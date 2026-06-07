@@ -6,7 +6,8 @@
 
 Welcome to **Python Mastery with Harsh**! This repository hosts an interactive, beautifully designed, and beginner-friendly Python learning platform. 
 
-🚀 **Live Site:** [https://lucifer01430.github.io/python-mastery-with-harsh/](https://lucifer01430.github.io/python-mastery-with-harsh/)
+🚀 **Live Site:** [https://lucifer01430.github.io/python-mastery-with-harsh/](https://lucifer01430.github.io/python-mastery-with-harsh/)  
+📺 **Chapter 1 Video Tutorial:** [Watch on YouTube](https://youtu.be/wfYnsQW9OLw?si=_sfgcVbQyazFBzcF)
 
 ---
 
