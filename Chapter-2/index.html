@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chapter 2 – Variables & Data Types | Python Mastery with Harsh</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<!-- NAVBAR -->
+<nav class="course-nav">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon"><i class="fab fa-python"></i></div>
+        Python Mastery with Harsh
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <span class="chapter-badge">CH 02</span>
+        <span class="d-none d-md-block" style="font-size:0.82rem;color:var(--text-muted)">Variables &amp; Data Types</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero-section" id="hero">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="chapter-number-pill animate-hero">
+          <i class="fas fa-book-reader"></i> Chapter 02 of 12
+        </div>
+        <h1 class="hero-title animate-hero-delay-1">
+          Variables<br>
+          <span class="gradient-text">&amp; Data</span><br>
+          Types
+        </h1>
+        <p class="hero-desc animate-hero-delay-2">
+          Learn how Python stores data in memory using variables, discovers the
+          <span class="kw-purple">five core data types</span>, masters operators,
+          type casting, and user input — the engine of every Python program.
+        </p>
+        <div class="d-flex flex-wrap gap-3 animate-hero-delay-3">
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(129,140,248,0.1);border:1px solid rgba(129,140,248,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#818cf8">
+            <i class="fas fa-clock"></i> ~50 min read
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#22c55e">
+            <i class="fas fa-signal"></i> Beginner Level
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#38bdf8">
+            <i class="fas fa-tasks"></i> 6 Exercises
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual position-relative" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero-code-window">
+            <div class="window-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="window-title">variables.py — Python Mastery</span>
+            </div>
+            <div class="window-body">
+              <div class="code-line"><span class="ln">1</span><span class="cm"># Chapter 2 — Variables &amp; Data Types</span></div>
+              <div class="code-line"><span class="ln">2</span></div>
+              <div class="code-line"><span class="ln">3</span><span class="ot">name </span><span class="op">= </span><span class="str">"Harsh"</span><span class="cm">        # str</span></div>
+              <div class="code-line"><span class="ln">4</span><span class="ot">age </span><span class="op">= </span><span class="num">25</span><span class="cm">             # int</span></div>
+              <div class="code-line"><span class="ln">5</span><span class="ot">price </span><span class="op">= </span><span class="num">99.99</span><span class="cm">        # float</span></div>
+              <div class="code-line"><span class="ln">6</span><span class="ot">is_active </span><span class="op">= </span><span class="num">True</span><span class="cm">    # bool</span></div>
+              <div class="code-line"><span class="ln">7</span></div>
+              <div class="code-line"><span class="ln">8</span><span class="fn">print</span><span class="op">(</span><span class="fn">type</span><span class="op">(</span><span class="ot">name</span><span class="op">))</span></div>
+              <div class="code-line"><span class="ln">9</span><span class="ot">age </span><span class="op">= </span><span class="fn">int</span><span class="op">(</span><span class="fn">input</span><span class="op">(</span><span class="str">"Enter age: "</span><span class="op">))</span></div>
+            </div>
+          </div>
+          <div class="floating-badge floating-badge-1">
+            <i class="fas fa-database" style="color:#818cf8;font-size:1.1rem"></i>
+            <span>5 Data Types</span>
+          </div>
+          <div class="floating-badge floating-badge-2">
+            <i class="fas fa-exchange-alt" style="color:#22c55e"></i>
+            <span>Type Casting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEARNING OBJECTIVES -->
+    <div class="mt-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="section-label"><i class="fas fa-bullseye"></i> Learning Objectives</div>
+      <div class="obj-grid">
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-box"></i></div><div><div style="font-weight:700;font-size:0.88rem">Variables</div><div style="font-size:0.78rem;color:var(--text-muted)">Understand memory storage</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-tags"></i></div><div><div style="font-weight:700;font-size:0.88rem">Data Types</div><div style="font-size:0.78rem;color:var(--text-muted)">int, float, str, bool, None</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-id-badge"></i></div><div><div style="font-weight:700;font-size:0.88rem">Naming Rules</div><div style="font-size:0.78rem;color:var(--text-muted)">Valid identifier conventions</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-calculator"></i></div><div><div style="font-weight:700;font-size:0.88rem">Operators</div><div style="font-size:0.78rem;color:var(--text-muted)">Arithmetic, Comparison, Logical</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-search"></i></div><div><div style="font-weight:700;font-size:0.88rem">type() Function</div><div style="font-size:0.78rem;color:var(--text-muted)">Inspect variable types</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-exchange-alt"></i></div><div><div style="font-weight:700;font-size:0.88rem">Type Casting</div><div style="font-size:0.78rem;color:var(--text-muted)">Convert between data types</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-keyboard"></i></div><div><div style="font-weight:700;font-size:0.88rem">User Input</div><div style="font-size:0.78rem;color:var(--text-muted)">Read keyboard input</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-magic"></i></div><div><div style="font-weight:700;font-size:0.88rem">Auto Detection</div><div style="font-size:0.78rem;color:var(--text-muted)">Python's dynamic typing</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 1 — INTRODUCTION ======================== -->
+<section class="section-gap" id="intro">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-lightbulb"></i> Introduction</div>
+      <h2 class="section-title">Why Do We Need <span style="color:var(--accent2)">Variables?</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row align-items-center g-5 mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <p style="color:var(--text-muted);font-size:0.97rem;margin-bottom:20px;">
+          In programming, data needs to be <span class="kw-purple">stored</span>, <span class="kw-highlight">processed</span>, and <span class="kw-green">reused</span> multiple times.
+          Instead of writing values repeatedly, we use <strong>variables</strong> to store information in memory.
+        </p>
+        <div class="callout callout-purple">
+          <i class="fas fa-database callout-icon" style="color:#818cf8"></i>
+          <div>
+            <div class="callout-title" style="color:#818cf8">Core Idea</div>
+            <div class="callout-body">Variables are the most fundamental building block of programming. Almost every Python program uses them to store, access, and modify data.</div>
+          </div>
+        </div>
+        <div class="callout callout-blue" style="margin-top:16px">
+          <i class="fas fa-lightbulb callout-icon" style="color:#38bdf8"></i>
+          <div>
+            <div class="callout-title" style="color:#38bdf8">In this chapter you will learn:</div>
+            <div class="callout-body">Variables • Data Types • Operators • Type Conversion • User Input</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <!-- Memory illustration SVG -->
+        <div class="illustration-wrap">
+          <svg viewBox="0 0 440 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px">
+            <defs>
+              <linearGradient id="mg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818cf8"/><stop offset="100%" style="stop-color:#38bdf8"/></linearGradient>
+              <linearGradient id="mg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#22c55e"/><stop offset="100%" style="stop-color:#38bdf8"/></linearGradient>
+            </defs>
+            <rect width="440" height="280" rx="16" fill="#0d1b2a" opacity="0.95"/>
+            <!-- RAM chip shape -->
+            <rect x="170" y="100" width="100" height="80" rx="8" fill="#1a2535" stroke="url(#mg1)" stroke-width="2"/>
+            <text x="220" y="128" text-anchor="middle" fill="#818cf8" font-size="10" font-family="Space Grotesk,sans-serif" font-weight="700">RAM</text>
+            <text x="220" y="144" text-anchor="middle" fill="#546e7a" font-size="9" font-family="Fira Code,monospace">Memory</text>
+            <!-- RAM legs -->
+            <line x1="185" y1="180" x2="185" y2="195" stroke="#546e7a" stroke-width="2"/>
+            <line x1="200" y1="180" x2="200" y2="195" stroke="#546e7a" stroke-width="2"/>
+            <line x1="215" y1="180" x2="215" y2="195" stroke="#546e7a" stroke-width="2"/>
+            <line x1="230" y1="180" x2="230" y2="195" stroke="#546e7a" stroke-width="2"/>
+            <line x1="245" y1="180" x2="245" y2="195" stroke="#546e7a" stroke-width="2"/>
+            <line x1="185" y1="100" x2="185" y2="85" stroke="#546e7a" stroke-width="2"/>
+            <line x1="200" y1="100" x2="200" y2="85" stroke="#546e7a" stroke-width="2"/>
+            <line x1="215" y1="100" x2="215" y2="85" stroke="#546e7a" stroke-width="2"/>
+            <line x1="230" y1="100" x2="230" y2="85" stroke="#546e7a" stroke-width="2"/>
+            <line x1="245" y1="100" x2="245" y2="85" stroke="#546e7a" stroke-width="2"/>
+            <!-- Variable boxes on left -->
+            <rect x="20" y="50" width="120" height="36" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+            <text x="30" y="65" fill="#c792ea" font-size="10" font-family="Fira Code,monospace">name</text>
+            <text x="30" y="79" fill="#c3e88d" font-size="10" font-family="Fira Code,monospace">= "Harsh"</text>
+            <rect x="20" y="102" width="120" height="36" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="30" y="117" fill="#c792ea" font-size="10" font-family="Fira Code,monospace">age</text>
+            <text x="30" y="131" fill="#f78c6c" font-size="10" font-family="Fira Code,monospace">= 25</text>
+            <rect x="20" y="154" width="120" height="36" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+            <text x="30" y="169" fill="#c792ea" font-size="10" font-family="Fira Code,monospace">price</text>
+            <text x="30" y="183" fill="#f78c6c" font-size="10" font-family="Fira Code,monospace">= 99.99</text>
+            <!-- Arrows to RAM -->
+            <line x1="140" y1="68" x2="168" y2="120" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="165,118 172,125 168,114" fill="#818cf8"/>
+            <line x1="140" y1="120" x2="168" y2="135" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="165,133 172,140 168,129" fill="#38bdf8"/>
+            <line x1="140" y1="172" x2="168" y2="150" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="165,148 172,155 168,144" fill="#22c55e"/>
+            <!-- Memory cells on right -->
+            <rect x="300" y="50" width="120" height="36" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+            <text x="310" y="65" fill="#546e7a" font-size="8" font-family="Fira Code,monospace">addr: 0x1A</text>
+            <text x="310" y="79" fill="#c3e88d" font-size="10" font-family="Fira Code,monospace">"Harsh"</text>
+            <rect x="300" y="102" width="120" height="36" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="310" y="117" fill="#546e7a" font-size="8" font-family="Fira Code,monospace">addr: 0x2B</text>
+            <text x="310" y="131" fill="#f78c6c" font-size="10" font-family="Fira Code,monospace">25</text>
+            <rect x="300" y="154" width="120" height="36" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+            <text x="310" y="169" fill="#546e7a" font-size="8" font-family="Fira Code,monospace">addr: 0x3C</text>
+            <text x="310" y="183" fill="#f78c6c" font-size="10" font-family="Fira Code,monospace">99.99</text>
+            <!-- Arrows from RAM -->
+            <line x1="272" y1="120" x2="298" y2="68" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="295,66 302,73 298,62" fill="#818cf8"/>
+            <line x1="272" y1="135" x2="298" y2="120" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="295,118 302,125 298,114" fill="#38bdf8"/>
+            <line x1="272" y1="150" x2="298" y2="172" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <polygon points="295,170 302,177 298,166" fill="#22c55e"/>
+            <!-- Labels -->
+            <text x="80" y="220" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Space Grotesk,sans-serif" font-weight="600">Variable Names</text>
+            <text x="360" y="220" text-anchor="middle" fill="#94a3b8" font-size="10" font-family="Space Grotesk,sans-serif" font-weight="600">Memory Locations</text>
+            <text x="220" y="246" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="Space Grotesk,sans-serif">Variables point to data stored in RAM</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 2 — VARIABLES ======================== -->
+<section class="section-gap" id="variables" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-box"></i> Core Concept</div>
+      <h2 class="section-title">What are <span style="color:var(--accent2)">Variables?</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">A variable is a <strong>name given to a memory location</strong> that stores data. Think of it as a labelled container holding a value you can use or change later.</p>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+        <div class="glass-card">
+          <h5 class="fw-bold mb-4"><i class="fas fa-box-open me-2" style="color:var(--accent2)"></i>Variable as a Container</h5>
+          <!-- Container analogy SVG -->
+          <div class="illustration-wrap mb-3">
+            <svg viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px">
+              <rect width="360" height="160" rx="12" fill="#0d1b2a"/>
+              <!-- Box 1 -->
+              <rect x="20" y="40" width="90" height="80" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+              <rect x="20" y="40" width="90" height="24" rx="10" fill="#818cf8" opacity="0.3"/>
+              <text x="65" y="57" text-anchor="middle" fill="#818cf8" font-size="9" font-family="Fira Code,monospace" font-weight="700">a</text>
+              <text x="65" y="92" text-anchor="middle" fill="#f78c6c" font-size="18" font-family="Fira Code,monospace" font-weight="700">30</text>
+              <text x="65" y="110" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">integer</text>
+              <!-- Box 2 -->
+              <rect x="135" y="40" width="90" height="80" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+              <rect x="135" y="40" width="90" height="24" rx="10" fill="#38bdf8" opacity="0.25"/>
+              <text x="180" y="57" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="Fira Code,monospace" font-weight="700">name</text>
+              <text x="180" y="92" text-anchor="middle" fill="#c3e88d" font-size="12" font-family="Fira Code,monospace" font-weight="700">"Harsh"</text>
+              <text x="180" y="110" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">string</text>
+              <!-- Box 3 -->
+              <rect x="250" y="40" width="90" height="80" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+              <rect x="250" y="40" width="90" height="24" rx="10" fill="#22c55e" opacity="0.2"/>
+              <text x="295" y="57" text-anchor="middle" fill="#22c55e" font-size="9" font-family="Fira Code,monospace" font-weight="700">price</text>
+              <text x="295" y="92" text-anchor="middle" fill="#f78c6c" font-size="13" font-family="Fira Code,monospace" font-weight="700">99.99</text>
+              <text x="295" y="110" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">float</text>
+              <!-- Labels -->
+              <text x="65" y="140" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Space Grotesk,sans-serif">a = 30</text>
+              <text x="180" y="140" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Space Grotesk,sans-serif">name = "Harsh"</text>
+              <text x="295" y="140" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Space Grotesk,sans-serif">price = 99.99</text>
+            </svg>
+          </div>
+          <div class="callout callout-purple" style="margin:0">
+            <i class="fas fa-lightbulb callout-icon" style="color:#818cf8"></i>
+            <div><div class="callout-title" style="color:#818cf8">Think of it like a box</div><div class="callout-body">The variable name is the label on the box. The value is what's inside the box.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+        <h5 class="fw-bold mb-3">Creating Variables</h5>
+        <div class="code-block">
+          <div class="code-topbar">
+            <div class="d-flex align-items-center gap-2">
+              <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+              <div class="code-lang"><i class="fab fa-python"></i> variables.py</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this,`a = 30\nname = &quot;Harsh&quot;\nprice = 99.99\n\nprint(a)\nprint(name)\nprint(price)`)"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">a </span><span class="s-op">= </span><span class="s-num">30</span><span class="s-cm">           # stores an integer</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Harsh"</span><span class="s-cm">    # stores a string</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-ot">price </span><span class="s-op">= </span><span class="s-num">99.99</span><span class="s-cm">      # stores a decimal</span></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">a</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">6</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">name</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">7</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">price</span><span class="s-op">)</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Output</div>
+          <div class="output-text">30<br>Harsh<br>99.99</div>
+        </div>
+
+        <!-- Naming Rules -->
+        <h5 class="fw-bold mt-4 mb-3"><i class="fas fa-id-badge me-2" style="color:var(--accent2)"></i>Rules for Naming Variables</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:var(--radius-sm);padding:16px">
+              <div style="color:#22c55e;font-weight:700;font-size:0.85rem;margin-bottom:10px"><i class="fas fa-check-circle me-2"></i>Valid Examples</div>
+              <div style="font-family:'Fira Code',monospace;font-size:0.82rem;line-height:2">
+                <div><span class="kw-green">name</span></div>
+                <div><span class="kw-green">age1</span></div>
+                <div><span class="kw-green">student_name</span></div>
+                <div><span class="kw-green">_total</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div style="background:rgba(244,63,94,0.08);border:1px solid rgba(244,63,94,0.2);border-radius:var(--radius-sm);padding:16px">
+              <div style="color:#f43f5e;font-weight:700;font-size:0.85rem;margin-bottom:10px"><i class="fas fa-times-circle me-2"></i>Invalid Examples</div>
+              <div style="font-family:'Fira Code',monospace;font-size:0.82rem;line-height:2">
+                <div><span class="kw-red">1name</span> <span style="color:var(--text-dim);font-size:0.75rem">← starts with number</span></div>
+                <div><span class="kw-red">student name</span> <span style="color:var(--text-dim);font-size:0.75rem">← has space</span></div>
+                <div><span class="kw-red">@price</span> <span style="color:var(--text-dim);font-size:0.75rem">← special char</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-warn mt-3">
+          <i class="fas fa-exclamation-triangle callout-icon" style="color:#f59e0b"></i>
+          <div><div class="callout-title" style="color:#f59e0b">Identifier Rules Summary</div><div class="callout-body">Can contain: <span class="kw-highlight">A–Z, a–z, 0–9, _</span> &nbsp;|&nbsp; Must start with: <span class="kw-highlight">letter or _</span> &nbsp;|&nbsp; Cannot start with a number or contain spaces.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 3 — DATA TYPES ======================== -->
+<section class="section-gap" id="datatypes">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-tags"></i> Core Concept</div>
+      <h2 class="section-title">Python <span style="color:var(--accent2)">Data Types</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Data types define what <strong>kind of value</strong> a variable holds. Python <span class="kw-purple">automatically detects</span> the type based on the assigned value — no need to declare types manually.</p>
+    </div>
+
+    <!-- Auto-detection callout -->
+    <div class="callout callout-blue mt-4" data-aos="fade-up">
+      <i class="fas fa-magic callout-icon" style="color:#38bdf8;font-size:1.4rem"></i>
+      <div>
+        <div class="callout-title" style="color:#38bdf8;font-size:1rem">Python's Superpower — Dynamic Typing</div>
+        <div class="callout-body" style="font-size:0.92rem;margin-top:6px">Unlike C or Java where you must declare <code class="kw-highlight" style="font-size:0.85em">int age = 25;</code>, Python simply needs <code class="kw-highlight" style="font-size:0.85em">age = 25</code>. Python figures out the type automatically. This makes Python fast to write and easy to read.</div>
+      </div>
+    </div>
+
+    <!-- Data type overview SVG -->
+    <div class="illustration-wrap my-4" data-aos="fade-up">
+      <svg viewBox="0 0 660 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:660px">
+        <rect width="660" height="120" rx="12" fill="#0d1b2a"/>
+        <!-- int -->
+        <rect x="15" y="20" width="115" height="80" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="72" y="48" text-anchor="middle" fill="#38bdf8" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">int</text>
+        <text x="72" y="66" text-anchor="middle" fill="#f78c6c" font-size="14" font-family="Fira Code,monospace">25</text>
+        <text x="72" y="90" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">Whole Number</text>
+        <!-- float -->
+        <rect x="145" y="20" width="115" height="80" rx="10" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+        <text x="202" y="48" text-anchor="middle" fill="#818cf8" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">float</text>
+        <text x="202" y="66" text-anchor="middle" fill="#f78c6c" font-size="14" font-family="Fira Code,monospace">99.99</text>
+        <text x="202" y="90" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">Decimal Number</text>
+        <!-- str -->
+        <rect x="275" y="20" width="115" height="80" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="332" y="48" text-anchor="middle" fill="#22c55e" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">str</text>
+        <text x="332" y="66" text-anchor="middle" fill="#c3e88d" font-size="12" font-family="Fira Code,monospace">"Harsh"</text>
+        <text x="332" y="90" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">Text Data</text>
+        <!-- bool -->
+        <rect x="405" y="20" width="115" height="80" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+        <text x="462" y="48" text-anchor="middle" fill="#f59e0b" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">bool</text>
+        <text x="462" y="66" text-anchor="middle" fill="#f78c6c" font-size="13" font-family="Fira Code,monospace">True</text>
+        <text x="462" y="90" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">True / False</text>
+        <!-- None -->
+        <rect x="535" y="20" width="115" height="80" rx="10" fill="#1e293b" stroke="#546e7a" stroke-width="1.5"/>
+        <text x="592" y="48" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="700">None</text>
+        <text x="592" y="66" text-anchor="middle" fill="#546e7a" font-size="13" font-family="Fira Code,monospace">None</text>
+        <text x="592" y="90" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">No Value</text>
+      </svg>
+    </div>
+
+    <!-- 5 Data Type Detail Cards -->
+    <div class="row g-4 mt-2">
+      <!-- int -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+        <div class="dtype-card" style="border-color:rgba(56,189,248,0.3)">
+          <div class="dtype-header">
+            <div class="dtype-icon" style="background:rgba(56,189,248,0.15)"><span style="font-family:'Fira Code',monospace;font-weight:800;color:#38bdf8">int</span></div>
+            <div><h6 class="fw-bold mb-0">Integer</h6><div style="font-size:0.78rem;color:var(--text-muted)">Whole numbers</div></div>
+          </div>
+          <div class="dtype-body">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">Stores any whole number — positive, negative, or zero. No decimal point.</p>
+            <div class="code-block" style="margin:0">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> int</div></div><button class="copy-btn" onclick="copyCode(this,'age = 25\nprint(type(age))')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content" style="padding:12px 12px 12px 0">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">age </span><span class="s-op">= </span><span class="s-num">25</span></span></div>
+              </div>
+            </div>
+            <div class="dtype-examples">
+              <span class="dtype-tag" style="background:rgba(56,189,248,0.1);color:#38bdf8">10</span>
+              <span class="dtype-tag" style="background:rgba(56,189,248,0.1);color:#38bdf8">100</span>
+              <span class="dtype-tag" style="background:rgba(56,189,248,0.1);color:#38bdf8">-50</span>
+              <span class="dtype-tag" style="background:rgba(56,189,248,0.1);color:#38bdf8">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- float -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="60">
+        <div class="dtype-card" style="border-color:rgba(129,140,248,0.3)">
+          <div class="dtype-header">
+            <div class="dtype-icon" style="background:rgba(129,140,248,0.15)"><span style="font-family:'Fira Code',monospace;font-weight:800;color:#818cf8">float</span></div>
+            <div><h6 class="fw-bold mb-0">Float</h6><div style="font-size:0.78rem;color:var(--text-muted)">Decimal numbers</div></div>
+          </div>
+          <div class="dtype-body">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">Stores numbers with a decimal point. Used for measurements, prices, and calculations.</p>
+            <div class="code-block" style="margin:0">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> float</div></div><button class="copy-btn" onclick="copyCode(this,'price = 99.99')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content" style="padding:12px 12px 12px 0">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">price </span><span class="s-op">= </span><span class="s-num">99.99</span></span></div>
+              </div>
+            </div>
+            <div class="dtype-examples">
+              <span class="dtype-tag" style="background:rgba(129,140,248,0.1);color:#818cf8">3.14</span>
+              <span class="dtype-tag" style="background:rgba(129,140,248,0.1);color:#818cf8">88.45</span>
+              <span class="dtype-tag" style="background:rgba(129,140,248,0.1);color:#818cf8">100.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- str -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="120">
+        <div class="dtype-card" style="border-color:rgba(34,197,94,0.3)">
+          <div class="dtype-header">
+            <div class="dtype-icon" style="background:rgba(34,197,94,0.15)"><span style="font-family:'Fira Code',monospace;font-weight:800;color:#22c55e">str</span></div>
+            <div><h6 class="fw-bold mb-0">String</h6><div style="font-size:0.78rem;color:var(--text-muted)">Text data</div></div>
+          </div>
+          <div class="dtype-body">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">Stores text enclosed in single or double quotes. Letters, words, sentences — any text.</p>
+            <div class="code-block" style="margin:0">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> str</div></div><button class="copy-btn" onclick="copyCode(this,'name = &quot;Harsh&quot;')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content" style="padding:12px 12px 12px 0">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Harsh"</span></span></div>
+              </div>
+            </div>
+            <div class="dtype-examples">
+              <span class="dtype-tag" style="background:rgba(34,197,94,0.1);color:#22c55e">"Python"</span>
+              <span class="dtype-tag" style="background:rgba(34,197,94,0.1);color:#22c55e">"Hi!"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- bool -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="180">
+        <div class="dtype-card" style="border-color:rgba(245,158,11,0.3)">
+          <div class="dtype-header">
+            <div class="dtype-icon" style="background:rgba(245,158,11,0.15)"><span style="font-family:'Fira Code',monospace;font-weight:800;color:#f59e0b">bool</span></div>
+            <div><h6 class="fw-bold mb-0">Boolean</h6><div style="font-size:0.78rem;color:var(--text-muted)">True or False</div></div>
+          </div>
+          <div class="dtype-body">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">Only two possible values. Used in conditions, decisions, and logic. Always capitalized.</p>
+            <div class="code-block" style="margin:0">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> bool</div></div><button class="copy-btn" onclick="copyCode(this,'is_logged_in = True')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content" style="padding:12px 12px 12px 0">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">is_logged_in </span><span class="s-op">= </span><span class="s-bool">True</span></span></div>
+              </div>
+            </div>
+            <div class="dtype-examples">
+              <span class="dtype-tag" style="background:rgba(34,197,94,0.15);color:#22c55e">True</span>
+              <span class="dtype-tag" style="background:rgba(244,63,94,0.15);color:#f43f5e">False</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- None -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="240">
+        <div class="dtype-card" style="border-color:rgba(100,116,139,0.3)">
+          <div class="dtype-header">
+            <div class="dtype-icon" style="background:rgba(100,116,139,0.15)"><span style="font-family:'Fira Code',monospace;font-weight:800;color:#64748b">None</span></div>
+            <div><h6 class="fw-bold mb-0">NoneType</h6><div style="font-size:0.78rem;color:var(--text-muted)">Absence of value</div></div>
+          </div>
+          <div class="dtype-body">
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">Represents the intentional absence of any value. Like a placeholder or "empty" variable.</p>
+            <div class="code-block" style="margin:0">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> None</div></div><button class="copy-btn" onclick="copyCode(this,'data = None')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content" style="padding:12px 12px 12px 0">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">data </span><span class="s-op">= </span><span class="s-none">None</span></span></div>
+              </div>
+            </div>
+            <div class="dtype-examples">
+              <span class="dtype-tag" style="background:rgba(100,116,139,0.15);color:#64748b">None</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Auto detection card -->
+      <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="glass-card h-100 d-flex flex-column justify-content-center">
+          <h6 class="fw-bold mb-3"><i class="fas fa-bolt me-2" style="color:#f59e0b"></i>Auto Type Detection</h6>
+          <div class="code-block">
+            <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> Python</div></div><button class="copy-btn" onclick="copyCode(this,`a = 71\nb = 88.44\nname = &quot;Harsh&quot;\nprint(type(a))\nprint(type(b))\nprint(type(name))`)"><i class="fas fa-copy"></i> Copy</button></div>
+            <div class="code-content">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">a </span><span class="s-op">= </span><span class="s-num">71</span></span></div>
+              <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-ot">b </span><span class="s-op">= </span><span class="s-num">88.44</span></span></div>
+              <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Harsh"</span></span></div>
+              <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">a</span><span class="s-op">))</span></span></div>
+              <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">b</span><span class="s-op">))</span></span></div>
+              <div class="code-row"><span class="line-no">6</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">name</span><span class="s-op">))</span></span></div>
+            </div>
+          </div>
+          <div class="output-box mt-2">
+            <div class="output-label">Output</div>
+            <div class="output-text">&lt;class 'int'&gt;<br>&lt;class 'float'&gt;<br>&lt;class 'str'&gt;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 4 — OPERATORS ======================== -->
+<section class="section-gap" id="operators" style="background:rgba(56,189,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-calculator"></i> Core Concept</div>
+      <h2 class="section-title">Operators in <span style="color:var(--accent)">Python</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Operators are symbols used to <strong>perform operations</strong> on values and variables. Python has four main categories.</p>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <!-- Arithmetic -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="0">
+        <div class="glass-card h-100">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div style="width:44px;height:44px;background:rgba(56,189,248,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem"><i class="fas fa-plus" style="color:#38bdf8"></i></div>
+            <div><h5 class="fw-bold mb-0">1. Arithmetic Operators</h5><div style="font-size:0.8rem;color:var(--text-muted)">For mathematical calculations</div></div>
+          </div>
+          <div class="table-responsive">
+            <table class="op-table">
+              <thead><tr><th>Operator</th><th>Name</th><th>Example → Result</th></tr></thead>
+              <tbody>
+                <tr><td>+</td><td>Addition</td><td>10 + 5 → 15</td></tr>
+                <tr><td>-</td><td>Subtraction</td><td>10 - 3 → 7</td></tr>
+                <tr><td>*</td><td>Multiplication</td><td>4 * 5 → 20</td></tr>
+                <tr><td>/</td><td>Division</td><td>10 / 2 → 5.0</td></tr>
+                <tr><td>%</td><td>Modulus (remainder)</td><td>10 % 3 → 1</td></tr>
+                <tr><td>**</td><td>Exponent (power)</td><td>2 ** 3 → 8</td></tr>
+                <tr><td>//</td><td>Floor Division</td><td>10 // 3 → 3</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="code-block mt-3">
+            <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> Example</div></div><button class="copy-btn" onclick="copyCode(this,`a = 10\nb = 5\nprint(a + b)\nprint(a * b)\nprint(a % b)`)"><i class="fas fa-copy"></i> Copy</button></div>
+            <div class="code-content">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">a </span><span class="s-op">= </span><span class="s-num">10</span></span></div>
+              <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-ot">b </span><span class="s-op">= </span><span class="s-num">5</span></span></div>
+              <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">a </span><span class="s-op">+ </span><span class="s-ot">b</span><span class="s-op">)</span></span></div>
+              <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">a </span><span class="s-op">* </span><span class="s-ot">b</span><span class="s-op">)</span></span></div>
+              <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">a </span><span class="s-op">% </span><span class="s-ot">b</span><span class="s-op">)</span></span></div>
+            </div>
+          </div>
+          <div class="output-box"><div class="output-label">Output</div><div class="output-text">15<br>50<br>0</div></div>
+        </div>
+      </div>
+      <!-- Comparison + Assignment -->
+      <div class="col-lg-6">
+        <div class="glass-card mb-4" data-aos="fade-left" data-aos-delay="60">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div style="width:44px;height:44px;background:rgba(34,197,94,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem"><i class="fas fa-equals" style="color:#22c55e"></i></div>
+            <div><h5 class="fw-bold mb-0">2. Assignment Operators</h5><div style="font-size:0.8rem;color:var(--text-muted)">Assign values to variables</div></div>
+          </div>
+          <div class="table-responsive">
+            <table class="op-table">
+              <thead><tr><th>Operator</th><th>Equivalent To</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><td>=</td><td>Assign</td><td>x = 10</td></tr>
+                <tr><td>+=</td><td>x = x + n</td><td>x += 5 → 15</td></tr>
+                <tr><td>-=</td><td>x = x - n</td><td>x -= 3 → 7</td></tr>
+                <tr><td>*=</td><td>x = x * n</td><td>x *= 2 → 20</td></tr>
+                <tr><td>/=</td><td>x = x / n</td><td>x /= 2 → 5.0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="glass-card mb-4" data-aos="fade-left" data-aos-delay="120">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div style="width:44px;height:44px;background:rgba(245,158,11,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem"><i class="fas fa-not-equal" style="color:#f59e0b"></i></div>
+            <div><h5 class="fw-bold mb-0">3. Comparison Operators</h5><div style="font-size:0.8rem;color:var(--text-muted)">Compare values → returns bool</div></div>
+          </div>
+          <div class="table-responsive">
+            <table class="op-table">
+              <thead><tr><th>Op</th><th>Meaning</th><th>Example → Result</th></tr></thead>
+              <tbody>
+                <tr><td>==</td><td>Equal to</td><td>5 == 5 → True</td></tr>
+                <tr><td>!=</td><td>Not equal</td><td>5 != 3 → True</td></tr>
+                <tr><td>&gt;</td><td>Greater than</td><td>10 &gt; 5 → True</td></tr>
+                <tr><td>&lt;</td><td>Less than</td><td>3 &lt; 8 → True</td></tr>
+                <tr><td>&gt;=</td><td>Greater or equal</td><td>5 &gt;= 5 → True</td></tr>
+                <tr><td>&lt;=</td><td>Less or equal</td><td>4 &lt;= 6 → True</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="glass-card" data-aos="fade-left" data-aos-delay="180">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div style="width:44px;height:44px;background:rgba(129,140,248,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem"><i class="fas fa-project-diagram" style="color:#818cf8"></i></div>
+            <div><h5 class="fw-bold mb-0">4. Logical Operators</h5><div style="font-size:0.8rem;color:var(--text-muted)">Combine conditions</div></div>
+          </div>
+          <div class="d-flex flex-wrap gap-3">
+            <div style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.2);border-radius:10px;padding:12px 18px;text-align:center;flex:1">
+              <div class="kw-highlight" style="font-size:0.9rem;font-weight:800">and</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px">Both must be True</div>
+              <div style="font-family:'Fira Code',monospace;font-size:0.78rem;color:#22c55e;margin-top:6px">True and True → True</div>
+            </div>
+            <div style="background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.2);border-radius:10px;padding:12px 18px;text-align:center;flex:1">
+              <div class="kw-purple" style="font-size:0.9rem;font-weight:800">or</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px">At least one True</div>
+              <div style="font-family:'Fira Code',monospace;font-size:0.78rem;color:#22c55e;margin-top:6px">True or False → True</div>
+            </div>
+            <div style="background:rgba(244,63,94,0.08);border:1px solid rgba(244,63,94,0.2);border-radius:10px;padding:12px 18px;text-align:center;flex:1">
+              <div class="kw-red" style="font-size:0.9rem;font-weight:800">not</div>
+              <div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px">Reverses the value</div>
+              <div style="font-family:'Fira Code',monospace;font-size:0.78rem;color:#22c55e;margin-top:6px">not True → False</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 5 — type() FUNCTION ======================== -->
+<section class="section-gap" id="type-fn">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-search"></i> Built-in Function</div>
+      <h2 class="section-title">The <span style="color:var(--accent)">type()</span> Function</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row g-4 mt-3 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="callout callout-blue mb-4">
+          <i class="fas fa-info-circle callout-icon" style="color:#38bdf8"></i>
+          <div><div class="callout-title" style="color:#38bdf8">What does type() do?</div><div class="callout-body">The <span class="kw-highlight">type()</span> function returns the data type of any variable or value. It's a built-in Python function — no import needed. Essential for debugging and understanding your data.</div></div>
+        </div>
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> type() example</div></div><button class="copy-btn" onclick="copyCode(this,`a = 31\nprint(type(a))\n\nb = &quot;31&quot;\nprint(type(b))\n\nc = 3.14\nprint(type(c))\n\nd = True\nprint(type(d))`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">a </span><span class="s-op">= </span><span class="s-num">31</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">a</span><span class="s-op">))</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-ot">b </span><span class="s-op">= </span><span class="s-str">"31"</span></span></div>
+            <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">b</span><span class="s-op">))</span></span></div>
+            <div class="code-row"><span class="line-no">6</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">7</span><span class="code-text"><span class="s-ot">c </span><span class="s-op">= </span><span class="s-num">3.14</span></span></div>
+            <div class="code-row"><span class="line-no">8</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">c</span><span class="s-op">))</span></span></div>
+            <div class="code-row"><span class="line-no">9</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">10</span><span class="code-text"><span class="s-ot">d </span><span class="s-op">= </span><span class="s-bool">True</span></span></div>
+            <div class="code-row"><span class="line-no">11</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">d</span><span class="s-op">))</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Output</div>
+          <div class="output-text">&lt;class 'int'&gt;<br>&lt;class 'str'&gt;<br>&lt;class 'float'&gt;<br>&lt;class 'bool'&gt;</div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <!-- Visual type checker -->
+        <div class="glass-card">
+          <h6 class="fw-bold mb-4"><i class="fas fa-eye me-2" style="color:var(--accent2)"></i>Notice the Difference!</h6>
+          <div class="callout callout-warn">
+            <i class="fas fa-exclamation-triangle callout-icon" style="color:#f59e0b"></i>
+            <div><div class="callout-title" style="color:#f59e0b">31 vs "31" — They're Different!</div><div class="callout-body">The number <span class="kw-highlight">31</span> is an integer you can do math with. The string <span class="kw-highlight">"31"</span> is text you cannot add or subtract. They look the same but behave completely differently.</div></div>
+          </div>
+          <!-- Visual diff -->
+          <div class="row g-3 mt-2">
+            <div class="col-6">
+              <div style="background:#060e1a;border:1px solid rgba(56,189,248,0.2);border-radius:10px;padding:16px;text-align:center">
+                <div style="font-family:'Fira Code',monospace;font-size:1.4rem;font-weight:700;color:#f78c6c">31</div>
+                <div style="font-size:0.72rem;color:var(--text-dim);margin-top:6px">type(31)</div>
+                <div style="font-family:'Fira Code',monospace;font-size:0.78rem;color:#38bdf8;margin-top:4px">&lt;class 'int'&gt;</div>
+                <div style="margin-top:8px;font-size:0.75rem;color:#22c55e"><i class="fas fa-check-circle me-1"></i>Can do math</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:#060e1a;border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:16px;text-align:center">
+                <div style="font-family:'Fira Code',monospace;font-size:1.4rem;font-weight:700;color:#c3e88d">"31"</div>
+                <div style="font-size:0.72rem;color:var(--text-dim);margin-top:6px">type("31")</div>
+                <div style="font-family:'Fira Code',monospace;font-size:0.78rem;color:#22c55e;margin-top:4px">&lt;class 'str'&gt;</div>
+                <div style="margin-top:8px;font-size:0.75rem;color:#f43f5e"><i class="fas fa-times-circle me-1"></i>Cannot do math</div>
+              </div>
+            </div>
+          </div>
+          <div class="callout callout-green mt-3" style="margin:0">
+            <i class="fas fa-lightbulb callout-icon" style="color:#22c55e"></i>
+            <div><div class="callout-title" style="color:#22c55e">Pro Tip</div><div class="callout-body">Always use <span class="kw-highlight">type()</span> when debugging to confirm what kind of data you're working with — especially after taking user input!</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 6 — TYPE CASTING ======================== -->
+<section class="section-gap" id="typecasting" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-exchange-alt"></i> Conversion</div>
+      <h2 class="section-title">Type <span style="color:var(--accent2)">Casting</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Type Casting means <strong>converting one data type into another</strong>. Python provides built-in functions for this.</p>
+    </div>
+
+    <!-- Casting Flow Visual -->
+    <div class="illustration-wrap my-4" data-aos="fade-up">
+      <svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px">
+        <rect width="620" height="130" rx="12" fill="#0d1b2a"/>
+        <!-- int → str -->
+        <rect x="15" y="30" width="85" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="57" y="52" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">int</text>
+        <text x="57" y="68" text-anchor="middle" fill="#f78c6c" font-size="13" font-family="Fira Code,monospace">31</text>
+        <line x1="100" y1="55" x2="125" y2="55" stroke="#818cf8" stroke-width="1.5"/>
+        <polygon points="123,51 131,55 123,59" fill="#818cf8"/>
+        <rect x="133" y="20" width="100" height="40" rx="8" fill="rgba(129,140,248,0.1)" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="4,2"/>
+        <text x="183" y="44" text-anchor="middle" fill="#818cf8" font-size="10" font-family="Fira Code,monospace" font-weight="700">str(31)</text>
+        <line x1="233" y1="55" x2="258" y2="55" stroke="#22c55e" stroke-width="1.5"/>
+        <polygon points="256,51 264,55 256,59" fill="#22c55e"/>
+        <rect x="266" y="30" width="85" height="50" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="308" y="52" text-anchor="middle" fill="#22c55e" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">str</text>
+        <text x="308" y="68" text-anchor="middle" fill="#c3e88d" font-size="12" font-family="Fira Code,monospace">"31"</text>
+        <!-- str → int -->
+        <rect x="385" y="30" width="95" height="50" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+        <text x="432" y="52" text-anchor="middle" fill="#22c55e" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">str</text>
+        <text x="432" y="68" text-anchor="middle" fill="#c3e88d" font-size="12" font-family="Fira Code,monospace">"32"</text>
+        <line x1="480" y1="55" x2="505" y2="55" stroke="#818cf8" stroke-width="1.5"/>
+        <polygon points="503,51 511,55 503,59" fill="#818cf8"/>
+        <rect x="513" y="30" width="92" height="50" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="559" y="52" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">int</text>
+        <text x="559" y="68" text-anchor="middle" fill="#f78c6c" font-size="13" font-family="Fira Code,monospace">32</text>
+        <!-- Labels -->
+        <text x="183" y="82" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Space Grotesk,sans-serif">int → str conversion</text>
+        <text x="400" y="100" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Fira Code,monospace">int("32")</text>
+        <text x="400" y="114" text-anchor="middle" fill="#94a3b8" font-size="8" font-family="Space Grotesk,sans-serif">str → int conversion</text>
+      </svg>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="example-card h-100">
+          <div class="example-header"><div class="example-num">1</div><div><h6 class="mb-0 fw-bold">Integer → String</h6><div style="font-size:0.78rem;color:var(--text-muted)">str() function</div></div></div>
+          <div class="example-body">
+            <div class="code-block">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i></div></div><button class="copy-btn" onclick="copyCode(this,'result = str(31)\nprint(result)\nprint(type(result))')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">result </span><span class="s-op">= </span><span class="s-fn">str</span><span class="s-op">(</span><span class="s-num">31</span><span class="s-op">)</span></span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">result</span><span class="s-op">)</span></span></div>
+                <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">result</span><span class="s-op">))</span></span></div>
+              </div>
+            </div>
+            <div class="output-box"><div class="output-label">Output</div><div class="output-text">"31"<br>&lt;class 'str'&gt;</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="60">
+        <div class="example-card h-100">
+          <div class="example-header"><div class="example-num">2</div><div><h6 class="mb-0 fw-bold">String → Integer</h6><div style="font-size:0.78rem;color:var(--text-muted)">int() function</div></div></div>
+          <div class="example-body">
+            <div class="code-block">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i></div></div><button class="copy-btn" onclick="copyCode(this,'result = int(&quot;32&quot;)\nprint(result)\nprint(type(result))')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">result </span><span class="s-op">= </span><span class="s-fn">int</span><span class="s-op">(</span><span class="s-str">"32"</span><span class="s-op">)</span></span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">result</span><span class="s-op">)</span></span></div>
+                <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">result</span><span class="s-op">))</span></span></div>
+              </div>
+            </div>
+            <div class="output-box"><div class="output-label">Output</div><div class="output-text">32<br>&lt;class 'int'&gt;</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="120">
+        <div class="example-card h-100">
+          <div class="example-header"><div class="example-num">3</div><div><h6 class="mb-0 fw-bold">Integer → Float</h6><div style="font-size:0.78rem;color:var(--text-muted)">float() function</div></div></div>
+          <div class="example-body">
+            <div class="code-block">
+              <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i></div></div><button class="copy-btn" onclick="copyCode(this,'result = float(32)\nprint(result)\nprint(type(result))')"><i class="fas fa-copy"></i> Copy</button></div>
+              <div class="code-content">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">result </span><span class="s-op">= </span><span class="s-fn">float</span><span class="s-op">(</span><span class="s-num">32</span><span class="s-op">)</span></span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">result</span><span class="s-op">)</span></span></div>
+                <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">result</span><span class="s-op">))</span></span></div>
+              </div>
+            </div>
+            <div class="output-box"><div class="output-label">Output</div><div class="output-text">32.0<br>&lt;class 'float'&gt;</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Casting summary table -->
+    <div class="glass-card mt-4" data-aos="fade-up">
+      <h5 class="fw-bold mb-4"><i class="fas fa-table me-2" style="color:var(--accent2)"></i>Type Casting Quick Reference</h5>
+      <div class="table-responsive">
+        <table class="compare-table">
+          <thead><tr><th>Function</th><th>Converts To</th><th>Example</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td>int()</td><td>Integer</td><td>int("42"), int(3.9)</td><td>42, 3 (truncates)</td></tr>
+            <tr><td>float()</td><td>Float</td><td>float(10), float("3.14")</td><td>10.0, 3.14</td></tr>
+            <tr><td>str()</td><td>String</td><td>str(100), str(True)</td><td>"100", "True"</td></tr>
+            <tr><td>bool()</td><td>Boolean</td><td>bool(0), bool(1)</td><td>False, True</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 7 — INPUT FUNCTION ======================== -->
+<section class="section-gap" id="input">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-keyboard"></i> User Interaction</div>
+      <h2 class="section-title">The <span style="color:#22c55e">input()</span> Function</h2>
+      <div class="section-divider" style="background:linear-gradient(90deg,#22c55e,#38bdf8)"></div>
+    </div>
+    <div class="row g-4 mt-3 align-items-start">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="callout callout-green mb-4">
+          <i class="fas fa-keyboard callout-icon" style="color:#22c55e"></i>
+          <div><div class="callout-title" style="color:#22c55e">What is input()?</div><div class="callout-body">The <span class="kw-green">input()</span> function pauses the program and waits for the user to type something on the keyboard. It then returns what the user typed as a <strong>string</strong>.</div></div>
+        </div>
+
+        <!-- Basic input -->
+        <h6 class="fw-bold mb-2">Basic Usage</h6>
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> input.py</div></div><button class="copy-btn" onclick="copyCode(this,`name = input(&quot;Enter your name: &quot;)\nprint(name)`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-fn">input</span><span class="s-op">(</span><span class="s-str">"Enter your name: "</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">name</span><span class="s-op">)</span></span></div>
+          </div>
+        </div>
+        <div class="terminal-box mb-4">
+          <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="terminal-title">Terminal</span></div>
+          <div class="terminal-body">
+            <div><span class="t-output">Enter your name: </span><span class="t-cmd">Harsh</span></div>
+            <div><span class="t-output">Harsh</span></div>
+          </div>
+        </div>
+
+        <!-- CRITICAL: input always returns string -->
+        <div class="callout callout-warn">
+          <i class="fas fa-exclamation-triangle callout-icon" style="color:#f59e0b;font-size:1.4rem"></i>
+          <div>
+            <div class="callout-title" style="color:#f59e0b;font-size:0.95rem">⚠ Critical Rule — Always a String!</div>
+            <div class="callout-body" style="margin-top:6px">The value returned by <span class="kw-highlight">input()</span> is <strong>always a string</strong>, even if the user types a number. You must convert it with type casting if you need a number.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <!-- Input type check -->
+        <h6 class="fw-bold mb-2">Input Returns a String</h6>
+        <div class="code-block mb-3">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> type check</div></div><button class="copy-btn" onclick="copyCode(this,`age = input(&quot;Enter age: &quot;)\nprint(type(age))`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">age </span><span class="s-op">= </span><span class="s-fn">input</span><span class="s-op">(</span><span class="s-str">"Enter age: "</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">age</span><span class="s-op">))</span></span></div>
+          </div>
+        </div>
+        <div class="output-box mb-4"><div class="output-label">Output (even if user types 25)</div><div class="output-text">&lt;class 'str'&gt;</div></div>
+
+        <!-- Input + Type Cast -->
+        <h6 class="fw-bold mb-2">Convert Input to Integer</h6>
+        <div class="code-block mb-3">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> cast input</div></div><button class="copy-btn" onclick="copyCode(this,`age = int(input(&quot;Enter age: &quot;))\nprint(age)\nprint(type(age))\nprint(age + 5)`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">age </span><span class="s-op">= </span><span class="s-fn">int</span><span class="s-op">(</span><span class="s-fn">input</span><span class="s-op">(</span><span class="s-str">"Enter age: "</span><span class="s-op">))</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">age</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">type</span><span class="s-op">(</span><span class="s-ot">age</span><span class="s-op">))</span></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">age </span><span class="s-op">+ </span><span class="s-num">5</span><span class="s-op">)</span></span></div>
+          </div>
+        </div>
+        <div class="output-box"><div class="output-label">Output (user typed 25)</div><div class="output-text">25<br>&lt;class 'int'&gt;<br>30</div></div>
+
+        <div class="callout callout-blue mt-3" style="margin:0">
+          <i class="fas fa-lightbulb callout-icon" style="color:#38bdf8"></i>
+          <div><div class="callout-title" style="color:#38bdf8">Pattern to remember</div><div class="callout-body"><span class="kw-highlight">int(input("prompt: "))</span> — wrap input() inside int() to get a number you can do math with.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 8 — COMMON MISTAKES ======================== -->
+<section class="section-gap" id="mistakes" style="background:rgba(244,63,94,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-exclamation-triangle"></i> Watch Out</div>
+      <h2 class="section-title">Common <span style="color:#f43f5e">Mistakes</span></h2>
+      <div class="section-divider" style="background:linear-gradient(90deg,#f43f5e,#f59e0b)"></div>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="0">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 1: Forgetting to cast input()</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Wrong — TypeError when adding</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text" style="color:#f43f5e">num = input("Enter: ")  # returns str!</span></div>
+              <div class="code-row"><span class="line-no">2</span><span class="code-text" style="color:#f43f5e">print(num + 10)        # TypeError!</span></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Correct — Cast to int first</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">num </span><span class="s-op">= </span><span class="s-fn">int</span><span class="s-op">(</span><span class="s-fn">input</span><span class="s-op">(</span><span class="s-str">"Enter: "</span><span class="s-op">))</span></span></div>
+              <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">num </span><span class="s-op">+ </span><span class="s-num">10</span><span class="s-op">)</span>  <span class="s-cm"># works!</span></span></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="60">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 2: Variable name starts with number</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Wrong — SyntaxError</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text" style="color:#f43f5e">1name = "Harsh"    # SyntaxError!</span></div>
+              <div class="code-row"><span class="line-no">2</span><span class="code-text" style="color:#f43f5e">3_count = 10       # SyntaxError!</span></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Correct — Start with letter or _</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name1 </span><span class="s-op">= </span><span class="s-str">"Harsh"</span>   <span class="s-cm"># valid</span></span></div>
+              <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-ot">_count </span><span class="s-op">= </span><span class="s-num">10</span>       <span class="s-cm"># valid</span></span></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="120">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 3: Converting non-numeric string to int</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Wrong — ValueError</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text" style="color:#f43f5e">x = int("Harsh")  # ValueError!</span></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Correct — Only numeric strings work</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">x </span><span class="s-op">= </span><span class="s-fn">int</span><span class="s-op">(</span><span class="s-str">"42"</span><span class="s-op">)</span>  <span class="s-cm"># valid: "42" is numeric</span></span></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="180">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 4: Using = instead of == for comparison</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Wrong — Assigns instead of comparing</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text" style="color:#f43f5e">if a = 5:     # SyntaxError!</span></div>
+            </div></div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Correct — Use == to compare</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0"><div class="code-content" style="padding:12px 12px 12px 0">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">if</span> <span class="s-ot">a </span><span class="s-op">== </span><span class="s-num">5</span><span class="s-op">:</span>   <span class="s-cm"># correct: ==</span></span></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 9 — INTERVIEW Q ======================== -->
+<section class="section-gap" id="interview">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-user-tie"></i> Interview Prep</div>
+      <h2 class="section-title">Interview <span style="color:var(--accent2)">Questions</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="accordion qa-accordion mt-4" id="interviewAccordion">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="0">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+            <span class="q-num">1</span> What is a variable in Python?
+          </button>
+        </h2>
+        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">A variable is a named memory location that stores a value. In Python, variables are created when you assign a value to them using the <code class="kw-highlight" style="font-size:0.85em">=</code> operator. Python is dynamically typed, so you don't need to declare the type — it's inferred automatically. Example: <code class="kw-highlight" style="font-size:0.85em">x = 10</code> creates an integer variable.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="50">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+            <span class="q-num">2</span> What are the basic data types in Python?
+          </button>
+        </h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">Python has five basic data types: <code class="kw-highlight" style="font-size:0.85em">int</code> (whole numbers like 25), <code class="kw-highlight" style="font-size:0.85em">float</code> (decimal numbers like 3.14), <code class="kw-highlight" style="font-size:0.85em">str</code> (text like "Hello"), <code class="kw-highlight" style="font-size:0.85em">bool</code> (True or False), and <code class="kw-highlight" style="font-size:0.85em">NoneType</code> (represents no value). Python detects types automatically based on the assigned value.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+            <span class="q-num">3</span> What is type casting? Name the functions used.
+          </button>
+        </h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">Type casting is converting one data type into another. Python provides built-in functions: <code class="kw-highlight" style="font-size:0.85em">int()</code> converts to integer, <code class="kw-highlight" style="font-size:0.85em">float()</code> to float, <code class="kw-highlight" style="font-size:0.85em">str()</code> to string, and <code class="kw-highlight" style="font-size:0.85em">bool()</code> to boolean. It's especially useful when working with user input, since <code class="kw-highlight" style="font-size:0.85em">input()</code> always returns a string.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+            <span class="q-num">4</span> What does the input() function always return?
+          </button>
+        </h2>
+        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">The <code class="kw-highlight" style="font-size:0.85em">input()</code> function <strong>always returns a string</strong>, regardless of what the user types. If the user enters the number 25, Python stores it as the string <code class="kw-highlight" style="font-size:0.85em">"25"</code>, not the integer 25. To use it as a number, you must convert it: <code class="kw-highlight" style="font-size:0.85em">age = int(input("Enter age: "))</code>.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+            <span class="q-num">5</span> What is the difference between = and == in Python?
+          </button>
+        </h2>
+        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body"><code class="kw-highlight" style="font-size:0.85em">=</code> is the <strong>assignment operator</strong> — it stores a value in a variable: <code class="kw-highlight" style="font-size:0.85em">x = 5</code>. <code class="kw-highlight" style="font-size:0.85em">==</code> is the <strong>comparison operator</strong> — it checks if two values are equal and returns True or False: <code class="kw-highlight" style="font-size:0.85em">x == 5</code> → True. Confusing them is one of the most common Python mistakes.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
+            <span class="q-num">6</span> What are the rules for naming variables in Python?
+          </button>
+        </h2>
+        <div id="q6" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">Variable names (identifiers) can contain letters (A-Z, a-z), digits (0-9), and underscores (_). They must start with a letter or underscore — never a digit. Spaces are not allowed. Python is case-sensitive: <code class="kw-highlight" style="font-size:0.85em">name</code> and <code class="kw-highlight" style="font-size:0.85em">Name</code> are different variables. Reserved keywords like <code class="kw-highlight" style="font-size:0.85em">if</code>, <code class="kw-highlight" style="font-size:0.85em">for</code>, <code class="kw-highlight" style="font-size:0.85em">while</code> cannot be used as variable names.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 10 — PRACTICE ======================== -->
+<section class="section-gap" id="practice" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-dumbbell"></i> Practice Set</div>
+      <h2 class="section-title">Practice <span style="color:var(--accent2)">Questions</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Write every line yourself — the best way to learn is by doing, not just reading.</p>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q1</span><span class="diff-badge diff-easy">Easy</span></div>
+          <div class="practice-body">
+            <h6>Add Two Numbers</h6>
+            <p>Write a Python program to add two numbers and print the result.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use the <span class="kw-purple">+</span> operator between two variables.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="60">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q2</span><span class="diff-badge diff-easy">Easy</span></div>
+          <div class="practice-body">
+            <h6>Find the Remainder</h6>
+            <p>Write a program to find the remainder when one number is divided by another.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use the <span class="kw-highlight">%</span> (modulus) operator.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q3</span><span class="diff-badge diff-easy">Easy</span></div>
+          <div class="practice-body">
+            <h6>Check Data Type</h6>
+            <p>Take input from the user and check the data type of the entered value using the <code style="font-family:'Fira Code',monospace;color:var(--accent2)">type()</code> function.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use <span class="kw-purple">print(type(value))</span> to display the type.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="180">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q4</span><span class="diff-badge diff-medium">Medium</span></div>
+          <div class="practice-body">
+            <h6>Greater Than Check</h6>
+            <p>Given <code style="font-family:'Fira Code',monospace;color:#38bdf8">a = 34</code> and <code style="font-family:'Fira Code',monospace;color:#38bdf8">b = 80</code>, use a comparison operator to determine if <code>a</code> is greater than <code>b</code>. Print the result.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use <span class="kw-highlight">&gt;</span> operator. The output will be <span class="kw-red">False</span>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q5</span><span class="diff-badge diff-medium">Medium</span></div>
+          <div class="practice-body">
+            <h6>Average Calculator</h6>
+            <p>Write a Python program to calculate the average of two numbers entered by the user.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use <span class="kw-highlight">int(input())</span> for both numbers, then <span class="kw-highlight">(a + b) / 2</span>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="practice-card" style="border-color:rgba(245,158,11,0.2)">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q6</span><span class="diff-badge diff-medium">Medium</span></div>
+          <div class="practice-body">
+            <h6>Square a Number</h6>
+            <p>Write a Python program to calculate the square of a number entered by the user.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use <span class="kw-highlight">**</span> (exponent) operator: <span class="kw-highlight">num ** 2</span>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 11 — REVISION ======================== -->
+<section class="section-gap" id="revision">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-sync-alt"></i> Quick Recap</div>
+      <h2 class="section-title">Chapter <span style="color:var(--accent2)">Summary</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="50"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>Variables</strong> are named memory locations that store data and can be reused throughout a program.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="100"><div class="revision-check"><i class="fas fa-check"></i></div><div>Python has <strong>5 basic data types:</strong> <span class="kw-highlight">int</span>, <span class="kw-purple">float</span>, <span class="kw-green">str</span>, <span class="kw-warn">bool</span>, and <span style="background:rgba(100,116,139,0.12);color:#64748b;padding:1px 8px;border-radius:5px;font-family:'Fira Code',monospace;font-size:0.88em">None</span>.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="150"><div class="revision-check"><i class="fas fa-check"></i></div><div>Python <strong>automatically detects</strong> the data type based on the assigned value — no manual declaration needed.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="200"><div class="revision-check"><i class="fas fa-check"></i></div><div>Variable names can contain letters, digits, and underscores. They <strong>cannot start with a number</strong> or contain spaces.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="250"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>4 operator types:</strong> Arithmetic (<span class="kw-highlight">+ - * / % ** //</span>), Assignment (<span class="kw-highlight">= += -=</span>), Comparison (<span class="kw-highlight">== != &gt; &lt;</span>), Logical (<span class="kw-highlight">and or not</span>).</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="300"><div class="revision-check"><i class="fas fa-check"></i></div><div>The <span class="kw-highlight">type()</span> function returns the <strong>data type of any variable</strong> — essential for debugging.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="350"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>Type Casting</strong> converts between types: <span class="kw-highlight">int()</span>, <span class="kw-purple">float()</span>, <span class="kw-green">str()</span>, <span class="kw-warn">bool()</span>.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="400"><div class="revision-check"><i class="fas fa-check"></i></div><div>The <span class="kw-green">input()</span> function reads keyboard input and <strong>always returns a string</strong> — convert it when you need a number.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="450"><div class="revision-check"><i class="fas fa-check"></i></div><div>Pattern: <span class="kw-highlight">int(input("prompt: "))</span> — reads user input and converts it to integer in one line.</div></div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
+        <div class="glass-card text-center">
+          <h5 class="fw-bold mb-4">Completion Checklist</h5>
+          <div class="d-flex flex-column gap-2" id="checklistBox">
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Understand Variables</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Understand Data Types</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Use Arithmetic Operators</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Use Comparison Operators</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Check Data Types using type()</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Perform Type Casting</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Take User Input</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Solve All Practice Questions</span></div>
+          </div>
+          <div class="mt-4 pt-3" style="border-top:1px solid var(--border)">
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:8px">Your Progress</div>
+            <div style="font-size:2rem;font-weight:800;font-family:'Syne',sans-serif" id="progressCount">0/8</div>
+            <div class="big-progress mt-2">
+              <div id="checkProgressBar" style="height:100%;width:0%;background:linear-gradient(90deg,#818cf8,#22c55e);border-radius:6px;transition:width 0.4s ease"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Excellent Work -->
+        <div class="glass-card mt-4 text-center">
+          <div style="font-size:3rem;margin-bottom:12px">🎉</div>
+          <h5 class="fw-bold mb-2">Excellent Work!</h5>
+          <p style="font-size:0.85rem;color:var(--text-muted)">You have successfully completed Chapter 2 — Variables &amp; Data Types. You can now build programs that store, process, and interact with data!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROGRESS TRACKER ======================== -->
+<section class="section-gap-sm" id="progress">
+  <div class="container">
+    <div class="progress-section" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="section-label"><i class="fas fa-map-marked-alt"></i> Course Progress</div>
+          <h3 class="fw-bold mt-2 mb-3" style="font-family:'Syne',sans-serif">Chapter 2 Complete! <span style="color:#22c55e">✓</span></h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px">Two chapters down, ten to go. You're building serious Python foundations — keep the momentum!</p>
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div style="flex:1">
+              <div class="big-progress">
+                <div class="big-progress-bar" style="width: 16.7%"></div>
+              </div>
+            </div>
+            <span style="font-weight:700;color:var(--accent2);font-size:1rem;min-width:46px">16.7%</span>
+          </div>
+          <div style="font-size:0.78rem;color:var(--text-muted)">2 of 12 chapters completed</div>
+          <!-- Mark Complete Button -->
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <button id="markCompleteBtn" onclick="toggleChapter2()" style="background:linear-gradient(135deg,#22c55e,#818cf8);border:none;color:#fff;font-weight:700;padding:12px 24px;border-radius:10px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:0.9rem;display:flex;align-items:center;gap:8px;transition:all 0.3s">
+              <i class="fas fa-check-circle"></i> Mark Chapter 2 as Complete
+            </button>
+            <a href="../index.html" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-main);font-weight:600;padding:12px 22px;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;font-size:0.9rem;transition:all 0.3s">
+              <i class="fas fa-home" style="color:#818cf8"></i> Back to Course Home
+            </a>
+          </div>
+          <div id="ch2CompletedMsg" style="display:none;margin-top:14px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:14px 18px;font-size:0.88rem;color:#22c55e">
+            <i class="fas fa-check-circle me-2"></i> <strong>Chapter 2 marked as complete!</strong> Your progress has been saved. Return to the homepage to continue your journey.
+          </div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="progress-steps">
+            <div class="progress-step">
+              <div class="ps-circle ps-done"><i class="fas fa-check" style="font-size:0.75rem"></i></div>
+              <div class="ps-label">Ch 1<br>Modules</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-active"><i class="fas fa-check" style="font-size:0.75rem"></i></div>
+              <div class="ps-label">Ch 2<br>Variables</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">3</div>
+              <div class="ps-label">Ch 3<br>Strings</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">4</div>
+              <div class="ps-label">Ch 4<br>Lists</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">5</div>
+              <div class="ps-label">Ch 5<br>Loops</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">...</div>
+              <div class="ps-label">More<br>Coming</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand column -->
+      <div>
+        <div class="footer-brand-name">Python Mastery with Harsh</div>
+        <p class="footer-tagline">From Absolute Beginner to Building Real Python Projects.<br>Completely free. Built with ❤️ for students.</p>
+        <div class="footer-social">
+          <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-social-link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-social-link" title="Portfolio">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="#" class="footer-social-link" title="Course Repo">
+            <i class="fas fa-code-branch"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chapters column -->
+      <div>
+        <div class="footer-col-title">Chapters</div>
+        <a href="../Chapter-1/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 1 – Modules &amp; PIP</a>
+        <a href="../Chapter-2/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 2 – Variables</a>
+        <a href="../coming-soon.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--text-dim)"></i>Chapter 3 – Strings (Soon)</a>
+        <a href="../index.html#chapters" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--text-dim)"></i>All Chapters →</a>
+      </div>
+
+      <!-- Links column -->
+      <div>
+        <div class="footer-col-title">Links</div>
+        <a href="../index.html#roadmap" class="footer-link">Course Roadmap</a>
+        <a href="../index.html#instructor" class="footer-link">About Instructor</a>
+        <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-link">Portfolio Website</a>
+        <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-link">GitHub Profile</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Python Mastery with Harsh. All rights reserved.</div>
+      <div class="footer-love">
+        Let's Learn Python with <a href="https://github.com/lucifer01430" target="_blank" rel="noopener">Harsh</a> ❤️
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script>
+function setChapter2Marked(isDone) {
+  var btn = document.getElementById('markCompleteBtn');
+  var msg = document.getElementById('ch2CompletedMsg');
+  if (isDone) {
+    btn.innerHTML = '<i class="fas fa-check-double"></i> Chapter 2 Complete ✓ &nbsp;<span style="font-size:0.78rem;opacity:0.75;border-left:1px solid rgba(34,197,94,0.4);padding-left:10px;margin-left:2px">Unmark</span>';
+    btn.style.background = 'rgba(34,197,94,0.15)';
+    btn.style.border = '1px solid rgba(34,197,94,0.4)';
+    btn.style.color = '#22c55e';
+    msg.style.display = 'block';
+    msg.innerHTML = '<i class="fas fa-check-circle me-2"></i><strong>Chapter 2 marked as complete!</strong> Your progress is saved. <span style="opacity:0.7;font-size:0.82rem">Click the button again to unmark.</span>';
+  } else {
+    btn.innerHTML = '<i class="fas fa-check-circle"></i> Mark Chapter 2 as Complete';
+    btn.style.background = 'linear-gradient(135deg,#22c55e,#818cf8)';
+    btn.style.border = 'none';
+    btn.style.color = '#fff';
+    msg.style.display = 'none';
+  }
+}
+
+function toggleChapter2() {
+  var isDone = localStorage.getItem('python_chapter_2') === 'completed';
+  if (isDone) {
+    localStorage.removeItem('python_chapter_2');
+    setChapter2Marked(false);
+  } else {
+    localStorage.setItem('python_chapter_2', 'completed');
+    setChapter2Marked(true);
+  }
+}
+
+// Apply saved state on page load
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('python_chapter_2') === 'completed') {
+    setChapter2Marked(true);
+  }
+});
+</script>
+
+</body>
+</html>

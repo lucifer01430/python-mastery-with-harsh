@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Mastery with Harsh | Learn Python from Scratch with Projects</title>
+
+  <meta name="title" content="Python Mastery with Harsh | Learn Python from Scratch with Projects" />
+
+  <meta name="description"
+    content="Master Python programming from beginner to advanced with Harsh Pandey. Learn Python through interactive notes, hands-on exercises, coding challenges, real-world examples, and practical projects including OOP, File Handling, Advanced Python, Jarvis AI Assistant, and AI Chatbot development." />
+
+  <meta name="keywords"
+    content="Python Mastery with Harsh, Learn Python, Python Course, Python Tutorial, Python for Beginners, Python Programming, Python Notes, Python Projects, Python OOP, File Handling in Python, Advanced Python, Python Exercises, Python Practice Questions, Python Developer Course, Django Developer, Web Development, Harsh Pandey, Python Learning Platform, Python Roadmap, Python Coding Course, Python Interview Preparation, Jarvis AI Project, AI Chatbot Python, Free Python Course" />
+
+  <meta name="author" content="Harsh Pandey" />
+
+  <meta name="robots" content="index, follow" />
+
+  <meta name="language" content="English" />
+
+  <meta name="revisit-after" content="7 days" />
+
+  <meta name="theme-color" content="#3776AB" />
+
+  <meta name="application-name" content="Python Mastery with Harsh" />
+
+  <meta name="generator" content="Python Mastery with Harsh Learning Platform" />
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type" content="website" />
+
+  <meta property="og:title" content="Python Mastery with Harsh | Learn Python from Scratch" />
+
+  <meta property="og:description"
+    content="A complete beginner-friendly Python learning platform featuring interactive notes, coding exercises, projects, OOP, Advanced Python, Jarvis AI Assistant, and AI Chatbot development." />
+
+  <meta property="og:site_name" content="Python Mastery with Harsh" />
+
+  <meta property="og:author" content="Harsh Pandey" />
+
+
+  <!-- Twitter / X SEO -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:title" content="Python Mastery with Harsh | Learn Python from Scratch" />
+
+  <meta name="twitter:description"
+    content="Master Python programming through practical coding, exercises, projects, and real-world applications." />
+
+
+<!-- Canonical -->
+<link rel="canonical" href="https://lucifer01430.github.io/python-mastery-with-harsh/" />
+
+
+  <!-- Favicons -->
+
+  <link rel="icon" type="image/png" href="assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Python" />
+  <link rel="manifest" href="assets/favicon/site.webmanifest" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Background Orbs -->
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+
+  <!-- ========================
+     NAVBAR
+======================== -->
+  <nav class="course-nav" id="mainNav">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="brand">
+          <div class="brand-icon"><i class="fab fa-python"></i></div>
+          Python Mastery with Harsh
+        </a>
+        <!-- Desktop nav -->
+        <div class="d-flex align-items-center gap-2 nav-links-desktop">
+          <a href="#roadmap" class="nav-link-item">Roadmap</a>
+          <a href="#chapters" class="nav-link-item">Chapters</a>
+          <a href="#instructor" class="nav-link-item">Instructor</a>
+          <a href="#progress" class="nav-link-item">Progress</a>
+          <a href="./Chapter-1/index.html" class="nav-start-btn ms-2">
+            <i class="fas fa-play"></i> Start Learning
+          </a>
+        </div>
+        <!-- Mobile hamburger -->
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <!-- Mobile dropdown menu -->
+      <div id="mobileMenu"
+        style="display:none;flex-direction:column;gap:6px;padding:14px 0 6px;border-top:1px solid var(--border);margin-top:12px">
+        <a href="#roadmap" class="nav-link-item">Roadmap</a>
+        <a href="#chapters" class="nav-link-item">Chapters</a>
+        <a href="#instructor" class="nav-link-item">Instructor</a>
+        <a href="#progress" class="nav-link-item">Progress</a>
+        <a href="./Chapter-1/index.html" class="nav-start-btn mt-2" style="text-align:center;justify-content:center">
+          <i class="fas fa-play"></i> Start Learning
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================
+     HERO SECTION
+======================== -->
+  <section class="hero-section" id="hero">
+    <div class="container position-relative">
+      <div class="row align-items-center g-5">
+        <!-- Left: Text content -->
+        <div class="col-lg-6">
+          <div class="chapter-number-pill animate-hero">
+            <i class="fab fa-python"></i> Complete Python Learning Journey
+          </div>
+          <h1 class="hero-title animate-hero-delay-1">
+            Python<br>
+            <span class="gradient-text">Mastery</span><br>
+            with Harsh
+          </h1>
+          <p class="hero-desc animate-hero-delay-2">
+            From Absolute Beginner to Building Real Python Projects.
+            Learn Python the <span class="kw-highlight">right way</span> — with hands-on examples,
+            real projects, and a structured learning path built by a working developer.
+          </p>
+
+          <!-- Quick stats pills -->
+          <div class="hero-stats animate-hero-delay-3">
+            <div class="hero-stat-pill">
+              <i class="fas fa-book-open stat-icon" style="color:#38bdf8"></i>
+              <div>
+                <div class="hero-stat-val">13</div>
+                <div class="hero-stat-lbl">Chapters</div>
+              </div>
+            </div>
+            <div class="hero-stat-pill">
+              <i class="fas fa-laptop-code stat-icon" style="color:#818cf8"></i>
+              <div>
+                <div class="hero-stat-val">2</div>
+                <div class="hero-stat-lbl">Major Projects</div>
+              </div>
+            </div>
+            <div class="hero-stat-pill">
+              <i class="fas fa-clock stat-icon" style="color:#22c55e"></i>
+              <div>
+                <div class="hero-stat-val">65+</div>
+                <div class="hero-stat-lbl">Hours</div>
+              </div>
+            </div>
+            <div class="hero-stat-pill">
+              <i class="fas fa-unlock stat-icon" style="color:#f59e0b"></i>
+              <div>
+                <div class="hero-stat-val">Free</div>
+                <div class="hero-stat-lbl">Forever</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA buttons -->
+          <div class="hero-cta-group animate-hero-delay-4">
+            <a href="./Chapter-1/index.html" class="btn-primary-hero" id="startLearningBtn">
+              <i class="fas fa-play"></i> Start Learning
+            </a>
+            <a href="#roadmap" class="btn-outline-hero">
+              <i class="fas fa-map"></i> View Roadmap
+            </a>
+            <a href="#chapters" class="btn-outline-hero">
+              <i class="fas fa-layer-group"></i> Browse Chapters
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Code window -->
+        <div class="col-lg-6">
+          <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+            <div class="hero-code-window">
+              <div class="window-bar">
+                <span class="dot dot-r"></span>
+                <span class="dot dot-y"></span>
+                <span class="dot dot-g"></span>
+                <span class="window-title">course_overview.py — Python Mastery</span>
+              </div>
+              <div class="window-body">
+                <div class="code-line"><span class="ln">1</span><span class="cm"># Python Mastery with Harsh 🐍</span>
+                </div>
+                <div class="code-line"><span class="ln">2</span><span class="cm"># From Zero to Real Python
+                    Projects</span></div>
+                <div class="code-line"><span class="ln">3</span></div>
+                <div class="code-line"><span class="ln">4</span><span class="ot">course </span><span class="op">=
+                    {</span></div>
+                <div class="code-line"><span class="ln">5</span><span class="ot">&nbsp;&nbsp;</span><span
+                    class="str">"name"</span><span class="op">:</span> <span class="str">"Python Mastery"</span><span
+                    class="op">,</span></div>
+                <div class="code-line"><span class="ln">6</span><span class="ot">&nbsp;&nbsp;</span><span
+                    class="str">"chapters"</span><span class="op">:</span> <span class="num">13</span><span
+                    class="op">,</span></div>
+                <div class="code-line"><span class="ln">7</span><span class="ot">&nbsp;&nbsp;</span><span
+                    class="str">"projects"</span><span class="op">:</span> <span class="num">2</span><span
+                    class="op">,</span></div>
+                <div class="code-line"><span class="ln">8</span><span class="ot">&nbsp;&nbsp;</span><span
+                    class="str">"level"</span><span class="op">:</span> <span class="str">"Beginner to Advanced"</span>
+                </div>
+                <div class="code-line"><span class="ln">9</span><span class="op">}</span></div>
+                <div class="code-line"><span class="ln">10</span></div>
+                <div class="code-line"><span class="ln">11</span><span class="fn">print</span><span
+                    class="op">(</span><span class="str">f"Welcome to {</span><span class="ot">course</span><span
+                    class="str">['name']}!"</span><span class="op">)</span></div>
+                <div class="code-line"><span class="ln">12</span><span class="fn">print</span><span
+                    class="op">(</span><span class="str">"Let's build something amazing 🚀"</span><span
+                    class="op">)</span></div>
+              </div>
+            </div>
+            <!-- Floating badges -->
+            <div class="floating-badge floating-badge-1">
+              <i class="fab fa-python" style="color:#38bdf8;font-size:1.1rem"></i>
+              <span style="color:var(--text-main)">Python 3.x</span>
+            </div>
+            <div class="floating-badge floating-badge-2">
+              <i class="fas fa-rocket" style="color:#22c55e"></i>
+              <span style="color:var(--text-main)">100% Free</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     COURSE STATISTICS
+======================== -->
+  <section class="section-gap-sm" id="statsSection">
+    <div class="container">
+      <div class="stats-grid" data-aos="fade-up">
+        <div class="stat-card">
+          <div class="stat-icon-wrap" style="background:rgba(56,189,248,0.12)">
+            <i class="fas fa-book-open" style="color:#38bdf8"></i>
+          </div>
+          <div class="stat-number counter-num" data-target="13" data-suffix="">0</div>
+          <div class="stat-label">Complete Chapters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap" style="background:rgba(129,140,248,0.12)">
+            <i class="fas fa-code" style="color:#818cf8"></i>
+          </div>
+          <div class="stat-number counter-num" data-target="2" data-suffix="">0</div>
+          <div class="stat-label">Major Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap" style="background:rgba(34,197,94,0.12)">
+            <i class="fas fa-clock" style="color:#22c55e"></i>
+          </div>
+          <div class="stat-number counter-num" data-target="65" data-suffix="+">0</div>
+          <div class="stat-label">Learning Hours</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon-wrap" style="background:rgba(245,158,11,0.12)">
+            <i class="fas fa-check-circle" style="color:#f59e0b"></i>
+          </div>
+          <div class="stat-number counter-num" data-target="0" data-suffix="" data-dynamic="completed">0</div>
+          <div class="stat-label">Modules Completed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     CONTINUE LEARNING
+======================== -->
+  <section class="section-gap-sm" id="continueLearning">
+    <div class="container">
+      <div class="continue-banner" id="continueLearningContent" data-aos="fade-up">
+        <!-- Populated by JS -->
+        <div class="continue-badge"><i class="fas fa-play-circle"></i> Continue Learning</div>
+        <h3 class="fw-bold mb-2" style="font-family:'Syne',sans-serif">Chapter 1 — Modules, Comments &amp; PIP</h3>
+        <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:24px">Start your Python journey right now!</p>
+        <a href="./Chapter-1/index.html" class="btn-continue">
+          <i class="fas fa-arrow-right"></i> Open Chapter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     ABOUT THE INSTRUCTOR
+======================== -->
+  <section class="section-gap" id="instructor" style="background:rgba(56,189,248,0.02)">
+    <div class="container">
+
+      <div data-aos="fade-right">
+        <div class="section-label"><i class="fas fa-user-tie"></i> Meet Your Instructor</div>
+        <h2 class="section-title">Built by a <span style="color:var(--accent)">Real Developer</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="row g-5 mt-2 align-items-start">
+
+        <!-- Left: Profile card -->
+        <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
+          <div class="instructor-profile-card">
+            <!-- Profile Image -->
+            <div class="instructor-avatar">
+              <img src="assets/img/profile.png" alt="Harsh Pandey – Python Mastery Instructor"
+                style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center top;display:block;" />
+            </div>
+
+            <div class="instructor-name">Harsh Pandey</div>
+            <div class="instructor-role">
+              <span class="role-pill"><i class="fab fa-python me-1"></i>Python Dev</span>
+              <span class="role-pill"><i class="fas fa-globe me-1"></i>Web Dev</span>
+              <span class="role-pill"><i class="fas fa-code me-1"></i>Engineer</span>
+            </div>
+
+            <!-- Social links -->
+            <div class="social-links">
+              <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="social-link"
+                title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="social-link"
+                title="Portfolio">
+                <i class="fas fa-globe"></i>
+              </a>
+              <a href="#" class="social-link" title="Course Repo">
+                <i class="fas fa-code-branch"></i>
+              </a>
+            </div>
+
+            <!-- Philosophy quote -->
+            <div class="philosophy-card">
+              <p class="philosophy-text">
+                "Don't just watch code. Write it. Break it. Fix it. That's how real developers are built."
+              </p>
+              <div style="font-size:0.78rem;color:var(--text-muted);margin-top:12px">
+                — Harsh Pandey
+              </div>
+            </div>
+          </div>
+
+          <!-- Mini stats -->
+          <div class="inst-stats-grid mt-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="inst-stat-card">
+              <div class="inst-stat-num" style="color:#38bdf8">13+</div>
+              <div class="inst-stat-lbl">Course Chapters</div>
+            </div>
+            <div class="inst-stat-card">
+              <div class="inst-stat-num" style="color:#818cf8">2</div>
+              <div class="inst-stat-lbl">AI Projects</div>
+            </div>
+            <div class="inst-stat-card">
+              <div class="inst-stat-num" style="color:#22c55e">100%</div>
+              <div class="inst-stat-lbl">Free Course</div>
+            </div>
+            <div class="inst-stat-card">
+              <div class="inst-stat-num" style="color:#f59e0b">Real</div>
+              <div class="inst-stat-lbl">Developer Built</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Details -->
+        <div class="col-lg-8" data-aos="fade-left" data-aos-delay="150">
+
+          <!-- Professional intro -->
+          <div class="callout callout-blue mb-4">
+            <i class="fas fa-user callout-icon" style="color:#38bdf8"></i>
+            <div>
+              <div class="callout-title" style="color:#38bdf8">Professional Introduction</div>
+              <div class="callout-body">
+                Harsh Pandey is a <strong>Web Developer and Python enthusiast</strong> who believes in learning through
+                practical
+                implementation and real-world projects. Along with professional development work, he actively builds
+                software solutions, explores Python automation, and creates educational content that helps beginners
+                learn programming in a <strong>practical and beginner-friendly way</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Course mission -->
+          <div class="callout callout-purple mb-4">
+            <i class="fas fa-bullseye callout-icon" style="color:#818cf8"></i>
+            <div>
+              <div class="callout-title" style="color:#818cf8">Course Mission</div>
+              <div class="callout-body">
+                To help complete beginners learn Python from scratch using interactive notes, practical coding examples,
+                exercises, projects, and real-world applications — all completely <strong>free of cost</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Stack -->
+          <h5 class="fw-bold mb-3"><i class="fas fa-tools me-2" style="color:var(--accent)"></i>Technology Stack</h5>
+          <div class="tech-badges-wrap mb-4">
+            <span class="tech-badge"><i class="fab fa-python" style="color:#38bdf8"></i>Python</span>
+            <span class="tech-badge"><i class="fas fa-layer-group" style="color:#22c55e"></i>Django</span>
+            <span class="tech-badge"><i class="fab fa-html5" style="color:#f59e0b"></i>HTML</span>
+            <span class="tech-badge"><i class="fab fa-css3-alt" style="color:#818cf8"></i>CSS</span>
+            <span class="tech-badge"><i class="fab fa-js-square" style="color:#f59e0b"></i>JavaScript</span>
+            <span class="tech-badge"><i class="fab fa-bootstrap" style="color:#818cf8"></i>Bootstrap</span>
+            <span class="tech-badge"><i class="fab fa-git-alt" style="color:#f43f5e"></i>Git</span>
+            <span class="tech-badge"><i class="fab fa-github" style="color:var(--text-muted)"></i>GitHub</span>
+            <span class="tech-badge"><i class="fas fa-plug" style="color:#22c55e"></i>REST APIs</span>
+            <span class="tech-badge"><i class="fas fa-mobile-alt" style="color:#38bdf8"></i>Responsive Design</span>
+          </div>
+
+          <!-- Developer Journey -->
+          <h5 class="fw-bold mb-3"><i class="fas fa-road me-2" style="color:#818cf8"></i>Developer Journey</h5>
+          <div class="journey-list">
+            <div class="journey-item">
+              <div class="journey-dot"></div>
+              <div class="journey-content">
+                <div class="journey-title"><i class="fas fa-globe me-2"
+                    style="color:#38bdf8;font-size:0.85rem"></i>Started as a Web Developer</div>
+                <div class="journey-desc">Built responsive front-end interfaces and web applications from scratch.</div>
+              </div>
+            </div>
+            <div class="journey-item">
+              <div class="journey-dot" style="background:linear-gradient(135deg,#818cf8,#22c55e)"></div>
+              <div class="journey-content">
+                <div class="journey-title"><i class="fab fa-python me-2"
+                    style="color:#818cf8;font-size:0.85rem"></i>Discovered Python Power</div>
+                <div class="journey-desc">Explored Python automation, data handling, and full-stack development with
+                  Django.</div>
+              </div>
+            </div>
+            <div class="journey-item">
+              <div class="journey-dot" style="background:linear-gradient(135deg,#22c55e,#f59e0b)"></div>
+              <div class="journey-content">
+                <div class="journey-title"><i class="fas fa-briefcase me-2"
+                    style="color:#22c55e;font-size:0.85rem"></i>Working in Professional Software Development</div>
+                <div class="journey-desc">Actively building real-world software solutions in a professional environment.
+                </div>
+              </div>
+            </div>
+            <div class="journey-item">
+              <div class="journey-dot" style="background:linear-gradient(135deg,#f59e0b,#f43f5e)"></div>
+              <div class="journey-content">
+                <div class="journey-title"><i class="fas fa-robot me-2"
+                    style="color:#f59e0b;font-size:0.85rem"></i>Building AI-Powered Projects</div>
+                <div class="journey-desc">Created Jarvis AI Assistant and Auto Reply Chatbot as part of the course mega
+                  projects.</div>
+              </div>
+            </div>
+            <div class="journey-item">
+              <div class="journey-dot" style="background:linear-gradient(135deg,#f43f5e,#818cf8)"></div>
+              <div class="journey-content">
+                <div class="journey-title"><i class="fas fa-chalkboard-teacher me-2"
+                    style="color:#f43f5e;font-size:0.85rem"></i>Creating a Free Python Platform</div>
+                <div class="journey-desc">Building Python Mastery — a complete, structured, and completely free learning
+                  platform for students worldwide.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     ABOUT THIS COURSE
+======================== -->
+  <section class="section-gap" id="about-course">
+    <div class="container">
+      <div data-aos="fade-right">
+        <div class="section-label"><i class="fas fa-graduation-cap"></i> About The Course</div>
+        <h2 class="section-title">What You Will <span style="color:var(--accent)">Learn</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub mb-5">A structured Python journey that takes you from writing your first line of code to
+          building AI-powered applications.</p>
+      </div>
+
+      <!-- Why Python cards -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="0">
+          <div class="feature-card h-100">
+            <div class="f-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-feather-alt"
+                style="color:#38bdf8"></i></div>
+            <h6>Easy to Learn</h6>
+            <p>Python's clean, readable syntax reads like plain English — perfect for absolute beginners.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="80">
+          <div class="feature-card h-100">
+            <div class="f-icon" style="background:rgba(129,140,248,0.15)"><i class="fas fa-rocket"
+                style="color:#818cf8"></i></div>
+            <h6>Endlessly Powerful</h6>
+            <p>From web apps to AI, automation to data science — Python is used everywhere in the industry.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="160">
+          <div class="feature-card h-100">
+            <div class="f-icon" style="background:rgba(34,197,94,0.15)"><i class="fas fa-briefcase"
+                style="color:#22c55e"></i></div>
+            <h6>Career-Ready</h6>
+            <p>Python is the #1 language for jobs in AI, ML, Backend, and Data Science — master it and stand out.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="240">
+          <div class="feature-card h-100">
+            <div class="f-icon" style="background:rgba(245,158,11,0.15)"><i class="fas fa-hands-on"
+                style="color:#f59e0b"></i></div>
+            <h6>Hands-On Learning</h6>
+            <p>Every chapter includes code examples, exercises, and practice problems — learn by doing.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="320">
+          <div class="feature-card h-100">
+            <div class="f-icon" style="background:rgba(244,63,94,0.15)"><i class="fas fa-project-diagram"
+                style="color:#f43f5e"></i></div>
+            <h6>Real Projects</h6>
+            <p>Build a Snake Water Gun Game, a Jarvis AI Assistant, and an Auto Reply AI Chatbot from scratch.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="feature-card h-100">
+            <div class="f-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-unlock-alt"
+                style="color:#38bdf8"></i></div>
+            <h6>Completely Free</h6>
+            <p>No paywalls, no subscriptions. A complete Python education available forever, free of charge.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Who is this for? -->
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+          <h4 class="fw-bold mb-4"><i class="fas fa-users me-2" style="color:var(--accent)"></i>Who Is This For?</h4>
+          <div class="d-flex flex-column gap-3">
+            <div class="audience-card">
+              <div class="audience-icon" style="background:rgba(56,189,248,0.12)"><i class="fas fa-user-graduate"
+                  style="color:#38bdf8"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.9rem">Students & Absolute Beginners</div>
+                <div style="font-size:0.82rem;color:var(--text-muted)">Zero programming knowledge required — start
+                  completely from scratch.</div>
+              </div>
+            </div>
+            <div class="audience-card">
+              <div class="audience-icon" style="background:rgba(129,140,248,0.12)"><i class="fas fa-briefcase"
+                  style="color:#818cf8"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.9rem">Working Professionals</div>
+                <div style="font-size:0.82rem;color:var(--text-muted)">Upskill with Python to automate tasks, build
+                  tools, and switch roles.</div>
+              </div>
+            </div>
+            <div class="audience-card">
+              <div class="audience-icon" style="background:rgba(34,197,94,0.12)"><i class="fas fa-laptop-code"
+                  style="color:#22c55e"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.9rem">Developers & Freelancers</div>
+                <div style="font-size:0.82rem;color:var(--text-muted)">Add Python to your stack for backend, automation,
+                  and AI projects.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+          <h4 class="fw-bold mb-4"><i class="fas fa-award me-2" style="color:#818cf8"></i>Learning Outcomes</h4>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-start gap-3"
+              style="background:var(--bg-card);border:1px solid var(--border);padding:14px 18px;border-radius:var(--radius-sm)">
+              <div style="color:#22c55e;font-size:1rem;min-width:20px"><i class="fas fa-check-circle"></i></div>
+              <div style="font-size:0.88rem">Write clean, efficient Python code for real-world applications</div>
+            </div>
+            <div class="d-flex align-items-start gap-3"
+              style="background:var(--bg-card);border:1px solid var(--border);padding:14px 18px;border-radius:var(--radius-sm)">
+              <div style="color:#22c55e;font-size:1rem;min-width:20px"><i class="fas fa-check-circle"></i></div>
+              <div style="font-size:0.88rem">Master Python fundamentals: variables, loops, functions, OOP, and more
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3"
+              style="background:var(--bg-card);border:1px solid var(--border);padding:14px 18px;border-radius:var(--radius-sm)">
+              <div style="color:#22c55e;font-size:1rem;min-width:20px"><i class="fas fa-check-circle"></i></div>
+              <div style="font-size:0.88rem">Build 3 complete projects including 2 AI-powered applications</div>
+            </div>
+            <div class="d-flex align-items-start gap-3"
+              style="background:var(--bg-card);border:1px solid var(--border);padding:14px 18px;border-radius:var(--radius-sm)">
+              <div style="color:#22c55e;font-size:1rem;min-width:20px"><i class="fas fa-check-circle"></i></div>
+              <div style="font-size:0.88rem">Use advanced Python features: lambdas, comprehensions, exception handling
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3"
+              style="background:var(--bg-card);border:1px solid var(--border);padding:14px 18px;border-radius:var(--radius-sm)">
+              <div style="color:#22c55e;font-size:1rem;min-width:20px"><i class="fas fa-check-circle"></i></div>
+              <div style="font-size:0.88rem">Be ready for Python developer roles, automation, and AI engineering</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     COMPLETE COURSE ROADMAP
+======================== -->
+  <section class="section-gap" id="roadmap" style="background:rgba(129,140,248,0.02)">
+    <div class="container">
+      <div data-aos="fade-right">
+        <div class="section-label"><i class="fas fa-map-signs"></i> Learning Path</div>
+        <h2 class="section-title">Complete Course <span style="color:var(--accent2)">Roadmap</span></h2>
+        <div class="section-divider" style="background:linear-gradient(90deg,#818cf8,#38bdf8)"></div>
+        <p class="section-sub mb-5">Your complete Python learning journey from first print statement to building AI
+          assistants.</p>
+      </div>
+
+      <!-- Flow direction visualization -->
+      <div class="d-flex justify-content-center mb-5" data-aos="fade-up">
+        <div class="d-flex align-items-center flex-wrap gap-2 justify-content-center" style="gap:8px!important">
+          <span class="phase-badge phase-foundation"><i class="fas fa-seedling me-1"></i> Foundation</span>
+          <i class="fas fa-chevron-right" style="color:var(--text-dim)"></i>
+          <span class="phase-badge phase-project"><i class="fas fa-hammer me-1"></i> Project</span>
+          <i class="fas fa-chevron-right" style="color:var(--text-dim)"></i>
+          <span class="phase-badge phase-intermediate"><i class="fas fa-layer-group me-1"></i> Intermediate</span>
+          <i class="fas fa-chevron-right" style="color:var(--text-dim)"></i>
+          <span class="phase-badge phase-advanced"><i class="fas fa-fire me-1"></i> Advanced</span>
+          <i class="fas fa-chevron-right" style="color:var(--text-dim)"></i>
+          <span class="phase-badge phase-mega"><i class="fas fa-robot me-1"></i> Mega Projects</span>
+        </div>
+      </div>
+
+      <!-- ——— FOUNDATION PHASE ——— -->
+      <div class="roadmap-phase-header" data-aos="fade-up">
+        <span class="phase-badge phase-foundation" style="font-size:0.92rem;padding:10px 28px">
+          <i class="fas fa-seedling me-2"></i> Phase 1 — Foundation Level
+        </span>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-md-6" data-aos="fade-right" data-aos-delay="0">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-done" data-key="python_chapter_1" id="rm-ch1">
+              <i class="fas fa-check" style="font-size:0.8rem"></i>
+            </div>
+            <div class="roadmap-card available-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 01</div>
+                <div>
+                  <span class="ch-status-pill status-available"><i class="fas fa-unlock-alt"></i> Available</span>
+                </div>
+              </div>
+              <div class="roadmap-ch-title">Getting Started with Python</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">Modules</span>
+                <span class="topic-tag">Comments</span>
+                <span class="topic-tag">PIP</span>
+                <span class="topic-tag">REPL</span>
+                <span class="topic-tag">First Program</span>
+              </div>
+              <a href="./Chapter-1/index.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--accent);text-decoration:none">
+                <i class="fas fa-arrow-right"></i> Open Chapter
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="60">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-active" data-key="python_chapter_2" id="rm-ch2">2</div>
+            <div class="roadmap-card available-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 02</div>
+                <span class="ch-status-pill status-available"><i class="fas fa-unlock-alt"></i> Available</span>
+              </div>
+              <div class="roadmap-ch-title">Variables &amp; Data Types</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">Variables</span>
+                <span class="topic-tag">int / float / str</span>
+                <span class="topic-tag">bool / None</span>
+                <span class="topic-tag">Operators</span>
+                <span class="topic-tag">Type Casting</span>
+              </div>
+              <a href="./Chapter-2/index.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--accent);text-decoration:none">
+                <i class="fas fa-arrow-right"></i> Open Chapter
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-right" data-aos-delay="120">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_3">3</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 03</div>
+                <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+              </div>
+              <div class="roadmap-ch-title">Working with Strings</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">String Methods</span>
+                <span class="topic-tag">Slicing</span>
+                <span class="topic-tag">Formatting</span>
+                <span class="topic-tag">f-strings</span>
+              </div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="180">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_4">4</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 04</div>
+                <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+              </div>
+              <div class="roadmap-ch-title">Lists &amp; Tuples</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">List Methods</span>
+                <span class="topic-tag">Indexing</span>
+                <span class="topic-tag">Tuples</span>
+                <span class="topic-tag">Packing</span>
+              </div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-right" data-aos-delay="240">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_5">5</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 05</div>
+                <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+              </div>
+              <div class="roadmap-ch-title">Dictionaries &amp; Sets</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">Dict Methods</span>
+                <span class="topic-tag">Sets</span>
+                <span class="topic-tag">CRUD Operations</span>
+              </div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_6">6</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 06</div>
+                <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+              </div>
+              <div class="roadmap-ch-title">Decision Making in Python</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">if/elif/else</span>
+                <span class="topic-tag">Ternary</span>
+                <span class="topic-tag">Conditions</span>
+              </div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-right" data-aos-delay="360">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_7">7</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 07</div>
+                <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+              </div>
+              <div class="roadmap-ch-title">Loops &amp; Iteration</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">for loop</span>
+                <span class="topic-tag">while loop</span>
+                <span class="topic-tag">break / continue</span>
+              </div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="420">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_8">8</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num">Chapter 08</div>
+                <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+              </div>
+              <div class="roadmap-ch-title">Functions &amp; Recursion</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">def</span>
+                <span class="topic-tag">Arguments</span>
+                <span class="topic-tag">return</span>
+                <span class="topic-tag">Recursion</span>
+              </div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ——— BEGINNER PROJECT ——— -->
+      <div class="roadmap-phase-header" data-aos="fade-up">
+        <span class="phase-badge phase-project" style="font-size:0.92rem;padding:10px 28px">
+          <i class="fas fa-hammer me-2"></i> Milestone — Beginner Project
+        </span>
+      </div>
+      <div class="row g-3 mb-4 justify-content-center">
+        <div class="col-md-8" data-aos="zoom-in">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-project" data-key="python_project_1" data-special="true">
+              <i class="fas fa-gamepad" style="font-size:0.85rem"></i>
+            </div>
+            <div class="roadmap-card project-card flex-grow-1">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <div class="roadmap-ch-num" style="color:#22c55e">Project 01</div>
+                <span class="ch-status-pill"
+                  style="background:rgba(34,197,94,0.12);color:#22c55e;border-color:rgba(34,197,94,0.3)">
+                  <i class="fas fa-code"></i> Beginner Project
+                </span>
+              </div>
+              <div class="roadmap-ch-title">Snake Water Gun Game 🎮</div>
+              <div style="font-size:0.83rem;color:var(--text-muted);margin-top:6px">
+                Apply your Python fundamentals to build a classic Snake-Water-Gun game with user input, conditions, and
+                loops.
+              </div>
+              <div class="roadmap-ch-topics mt-2">
+                <span class="topic-tag" style="color:#22c55e;border-color:rgba(34,197,94,0.2)">Game Logic</span>
+                <span class="topic-tag" style="color:#22c55e;border-color:rgba(34,197,94,0.2)">Conditions</span>
+                <span class="topic-tag" style="color:#22c55e;border-color:rgba(34,197,94,0.2)">User Input</span>
+                <span class="topic-tag" style="color:#22c55e;border-color:rgba(34,197,94,0.2)">Random Module</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ——— INTERMEDIATE PHASE ——— -->
+      <div class="roadmap-phase-header" data-aos="fade-up">
+        <span class="phase-badge phase-intermediate" style="font-size:0.92rem;padding:10px 28px">
+          <i class="fas fa-layer-group me-2"></i> Phase 2 — Intermediate Level
+        </span>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_9">9</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="roadmap-ch-num">Chapter 09</div>
+              <div class="roadmap-ch-title">File Handling &amp; Data Storage</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">open()</span>
+                <span class="topic-tag">read/write</span>
+                <span class="topic-tag">JSON</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="80">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_10">10</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="roadmap-ch-num">Chapter 10</div>
+              <div class="roadmap-ch-title">Object Oriented Programming</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">Classes</span>
+                <span class="topic-tag">Objects</span>
+                <span class="topic-tag">__init__</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="160">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_11">11</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="roadmap-ch-num">Chapter 11</div>
+              <div class="roadmap-ch-title">Advanced OOP &amp; Inheritance</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">Inheritance</span>
+                <span class="topic-tag">Polymorphism</span>
+                <span class="topic-tag">Encapsulation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ——— ADVANCED PHASE ——— -->
+      <div class="roadmap-phase-header" data-aos="fade-up">
+        <span class="phase-badge phase-advanced" style="font-size:0.92rem;padding:10px 28px">
+          <i class="fas fa-fire me-2"></i> Phase 3 — Advanced Level
+        </span>
+      </div>
+      <div class="row g-3 mb-4">
+        <div class="col-md-6" data-aos="fade-right" data-aos-delay="0">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_12">12</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="roadmap-ch-num">Chapter 12</div>
+              <div class="roadmap-ch-title">Modern Python Features</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">Walrus Operator</span>
+                <span class="topic-tag">Match Case</span>
+                <span class="topic-tag">Type Hints</span>
+                <span class="topic-tag">Exception Handling</span>
+                <span class="topic-tag">Enumerate</span>
+                <span class="topic-tag">List Comprehensions</span>
+                <span class="topic-tag">Dict Merge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="80">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-pending" data-key="python_chapter_13">13</div>
+            <div class="roadmap-card flex-grow-1">
+              <div class="roadmap-ch-num">Chapter 13</div>
+              <div class="roadmap-ch-title">Python Productivity Tools</div>
+              <div class="roadmap-ch-topics">
+                <span class="topic-tag">Virtual Env</span>
+                <span class="topic-tag">Lambda</span>
+                <span class="topic-tag">join()</span>
+                <span class="topic-tag">format()</span>
+                <span class="topic-tag">Map / Filter / Reduce</span>
+                <span class="topic-tag">pip freeze</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ——— MEGA PROJECTS ——— -->
+      <div class="roadmap-phase-header" data-aos="fade-up">
+        <span class="phase-badge phase-mega" style="font-size:0.92rem;padding:10px 28px">
+          <i class="fas fa-robot me-2"></i> Final Phase — Mega Projects
+        </span>
+      </div>
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-5" data-aos="zoom-in" data-aos-delay="0">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-mega" data-key="python_project_mega" data-special="true">
+              <i class="fas fa-robot" style="font-size:0.85rem"></i>
+            </div>
+            <div class="roadmap-card mega-card flex-grow-1">
+              <div class="roadmap-ch-num" style="color:#f43f5e">Mega Project 1</div>
+              <div class="roadmap-ch-title">Jarvis AI Assistant 🤖</div>
+              <div style="font-size:0.82rem;color:var(--text-muted);margin-top:6px">Build a voice-controlled AI
+                assistant that can perform tasks, answer questions, and automate your computer.</div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5" data-aos="zoom-in" data-aos-delay="100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="roadmap-node node-mega" data-special="true"
+              style="border-color:#818cf8;color:#818cf8;background:rgba(129,140,248,0.12)">
+              <i class="fas fa-comments" style="font-size:0.85rem"></i>
+            </div>
+            <div class="roadmap-card mega-card flex-grow-1"
+              style="border-color:rgba(129,140,248,0.3);background:rgba(129,140,248,0.04)">
+              <div class="roadmap-ch-num" style="color:#818cf8">Mega Project 2</div>
+              <div class="roadmap-ch-title">Auto Reply AI Chatbot 💬</div>
+              <div style="font-size:0.82rem;color:var(--text-muted);margin-top:6px">Build an intelligent chatbot that
+                can automatically reply to messages using Python and AI integrations.</div>
+              <a href="coming-soon.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
+                <i class="fas fa-lock"></i> Sneak Peek
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     CHAPTERS SECTION
+======================== -->
+  <section class="section-gap" id="chapters">
+    <div class="container">
+      <div data-aos="fade-right">
+        <div class="section-label"><i class="fas fa-layer-group"></i> Course Chapters</div>
+        <h2 class="section-title">Browse <span style="color:var(--accent)">All Chapters</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-sub mb-5">Start with available chapters and watch more unlock as the course grows.</p>
+      </div>
+
+      <div class="chapters-grid">
+
+        <!-- Chapter 1 — AVAILABLE -->
+        <div class="chapter-card available" data-chapter-key="python_chapter_1" data-aos="fade-up" data-aos-delay="0">
+          <span class="completed-badge"><i class="fas fa-check me-1"></i> Completed</span>
+          <div class="chapter-card-header">
+            <div class="ch-num-badge">CHAPTER 01</div>
+            <span class="ch-status-pill status-available"><i class="fas fa-unlock-alt"></i> Available</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5>Modules, Comments &amp; PIP</h5>
+            <p>Start your Python journey. Learn what programming is, why Python, how to install it, write your first
+              program, and master modules and comments.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag">Modules</span>
+              <span class="ch-topic-tag">Comments</span>
+              <span class="ch-topic-tag">PIP</span>
+              <span class="ch-topic-tag">REPL</span>
+              <span class="ch-topic-tag">Installation</span>
+            </div>
+            <div class="d-flex gap-2 mb-2" style="font-size:0.78rem;color:var(--text-muted)">
+              <span><i class="fas fa-clock me-1" style="color:#38bdf8"></i>~45 min</span>
+              <span><i class="fas fa-signal me-1" style="color:#22c55e"></i>Beginner</span>
+              <span><i class="fas fa-tasks me-1" style="color:#818cf8"></i>5 Exercises</span>
+            </div>
+            <a href="./Chapter-1/index.html" class="btn-open-chapter">
+              <i class="fas fa-book-open"></i> Open Chapter 1
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapter 2 — AVAILABLE -->
+        <div class="chapter-card available" data-chapter-key="python_chapter_2" data-aos="fade-up" data-aos-delay="80">
+          <span class="completed-badge"><i class="fas fa-check me-1"></i> Completed</span>
+          <div class="chapter-card-header"
+            style="background:linear-gradient(135deg,rgba(129,140,248,0.06),rgba(56,189,248,0.06))">
+            <div class="ch-num-badge"
+              style="background:linear-gradient(135deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+              CHAPTER 02</div>
+            <span class="ch-status-pill status-available"><i class="fas fa-unlock-alt"></i> Available</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5>Variables &amp; Data Types</h5>
+            <p>Learn how Python stores data using variables, discover the five core data types, master operators, type
+              casting, and user input.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag">Variables</span>
+              <span class="ch-topic-tag">Data Types</span>
+              <span class="ch-topic-tag">Operators</span>
+              <span class="ch-topic-tag">Type Casting</span>
+              <span class="ch-topic-tag">Input</span>
+            </div>
+            <div class="d-flex gap-2 mb-2" style="font-size:0.78rem;color:var(--text-muted)">
+              <span><i class="fas fa-clock me-1" style="color:#818cf8"></i>~50 min</span>
+              <span><i class="fas fa-signal me-1" style="color:#22c55e"></i>Beginner</span>
+              <span><i class="fas fa-tasks me-1" style="color:#38bdf8"></i>6 Exercises</span>
+            </div>
+            <a href="./Chapter-2/index.html" class="btn-open-chapter"
+              style="background:linear-gradient(135deg,#818cf8,#38bdf8)">
+              <i class="fas fa-book-open"></i> Open Chapter 2
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapter 3 — LOCKED -->
+        <div class="chapter-card locked" data-aos="fade-up" data-aos-delay="160">
+          <div class="chapter-card-header">
+            <div class="ch-num-badge" style="opacity:0.4">CHAPTER 03</div>
+            <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5 style="opacity:0.6">Working with Strings</h5>
+            <p>String methods, slicing, formatting, and f-strings. Master text manipulation in Python.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag" style="opacity:0.5">String Methods</span>
+              <span class="ch-topic-tag" style="opacity:0.5">Slicing</span>
+              <span class="ch-topic-tag" style="opacity:0.5">f-strings</span>
+            </div>
+            <a href="coming-soon.html" class="btn-locked-chapter mt-2" style="text-decoration:none">
+              <i class="fas fa-lock"></i> Coming Soon
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapter 4 — LOCKED -->
+        <div class="chapter-card locked" data-aos="fade-up" data-aos-delay="240">
+          <div class="chapter-card-header">
+            <div class="ch-num-badge" style="opacity:0.4">CHAPTER 04</div>
+            <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5 style="opacity:0.6">Lists &amp; Tuples</h5>
+            <p>Working with ordered collections, list methods, slicing, and immutable tuples.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag" style="opacity:0.5">Lists</span>
+              <span class="ch-topic-tag" style="opacity:0.5">Tuples</span>
+              <span class="ch-topic-tag" style="opacity:0.5">Indexing</span>
+            </div>
+            <a href="coming-soon.html" class="btn-locked-chapter mt-2" style="text-decoration:none">
+              <i class="fas fa-lock"></i> Coming Soon
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapter 5 — LOCKED -->
+        <div class="chapter-card locked" data-aos="fade-up" data-aos-delay="320">
+          <div class="chapter-card-header">
+            <div class="ch-num-badge" style="opacity:0.4">CHAPTER 05</div>
+            <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5 style="opacity:0.6">Dictionaries &amp; Sets</h5>
+            <p>Key-value data storage, dictionary methods, and working with unique collections using sets.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag" style="opacity:0.5">Dicts</span>
+              <span class="ch-topic-tag" style="opacity:0.5">Sets</span>
+              <span class="ch-topic-tag" style="opacity:0.5">CRUD</span>
+            </div>
+            <a href="coming-soon.html" class="btn-locked-chapter mt-2" style="text-decoration:none">
+              <i class="fas fa-lock"></i> Coming Soon
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapter 6 — LOCKED -->
+        <div class="chapter-card locked" data-aos="fade-up" data-aos-delay="400">
+          <div class="chapter-card-header">
+            <div class="ch-num-badge" style="opacity:0.4">CHAPTER 06</div>
+            <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5 style="opacity:0.6">Decision Making in Python</h5>
+            <p>Control flow with if/elif/else statements, ternary expressions, and conditional logic.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag" style="opacity:0.5">if/elif/else</span>
+              <span class="ch-topic-tag" style="opacity:0.5">Ternary</span>
+            </div>
+            <a href="coming-soon.html" class="btn-locked-chapter mt-2" style="text-decoration:none">
+              <i class="fas fa-lock"></i> Coming Soon
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapter 7 — LOCKED -->
+        <div class="chapter-card locked" data-aos="fade-up" data-aos-delay="480">
+          <div class="chapter-card-header">
+            <div class="ch-num-badge" style="opacity:0.4">CHAPTER 07</div>
+            <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5 style="opacity:0.6">Loops &amp; Iteration</h5>
+            <p>Automate repetition with for and while loops, break/continue, nested loops, and patterns.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag" style="opacity:0.5">for loop</span>
+              <span class="ch-topic-tag" style="opacity:0.5">while loop</span>
+              <span class="ch-topic-tag" style="opacity:0.5">break/continue</span>
+            </div>
+            <a href="coming-soon.html" class="btn-locked-chapter mt-2" style="text-decoration:none">
+              <i class="fas fa-lock"></i> Coming Soon
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapter 8 — LOCKED -->
+        <div class="chapter-card locked" data-aos="fade-up" data-aos-delay="560">
+          <div class="chapter-card-header">
+            <div class="ch-num-badge" style="opacity:0.4">CHAPTER 08</div>
+            <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+          </div>
+          <div class="chapter-card-body">
+            <h5 style="opacity:0.6">Functions &amp; Recursion</h5>
+            <p>Define reusable code blocks, understand scope, arguments, return values, and recursive functions.</p>
+            <div class="chapter-topics-list">
+              <span class="ch-topic-tag" style="opacity:0.5">def</span>
+              <span class="ch-topic-tag" style="opacity:0.5">return</span>
+              <span class="ch-topic-tag" style="opacity:0.5">Recursion</span>
+            </div>
+            <a href="coming-soon.html" class="btn-locked-chapter mt-2" style="text-decoration:none">
+              <i class="fas fa-lock"></i> Coming Soon
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View more hint -->
+      <div class="text-center mt-5" data-aos="fade-up">
+        <div class="callout callout-blue d-inline-flex"
+          style="display:inline-flex!important;max-width:600px;text-align:left">
+          <i class="fas fa-info-circle callout-icon" style="color:#38bdf8"></i>
+          <div>
+            <div class="callout-title" style="color:#38bdf8">Chapters 9–13 &amp; Projects Coming Soon</div>
+            <div class="callout-body">The course is actively being built. Follow
+              <a href="https://github.com/lucifer01430" target="_blank" rel="noopener"
+                style="color:var(--accent)">@lucifer01430</a>
+              on GitHub to get notified when new chapters drop.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     GLOBAL PROGRESS TRACKER
+======================== -->
+  <section class="section-gap-sm" id="progress">
+    <div class="container">
+      <div class="progress-section" data-aos="fade-up">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="section-label"><i class="fas fa-chart-line"></i> Your Progress</div>
+            <h3 class="fw-bold mt-2 mb-2" style="font-family:'Syne',sans-serif">
+              Course Progress <span style="color:#22c55e" id="progressCheckmark"></span>
+            </h3>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px" id="globalCompletedCount">
+              0 / 15 Modules
+            </p>
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div style="flex:1">
+                <div class="big-progress">
+                  <div class="big-progress-bar" id="globalProgressBar"></div>
+                </div>
+              </div>
+              <span style="font-weight:700;color:var(--accent);font-size:1rem;min-width:46px"
+                id="globalProgressPct">0%</span>
+            </div>
+            <div style="font-size:0.78rem;color:var(--text-dim)">13 Chapters + 2 Major Projects = 15 Total Modules</div>
+
+            <!-- Reset progress (debug helper) -->
+            <button onclick="if(confirm('Reset all progress?')){localStorage.clear();location.reload();}"
+              style="margin-top:16px;background:none;border:1px solid var(--border);color:var(--text-dim);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:0.78rem;">
+              <i class="fas fa-redo me-1"></i> Reset Progress
+            </button>
+          </div>
+
+          <!-- Progress steps -->
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="progress-steps">
+              <div class="progress-step">
+                <div class="ps-circle ps-pending" data-key="python_chapter_1">1</div>
+                <div class="ps-label">Ch 1<br>Modules</div>
+              </div>
+              <div class="progress-step">
+                <div class="ps-circle ps-pending" data-key="python_chapter_2">2</div>
+                <div class="ps-label">Ch 2<br>Variables</div>
+              </div>
+              <div class="progress-step">
+                <div class="ps-circle ps-pending" data-key="python_chapter_3">3</div>
+                <div class="ps-label">Ch 3<br>Strings</div>
+              </div>
+              <div class="progress-step">
+                <div class="ps-circle ps-pending" data-key="python_chapter_4">4</div>
+                <div class="ps-label">Ch 4<br>Lists</div>
+              </div>
+              <div class="progress-step">
+                <div class="ps-circle ps-pending" data-key="python_chapter_8">5+</div>
+                <div class="ps-label">Ch 5-8<br>More</div>
+              </div>
+              <div class="progress-step">
+                <div class="ps-circle ps-pending" data-key="python_project_mega" data-special="true">🤖</div>
+                <div class="ps-label">Mega<br>Projects</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+     FOOTER
+======================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand column -->
+        <div>
+          <div class="footer-brand-name">Python Mastery with Harsh</div>
+          <p class="footer-tagline">From Absolute Beginner to Building Real Python Projects.<br>Completely free. Built
+            with ❤️ for students.</p>
+          <div class="footer-social">
+            <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-social-link"
+              title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-social-link"
+              title="Portfolio">
+              <i class="fas fa-globe"></i>
+            </a>
+            <a href="#" class="footer-social-link" title="Course Repo">
+              <i class="fas fa-code-branch"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Chapters column -->
+        <div>
+          <div class="footer-col-title">Chapters</div>
+          <a href="./Chapter-1/index.html" class="footer-link"><i class="fas fa-chevron-right me-1"
+              style="font-size:0.6rem;color:var(--accent)"></i>Chapter 1 – Modules &amp; PIP</a>
+          <a href="./Chapter-2/index.html" class="footer-link"><i class="fas fa-chevron-right me-1"
+              style="font-size:0.6rem;color:var(--accent)"></i>Chapter 2 – Variables</a>
+          <a href="coming-soon.html" class="footer-link"><i class="fas fa-chevron-right me-1"
+              style="font-size:0.6rem;color:var(--text-dim)"></i>Chapter 3 – Strings (Soon)</a>
+          <a href="#chapters" class="footer-link"><i class="fas fa-chevron-right me-1"
+              style="font-size:0.6rem;color:var(--text-dim)"></i>All Chapters →</a>
+        </div>
+
+        <!-- Links column -->
+        <div>
+          <div class="footer-col-title">Links</div>
+          <a href="#roadmap" class="footer-link">Course Roadmap</a>
+          <a href="#instructor" class="footer-link">About Instructor</a>
+          <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener"
+            class="footer-link">Portfolio Website</a>
+          <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-link">GitHub
+            Profile</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2025 Python Mastery with Harsh. All rights reserved.</div>
+        <div class="footer-love">
+          Let's Learn Python with <a href="https://github.com/lucifer01430" target="_blank" rel="noopener">Harsh</a> ❤️
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

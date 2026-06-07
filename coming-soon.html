@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Coming Soon | Python Mastery with Harsh</title>
+<meta name="description" content="This chapter is currently under development. Stay tuned for updates on Python Mastery with Harsh Pandey." />
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+  .coming-soon-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0 60px;
+    position: relative;
+    z-index: 1;
+  }
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(129, 140, 248, 0.1);
+    border: 1px solid rgba(129, 140, 248, 0.3);
+    color: var(--accent2);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+  }
+  .soon-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 48px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.5), 0 0 60px rgba(56,189,248,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  .soon-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(129,140,248,0.12), transparent 70%);
+    pointer-events: none;
+  }
+  .pulse-icon {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: 24px;
+    animation: iconPulse 2s infinite ease-in-out;
+  }
+  @keyframes iconPulse {
+    0%, 100% { transform: scale(1); opacity: 1; filter: drop-shadow(0 0 10px rgba(56,189,248,0.3)); }
+    50% { transform: scale(1.08); opacity: 0.8; filter: drop-shadow(0 0 25px rgba(56,189,248,0.6)); }
+  }
+  .soon-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .soon-desc {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 580px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  .upcoming-item {
+    background: var(--bg-card2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .upcoming-item:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    transform: translateY(-3px);
+  }
+  .upcoming-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+  .soon-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn-soon-primary {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    color: #fff;
+    font-weight: 700;
+    padding: 13px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    border: none;
+    box-shadow: 0 8px 24px rgba(56,189,248,0.25);
+  }
+  .btn-soon-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(56,189,248,0.4);
+    color: #fff;
+  }
+  .btn-soon-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.93rem;
+    transition: all 0.3s;
+  }
+  .btn-soon-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(56,189,248,0.06);
+    transform: translateY(-3px);
+  }
+</style>
+</head>
+<body>
+
+<!-- Background Orbs -->
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<!-- ========================
+     NAVBAR
+======================== -->
+<nav class="course-nav" id="mainNav">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="brand">
+        <div class="brand-icon"><i class="fab fa-python"></i></div>
+        Python Mastery with Harsh
+      </a>
+      <a href="index.html" class="nav-start-btn">
+        <i class="fas fa-home"></i> Back to Home
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========================
+     COMING SOON CARD
+======================== -->
+<div class="coming-soon-wrapper">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center" data-aos="zoom-in">
+        <div class="soon-card">
+          <div class="status-badge"><i class="fas fa-hammer"></i> Work In Progress</div>
+          <div class="pulse-icon"><i class="fab fa-python"></i></div>
+          <h1 class="soon-title">More Chapters Coming Soon</h1>
+          <p class="soon-desc">
+            Harsh is working hard to bring you the next chapters of the <strong>Python Mastery</strong> course.
+            The curriculum is designed carefully to bridge the gap between simple tutorials and professional development.
+          </p>
+
+          <h5 class="fw-bold mb-3 text-start" style="font-family:'Space Grotesk',sans-serif"><i class="fas fa-star me-2" style="color:var(--accent2)"></i>What's Cooking?</h5>
+          <div class="upcoming-grid">
+            <div class="upcoming-item">
+              <div class="upcoming-icon"><i class="fas fa-font"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem">Strings & Methods</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Chapter 3 is landing next</div>
+              </div>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-icon"><i class="fas fa-list-ol"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem">Lists, Tuples, Sets</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Data structure chapters</div>
+              </div>
+            </div>
+            <div class="upcoming-item">
+              <div class="upcoming-icon"><i class="fas fa-robot"></i></div>
+              <div>
+                <div style="font-weight:700;font-size:0.85rem">Jarvis AI Assistant</div>
+                <div style="font-size:0.75rem;color:var(--text-muted)">Mega AI Voice Project</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="soon-actions">
+            <a href="index.html" class="btn-soon-primary">
+              <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="btn-soon-outline">
+              <i class="fab fa-github"></i> Follow @lucifer01430
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========================
+     FOOTER
+======================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand column -->
+      <div>
+        <div class="footer-brand-name">Python Mastery with Harsh</div>
+        <p class="footer-tagline">From Absolute Beginner to Building Real Python Projects.<br>Completely free. Built with ❤️ for students.</p>
+        <div class="footer-social">
+          <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-social-link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-social-link" title="Portfolio">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="#" class="footer-social-link" title="Course Repo">
+            <i class="fas fa-code-branch"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chapters column -->
+      <div>
+        <div class="footer-col-title">Chapters</div>
+        <a href="./Chapter-1/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 1 – Modules &amp; PIP</a>
+        <a href="./Chapter-2/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 2 – Variables</a>
+        <a href="coming-soon.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--text-dim)"></i>Chapter 3 – Strings (Soon)</a>
+        <a href="index.html#chapters" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--text-dim)"></i>All Chapters →</a>
+      </div>
+
+      <!-- Links column -->
+      <div>
+        <div class="footer-col-title">Links</div>
+        <a href="index.html#roadmap" class="footer-link">Course Roadmap</a>
+        <a href="index.html#instructor" class="footer-link">About Instructor</a>
+        <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-link">Portfolio Website</a>
+        <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-link">GitHub Profile</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Python Mastery with Harsh. All rights reserved.</div>
+      <div class="footer-love">
+        Let's Learn Python with <a href="https://github.com/lucifer01430" target="_blank" rel="noopener">Harsh</a> ❤️
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+</script>
+</body>
+</html>

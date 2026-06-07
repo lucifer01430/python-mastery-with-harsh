@@ -1,0 +1,1577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chapter 1 – Modules, Comments & PIP | Python Mastery with Harsh</title>
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<!-- ========================
+     NAVBAR
+======================== -->
+<nav class="course-nav">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon"><i class="fab fa-python"></i></div>
+        Python Mastery with Harsh
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <span class="chapter-badge">CH 01</span>
+        <span class="d-none d-md-block" style="font-size:0.82rem;color:var(--text-muted)">Modules, Comments & PIP</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ========================
+     HERO SECTION
+======================== -->
+<section class="hero-section" id="hero">
+  <div class="container position-relative">
+
+    <!-- PREFACE STRIP -->
+    <div class="hero-preface-strip" data-aos="fade-down">
+      <div class="preface-author">
+        <i class="fas fa-book-open"></i> Course Preface — Python Mastery with Harsh
+      </div>
+      <div class="row align-items-start">
+        <div class="col-md-7">
+          <h4 class="fw-bold mb-3" style="font-family:'Syne',sans-serif;">Welcome to Python Mastery</h4>
+          <p style="font-size:0.92rem;color:var(--text-muted);margin-bottom:14px;">
+            A complete, beginner-friendly Python course designed to build a
+            <span class="kw-highlight">strong foundation</span> from scratch — through real coding examples,
+            exercises, and projects.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-3">
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);">
+              <i class="fas fa-user-graduate" style="color:#38bdf8"></i> Students &amp; Beginners
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);">
+              <i class="fas fa-briefcase" style="color:#818cf8"></i> Working Professionals
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text-muted);">
+              <i class="fas fa-laptop-code" style="color:#22c55e"></i> Developers &amp; Freelancers
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 mt-3 mt-md-0">
+          <div class="d-flex flex-column gap-2">
+            <div class="callout callout-blue py-2" style="margin:0">
+              <i class="fas fa-layer-group callout-icon" style="color:#38bdf8"></i>
+              <div><span class="callout-title" style="color:#38bdf8">Structured Chapters</span><div class="callout-body">Concepts → Examples → Practice → Projects</div></div>
+            </div>
+            <div class="callout callout-green py-2" style="margin:0">
+              <i class="fas fa-code callout-icon" style="color:#22c55e"></i>
+              <div><span class="callout-title" style="color:#22c55e">Hands-On Focus</span><div class="callout-body">Write every line — learning by doing</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO MAIN -->
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="chapter-number-pill animate-hero">
+          <i class="fas fa-book-reader"></i> Chapter 01 of 12
+        </div>
+        <h1 class="hero-title animate-hero-delay-1">
+          Modules,<br>
+          <span class="gradient-text">Comments</span><br>
+          &amp; PIP
+        </h1>
+        <p class="hero-desc animate-hero-delay-2">
+          Begin your Python journey. Understand what programming is, why Python rules,
+          how to install it, write your first program, and master modules and comments.
+        </p>
+        <div class="d-flex flex-wrap gap-3 animate-hero-delay-3">
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:var(--accent)">
+            <i class="fas fa-clock"></i> ~45 min read
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#22c55e">
+            <i class="fas fa-signal"></i> Beginner Level
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(129,140,248,0.1);border:1px solid rgba(129,140,248,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#818cf8">
+            <i class="fas fa-tasks"></i> 5 Exercises
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero-code-window">
+            <div class="window-bar">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+              <span class="window-title">hello.py — Python Mastery</span>
+            </div>
+            <div class="window-body">
+              <div class="code-line"><span class="ln">1</span><span class="cm"># My first Python program 🐍</span></div>
+              <div class="code-line"><span class="ln">2</span><span class="cm"># Chapter 1 — Python Mastery with Harsh</span></div>
+              <div class="code-line"><span class="ln">3</span></div>
+              <div class="code-line"><span class="ln">4</span><span class="kw">import</span><span class="ot"> </span><span class="fn">os</span></div>
+              <div class="code-line"><span class="ln">5</span><span class="kw">import</span><span class="ot"> </span><span class="fn">math</span></div>
+              <div class="code-line"><span class="ln">6</span></div>
+              <div class="code-line"><span class="ln">7</span><span class="fn">print</span><span class="op">(</span><span class="str">"Hello, World! 🌍"</span><span class="op">)</span></div>
+              <div class="code-line"><span class="ln">8</span><span class="fn">print</span><span class="op">(</span><span class="str">"Welcome to Python Mastery"</span><span class="op">)</span></div>
+              <div class="code-line"><span class="ln">9</span></div>
+              <div class="code-line"><span class="ln">10</span><span class="cm">"""</span></div>
+              <div class="code-line"><span class="ln">11</span><span class="cm"> Multi-line comment:</span></div>
+              <div class="code-line"><span class="ln">12</span><span class="cm"> Python is amazing!</span></div>
+              <div class="code-line"><span class="ln">13</span><span class="cm">"""</span></div>
+            </div>
+          </div>
+          <!-- Floating badges -->
+          <div class="floating-badge floating-badge-1">
+            <i class="fab fa-python" style="color:#38bdf8;font-size:1.1rem"></i>
+            <span style="color:var(--text-main)">Python 3.x Ready</span>
+          </div>
+          <div class="floating-badge floating-badge-2">
+            <i class="fas fa-check-circle" style="color:#22c55e"></i>
+            <span style="color:var(--text-main)">Beginner Friendly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEARNING OBJECTIVES -->
+    <div class="mt-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="section-label"><i class="fas fa-bullseye"></i> Learning Objectives</div>
+      <div class="obj-grid">
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-brain"></i></div><div><div style="font-weight:700;font-size:0.88rem">What is Programming?</div><div style="font-size:0.78rem;color:var(--text-muted)">Understand the concept of programming</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fab fa-python"></i></div><div><div style="font-weight:700;font-size:0.88rem">Why Python?</div><div style="font-size:0.78rem;color:var(--text-muted)">Learn features and capabilities</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-download"></i></div><div><div style="font-weight:700;font-size:0.88rem">Install Python</div><div style="font-size:0.78rem;color:var(--text-muted)">Setup Python on your system</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-code"></i></div><div><div style="font-weight:700;font-size:0.88rem">First Program</div><div style="font-size:0.78rem;color:var(--text-muted)">Write and run Hello World</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-cubes"></i></div><div><div style="font-weight:700;font-size:0.88rem">Modules &amp; PIP</div><div style="font-size:0.78rem;color:var(--text-muted)">Import modules, install packages</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-comment-dots"></i></div><div><div style="font-weight:700;font-size:0.88rem">Comments</div><div style="font-size:0.78rem;color:var(--text-muted)">Write single &amp; multi-line comments</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 1 — PROGRAMMING
+======================== -->
+<section class="section-gap" id="programming">
+  <div class="container">
+
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-lightbulb"></i> Introduction</div>
+      <h2 class="section-title">What is <span style="color:var(--accent)">Programming?</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="row align-items-center g-5 mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <p style="color:var(--text-muted);font-size:0.97rem;margin-bottom:20px;">
+          Programming is the process of giving <span class="kw-highlight">instructions to a computer</span> so that it can perform specific tasks.
+          Just as we use languages like Hindi or English to communicate with people, we use <span class="kw-highlight">programming languages</span> to communicate with computers.
+        </p>
+        <div class="callout callout-blue">
+          <i class="fas fa-info-circle callout-icon" style="color:#38bdf8"></i>
+          <div>
+            <div class="callout-title" style="color:#38bdf8">Key Idea</div>
+            <div class="callout-body">A computer cannot understand human language directly. It only follows instructions written in a programming language.</div>
+          </div>
+        </div>
+        <div class="callout callout-purple" style="margin-top:16px">
+          <i class="fas fa-rocket callout-icon" style="color:#818cf8"></i>
+          <div>
+            <div class="callout-title" style="color:#818cf8">What can you build?</div>
+            <div class="callout-body">Websites • Mobile Apps • Games • AI Systems • Automation Tools • Much more!</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <!-- SVG Illustration: Human → Code → Computer -->
+        <div class="illustration-wrap">
+          <svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px">
+            <defs>
+              <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#38bdf8"/>
+                <stop offset="100%" style="stop-color:#818cf8"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#22c55e"/>
+                <stop offset="100%" style="stop-color:#38bdf8"/>
+              </linearGradient>
+              <filter id="glow-f">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- Background -->
+            <rect width="480" height="280" rx="16" fill="#0d1b2a" opacity="0.9"/>
+            <!-- Human node -->
+            <circle cx="80" cy="140" r="42" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+            <circle cx="80" cy="122" r="14" fill="url(#g1)" opacity="0.9"/>
+            <ellipse cx="80" cy="158" rx="22" ry="12" fill="url(#g1)" opacity="0.7"/>
+            <text x="80" y="196" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="600">Human</text>
+            <!-- Code node -->
+            <rect x="178" y="108" width="124" height="64" rx="12" fill="#162032" stroke="url(#g1)" stroke-width="2"/>
+            <text x="198" y="132" fill="#c792ea" font-size="10" font-family="Fira Code,monospace">print("Hello")</text>
+            <text x="198" y="148" fill="#82aaff" font-size="10" font-family="Fira Code,monospace">import math</text>
+            <text x="198" y="164" fill="#546e7a" font-size="10" font-family="Fira Code,monospace"># comment</text>
+            <text x="240" y="192" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="600">Python Code</text>
+            <!-- Computer node -->
+            <rect x="358" y="108" width="80" height="58" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+            <rect x="365" y="115" width="66" height="38" rx="4" fill="#0a1628"/>
+            <text x="398" y="138" text-anchor="middle" fill="#22c55e" font-size="14" font-family="Fira Code,monospace">&gt;_</text>
+            <rect x="375" y="166" width="46" height="5" rx="2" fill="#1e293b"/>
+            <rect x="386" y="171" width="24" height="3" rx="1" fill="#2d4a6b"/>
+            <text x="398" y="196" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="Space Grotesk,sans-serif" font-weight="600">Computer</text>
+            <!-- Arrows -->
+            <line x1="124" y1="140" x2="176" y2="140" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4,3" filter="url(#glow-f)"/>
+            <polygon points="174,135 182,140 174,145" fill="#38bdf8"/>
+            <line x1="304" y1="140" x2="356" y2="140" stroke="#22c55e" stroke-width="2" stroke-dasharray="4,3" filter="url(#glow-f)"/>
+            <polygon points="354,135 362,140 354,145" fill="#22c55e"/>
+            <!-- Labels on arrows -->
+            <text x="150" y="130" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="Space Grotesk,sans-serif">writes</text>
+            <text x="330" y="130" text-anchor="middle" fill="#22c55e" font-size="9" font-family="Space Grotesk,sans-serif">executes</text>
+            <!-- Output label -->
+            <text x="398" y="220" text-anchor="middle" fill="#22c55e" font-size="9" font-family="Fira Code,monospace">Output: Hello, World!</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 2 — WHAT IS PYTHON
+======================== -->
+<section class="section-gap" id="python" style="background:rgba(56,189,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fab fa-python"></i> The Language</div>
+      <h2 class="section-title">What is <span style="color:var(--accent)">Python?</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+        <div class="glass-card h-100">
+          <div class="mb-4">
+            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:64px;height:64px">
+              <defs>
+                <linearGradient id="pyg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#3776ab"/><stop offset="100%" style="stop-color:#ffd343"/></linearGradient>
+              </defs>
+              <circle cx="40" cy="40" r="38" fill="#1e293b" stroke="rgba(56,189,248,0.3)" stroke-width="1.5"/>
+              <path d="M40 14c-7 0-13 2-16 6l-3 12h22c2 0 3 1 3 3v2H26c-3 0-7 2-8 8l-2 12c-1 5 2 9 7 9h5v-8c0-3 3-5 6-5h18c3 0 6-3 6-6V31c0-5-3-9-8-11A32 32 0 0040 14zm-5 7a3 3 0 110 6 3 3 0 010-6z" fill="#3776ab"/>
+              <path d="M40 66c7 0 13-2 16-6l3-12H37c-2 0-3-1-3-3v-2h20c3 0 7-2 8-8l2-12c1-5-2-9-7-9h-5v8c0 3-3 5-6 5H28c-3 0-6 3-6 6v17c0 5 3 9 8 11A32 32 0 0040 66zm5-7a3 3 0 110-6 3 3 0 010 6z" fill="#ffd343"/>
+            </svg>
+          </div>
+          <h4 class="fw-bold mb-3">Python at a Glance</h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px;">
+            Python is one of the most popular programming languages in the world. Its
+            <span class="kw-highlight">clean, readable syntax</span> is close to natural English — making it
+            perfect for beginners and powerful enough for experts.
+          </p>
+          <div class="callout callout-green" style="margin:0">
+            <i class="fas fa-trophy callout-icon" style="color:#22c55e"></i>
+            <div>
+              <div class="callout-title" style="color:#22c55e">Why Python Wins</div>
+              <div class="callout-body">Used by beginners, students, developers, data scientists, and the world's largest tech companies.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+        <div class="feature-grid">
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="f-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-feather-alt" style="color:#38bdf8"></i></div>
+            <h6>Easy to Learn</h6>
+            <p>Simple syntax reduces development time drastically</p>
+          </div>
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="150">
+            <div class="f-icon" style="background:rgba(34,197,94,0.15)"><i class="fas fa-unlock-alt" style="color:#22c55e"></i></div>
+            <h6>Free &amp; Open Source</h6>
+            <p>Download and use Python without any cost</p>
+          </div>
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="f-icon" style="background:rgba(129,140,248,0.15)"><i class="fas fa-layer-group" style="color:#818cf8"></i></div>
+            <h6>High-Level Language</h6>
+            <p>Focus on solving problems, not system details</p>
+          </div>
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="250">
+            <div class="f-icon" style="background:rgba(245,158,11,0.15)"><i class="fas fa-globe" style="color:#f59e0b"></i></div>
+            <h6>Cross-Platform</h6>
+            <p>Runs on Windows, Linux &amp; macOS</p>
+          </div>
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
+            <div class="f-icon" style="background:rgba(244,63,94,0.15)"><i class="fas fa-users" style="color:#f43f5e"></i></div>
+            <h6>Huge Community</h6>
+            <p>Millions of developers sharing solutions</p>
+          </div>
+          <div class="feature-card" data-aos="zoom-in" data-aos-delay="350">
+            <div class="f-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-magic" style="color:#38bdf8"></i></div>
+            <h6>Versatile &amp; Powerful</h6>
+            <p>Web, AI, ML, Automation, Cybersecurity &amp; more</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 3 — INSTALL PYTHON
+======================== -->
+<section class="section-gap" id="install">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-download"></i> Setup</div>
+      <h2 class="section-title">Installing <span style="color:var(--accent)">Python</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Get Python running on your machine in minutes. Follow these steps carefully.</p>
+    </div>
+
+    <div class="mt-5">
+      <!-- Flow Diagram -->
+      <div class="flow-container mb-5" data-aos="fade-up">
+        <div class="flow-step">
+          <div class="step-num">1</div>
+          <div class="step-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-globe" style="color:#38bdf8"></i></div>
+          <div style="font-weight:700;font-size:0.85rem">Visit Website</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">python.org</div>
+        </div>
+        <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="flow-step">
+          <div class="step-num">2</div>
+          <div class="step-icon" style="background:rgba(129,140,248,0.15)"><i class="fas fa-download" style="color:#818cf8"></i></div>
+          <div style="font-weight:700;font-size:0.85rem">Download</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">Latest stable version</div>
+        </div>
+        <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="flow-step">
+          <div class="step-num">3</div>
+          <div class="step-icon" style="background:rgba(245,158,11,0.15)"><i class="fas fa-cog" style="color:#f59e0b"></i></div>
+          <div style="font-weight:700;font-size:0.85rem">Run Installer</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">Execute setup file</div>
+        </div>
+        <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="flow-step">
+          <div class="step-num">4</div>
+          <div class="step-icon" style="background:rgba(244,63,94,0.15)"><i class="fas fa-exclamation-triangle" style="color:#f43f5e"></i></div>
+          <div style="font-weight:700;font-size:0.85rem">Add to PATH</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">Critical checkbox!</div>
+        </div>
+        <div class="flow-arrow"><i class="fas fa-chevron-right"></i></div>
+        <div class="flow-step">
+          <div class="step-num">5</div>
+          <div class="step-icon" style="background:rgba(34,197,94,0.15)"><i class="fas fa-check-double" style="color:#22c55e"></i></div>
+          <div style="font-weight:700;font-size:0.85rem">Verify</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">Run python --version</div>
+        </div>
+      </div>
+
+      <!-- Critical Warning -->
+      <div class="callout callout-warn" data-aos="fade-up">
+        <i class="fas fa-exclamation-triangle callout-icon" style="color:#f59e0b;font-size:1.4rem"></i>
+        <div>
+          <div class="callout-title" style="color:#f59e0b;font-size:0.95rem">⚠ Critical Step — Don't Skip This!</div>
+          <div class="callout-body" style="font-size:0.92rem;margin-top:6px">During installation, you MUST check the option <strong style="color:#f59e0b">"Add Python to PATH"</strong> before clicking Install. Without this, Python won't be recognized in Terminal or Command Prompt.</div>
+        </div>
+      </div>
+
+      <!-- Verification Code Block -->
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h5 class="fw-bold mt-4 mb-3">Verify Your Installation</h5>
+        <div class="code-block">
+          <div class="code-topbar">
+            <div class="d-flex align-items-center gap-2">
+              <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+              <div class="code-lang"><i class="fas fa-terminal"></i> Terminal / Command Prompt</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this,'python --version')">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">python</span> --version</span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label"><i class="fas fa-terminal"></i> Expected Output</div>
+          <div class="output-text">Python 3.12.x</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 4 — FIRST PROGRAM
+======================== -->
+<section class="section-gap" id="first-program" style="background:rgba(34,197,94,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-rocket"></i> First Steps</div>
+      <h2 class="section-title">Your First <span style="color:#22c55e">Python Program</span></h2>
+      <div class="section-divider" style="background:linear-gradient(90deg,#22c55e,#38bdf8)"></div>
+    </div>
+
+    <div class="row g-4 mt-2">
+      <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+        <div class="glass-card">
+          <h5 class="fw-bold mb-4">Step 1 — Create the file</h5>
+          <div class="callout callout-blue" style="margin-bottom:20px">
+            <i class="fas fa-file-code callout-icon" style="color:#38bdf8"></i>
+            <div>
+              <div class="callout-title" style="color:#38bdf8">Create a file named:</div>
+              <div class="callout-body"><code style="font-family:'Fira Code',monospace;color:#38bdf8;font-size:1rem">hello.py</code></div>
+            </div>
+          </div>
+          <h5 class="fw-bold mb-3">Step 2 — Write the code</h5>
+          <div class="code-block">
+            <div class="code-topbar">
+              <div class="d-flex align-items-center gap-2">
+                <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+                <div class="code-lang"><i class="fab fa-python"></i> hello.py</div>
+              </div>
+              <button class="copy-btn" onclick="copyCode(this,'print(&quot;Hello, World!&quot;)')">
+                <i class="fas fa-copy"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"Hello, World!"</span><span class="s-op">)</span></span></div>
+            </div>
+          </div>
+          <h5 class="fw-bold mb-3 mt-4">Step 3 — Run the program</h5>
+          <div class="terminal-box">
+            <div class="terminal-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="terminal-title">Terminal</span>
+            </div>
+            <div class="terminal-body">
+              <div><span class="t-prompt">$ </span><span class="t-cmd">python hello.py</span></div>
+              <div><span class="t-output">Hello, World!</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
+        <div class="glass-card h-100 d-flex flex-column justify-content-center text-center">
+          <!-- Celebration SVG -->
+          <div class="illustration-wrap mb-3">
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" style="width:180px">
+              <circle cx="100" cy="90" r="70" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.2)" stroke-width="1.5"/>
+              <circle cx="100" cy="90" r="50" fill="rgba(34,197,94,0.1)"/>
+              <text x="100" y="106" text-anchor="middle" font-size="50">🎉</text>
+              <!-- Sparks -->
+              <circle cx="45" cy="40" r="4" fill="#f59e0b" opacity="0.8"><animate attributeName="cy" values="40;30;40" dur="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite"/></circle>
+              <circle cx="155" cy="45" r="3" fill="#38bdf8" opacity="0.8"><animate attributeName="cy" values="45;33;45" dur="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.2s" repeatCount="indefinite"/></circle>
+              <circle cx="60" cy="155" r="3" fill="#818cf8" opacity="0.7"><animate attributeName="cy" values="155;145;155" dur="1.8s" repeatCount="indefinite"/></circle>
+              <circle cx="148" cy="148" r="5" fill="#22c55e" opacity="0.6"><animate attributeName="cy" values="148;138;148" dur="1.3s" repeatCount="indefinite"/></circle>
+            </svg>
+          </div>
+          <h4 class="fw-bold mb-2">Congratulations! 🎉</h4>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px">You've just written and executed your first Python program!</p>
+          <div class="callout callout-green" style="text-align:left">
+            <i class="fas fa-lightbulb callout-icon" style="color:#22c55e"></i>
+            <div>
+              <div class="callout-title" style="color:#22c55e">Fun Fact</div>
+              <div class="callout-body"><span class="kw-highlight">print()</span> is a built-in Python function that displays output on the screen. It's one of the most used functions in Python!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 5 — MODULES
+======================== -->
+<section class="section-gap" id="modules">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-cubes"></i> Core Concept</div>
+      <h2 class="section-title">What are <span style="color:var(--accent)">Modules?</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">A module is a file that contains <strong>reusable Python code</strong>. Instead of writing everything from scratch, import modules and use pre-written functions, classes, and tools.</p>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <!-- Module Concept Visual -->
+        <div class="illustration-wrap">
+          <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:400px">
+            <rect width="400" height="250" rx="16" fill="#0d1b2a"/>
+            <!-- Your Program -->
+            <rect x="20" y="90" width="110" height="70" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="75" y="118" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="Space Grotesk,sans-serif" font-weight="700">Your Program</text>
+            <text x="75" y="134" text-anchor="middle" fill="#546e7a" font-size="9" font-family="Fira Code,monospace">main.py</text>
+            <text x="75" y="152" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="Fira Code,monospace">import math</text>
+            <!-- Arrows to modules -->
+            <line x1="130" y1="115" x2="175" y2="60" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <line x1="130" y1="125" x2="175" y2="125" stroke="#818cf8" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <line x1="130" y1="135" x2="175" y2="190" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <line x1="130" y1="145" x2="175" y2="210" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <!-- Module boxes -->
+            <rect x="177" y="35" width="80" height="38" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="217" y="55" text-anchor="middle" fill="#38bdf8" font-size="10" font-family="Fira Code,monospace">math</text>
+            <text x="217" y="68" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">Built-in</text>
+            <rect x="177" y="105" width="80" height="38" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+            <text x="217" y="125" text-anchor="middle" fill="#818cf8" font-size="10" font-family="Fira Code,monospace">random</text>
+            <text x="217" y="138" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">Built-in</text>
+            <rect x="177" y="168" width="80" height="38" rx="8" fill="#1e293b" stroke="#22c55e" stroke-width="1.5"/>
+            <text x="217" y="188" text-anchor="middle" fill="#22c55e" font-size="10" font-family="Fira Code,monospace">flask</text>
+            <text x="217" y="201" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">External (pip)</text>
+            <!-- Label -->
+            <text x="200" y="240" text-anchor="middle" fill="#94a3b8" font-size="9" font-family="Space Grotesk,sans-serif">Modules extend your program's power</text>
+            <!-- Import syntax on right -->
+            <rect x="280" y="60" width="108" height="130" rx="10" fill="#162032" stroke="rgba(56,189,248,0.2)" stroke-width="1"/>
+            <text x="334" y="82" text-anchor="middle" fill="#546e7a" font-size="9" font-family="Fira Code,monospace"># Usage</text>
+            <text x="290" y="100" fill="#c792ea" font-size="9" font-family="Fira Code,monospace">import math</text>
+            <text x="290" y="116" fill="#82aaff" font-size="9" font-family="Fira Code,monospace">math.sqrt(16)</text>
+            <text x="290" y="132" fill="#c3e88d" font-size="9" font-family="Fira Code,monospace">→ 4.0</text>
+            <text x="290" y="152" fill="#c792ea" font-size="9" font-family="Fira Code,monospace">import random</text>
+            <text x="290" y="168" fill="#82aaff" font-size="9" font-family="Fira Code,monospace">random.randint</text>
+            <text x="290" y="184" fill="#82aaff" font-size="9" font-family="Fira Code,monospace">(1,10)</text>
+          </svg>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="callout callout-blue">
+          <i class="fas fa-info-circle callout-icon" style="color:#38bdf8"></i>
+          <div>
+            <div class="callout-title" style="color:#38bdf8">Think of modules like tools in a toolbox</div>
+            <div class="callout-body">You don't build a hammer from scratch every time you need to nail something. You just pick it from your toolbox. Similarly, modules give you ready-made tools for your programs.</div>
+          </div>
+        </div>
+
+        <h5 class="fw-bold mt-4 mb-3">Benefits of Using Modules</h5>
+        <div class="d-flex flex-column gap-3">
+          <div class="obj-card"><div class="obj-icon"><i class="fas fa-bolt"></i></div><div><div style="font-weight:700;font-size:0.88rem">Save Time</div><div style="font-size:0.8rem;color:var(--text-muted)">Don't reinvent the wheel — use ready-made code</div></div></div>
+          <div class="obj-card"><div class="obj-icon" style="background:rgba(34,197,94,0.15)"><i class="fas fa-recycle" style="color:#22c55e"></i></div><div><div style="font-weight:700;font-size:0.88rem">Reduce Duplication</div><div style="font-size:0.8rem;color:var(--text-muted)">Write once, import anywhere across projects</div></div></div>
+          <div class="obj-card"><div class="obj-icon" style="background:rgba(129,140,248,0.15)"><i class="fas fa-tachometer-alt" style="color:#818cf8"></i></div><div><div style="font-weight:700;font-size:0.88rem">Boost Productivity</div><div style="font-size:0.8rem;color:var(--text-muted)">Leverage thousands of community-tested solutions</div></div></div>
+        </div>
+
+        <!-- Import Example -->
+        <div class="code-block mt-4">
+          <div class="code-topbar">
+            <div class="d-flex align-items-center gap-2">
+              <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+              <div class="code-lang"><i class="fab fa-python"></i> Python</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this,`import math\nprint(math.sqrt(25))\nprint(math.pi)`)">
+              <i class="fas fa-copy"></i> Copy
+            </button>
+          </div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">import</span> <span class="s-mod">math</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-mod">math</span><span class="s-op">.</span><span class="s-fn">sqrt</span><span class="s-op">(</span><span class="s-num">25</span><span class="s-op">))</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-mod">math</span><span class="s-op">.</span><span class="s-fn">pi</span><span class="s-op">)</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Output</div>
+          <div class="output-text">5.0<br>3.141592653589793</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Types of Modules -->
+    <div class="mt-5">
+      <h3 class="fw-bold mb-4 text-center" data-aos="fade-up">Types of Modules</h3>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+          <div class="glass-card h-100" style="border-color:rgba(56,189,248,0.3)">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+              <div style="width:48px;height:48px;background:rgba(56,189,248,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#38bdf8"><i class="fas fa-box"></i></div>
+              <div>
+                <h5 class="fw-bold mb-1">Built-in Modules</h5>
+                <span class="diff-easy">Pre-installed</span>
+              </div>
+            </div>
+            <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px">These modules come <strong>pre-installed with Python</strong>. No additional installation required. Just import and use!</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="kw-highlight">os</span>
+              <span class="kw-highlight">math</span>
+              <span class="kw-highlight">random</span>
+              <span class="kw-highlight">datetime</span>
+              <span class="kw-highlight">sys</span>
+              <span class="kw-highlight">json</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-left" data-aos-delay="150">
+          <div class="glass-card h-100" style="border-color:rgba(245,158,11,0.3)">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+              <div style="width:48px;height:48px;background:rgba(245,158,11,0.15);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#f59e0b"><i class="fas fa-download"></i></div>
+              <div>
+                <h5 class="fw-bold mb-1">External Modules</h5>
+                <span class="diff-medium">Install via PIP</span>
+              </div>
+            </div>
+            <p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:16px">Created by the community, these modules <strong>extend Python's capabilities</strong> for specific tasks. Install using PIP.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="kw-warn">flask</span>
+              <span class="kw-warn">tensorflow</span>
+              <span class="kw-warn">numpy</span>
+              <span class="kw-warn">pandas</span>
+              <span class="kw-warn">requests</span>
+              <span class="kw-warn">django</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="glass-card mt-4" data-aos="fade-up">
+        <h5 class="fw-bold mb-4"><i class="fas fa-table me-2" style="color:var(--accent)"></i>Built-in vs External Modules</h5>
+        <div class="table-responsive">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Module</th>
+                <th>Type</th>
+                <th>Purpose</th>
+                <th>Installation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>os</td><td><span class="badge-built">Built-in</span></td><td>Interact with the operating system</td><td>None needed</td></tr>
+              <tr><td>math</td><td><span class="badge-built">Built-in</span></td><td>Mathematical functions</td><td>None needed</td></tr>
+              <tr><td>random</td><td><span class="badge-built">Built-in</span></td><td>Generate random numbers</td><td>None needed</td></tr>
+              <tr><td>datetime</td><td><span class="badge-built">Built-in</span></td><td>Date and time operations</td><td>None needed</td></tr>
+              <tr><td>numpy</td><td><span class="badge-ext">External</span></td><td>Numerical computing</td><td>pip install numpy</td></tr>
+              <tr><td>flask</td><td><span class="badge-ext">External</span></td><td>Web development framework</td><td>pip install flask</td></tr>
+              <tr><td>pandas</td><td><span class="badge-ext">External</span></td><td>Data analysis &amp; manipulation</td><td>pip install pandas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 6 — PIP
+======================== -->
+<section class="section-gap" id="pip" style="background:rgba(245,158,11,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-box-open"></i> Package Manager</div>
+      <h2 class="section-title">What is <span style="color:#f59e0b">PIP?</span></h2>
+      <div class="section-divider" style="background:linear-gradient(90deg,#f59e0b,#f43f5e)"></div>
+    </div>
+
+    <div class="row g-4 mt-3 align-items-center">
+      <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+        <div class="glass-card">
+          <div style="text-align:center;margin-bottom:24px">
+            <div style="width:80px;height:80px;background:rgba(245,158,11,0.15);border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 16px;border:2px solid rgba(245,158,11,0.3)">
+              <i class="fas fa-box-open" style="color:#f59e0b"></i>
+            </div>
+            <h4 class="fw-bold mb-2">PIP</h4>
+            <div style="font-size:0.85rem;color:var(--text-muted);letter-spacing:2px">Pip Installs Packages</div>
+          </div>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px">PIP is the <strong>official package manager</strong> for Python. It allows you to install and manage external libraries and frameworks with a single command.</p>
+          <div class="callout callout-warn" style="margin:0">
+            <i class="fas fa-store callout-icon" style="color:#f59e0b"></i>
+            <div>
+              <div class="callout-title" style="color:#f59e0b">Think of PIP like an App Store</div>
+              <div class="callout-body">Just like you install apps on your phone, PIP installs Python packages on your computer.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+        <h5 class="fw-bold mb-3">Common PIP Commands</h5>
+
+        <div class="code-block mb-3">
+          <div class="code-topbar">
+            <div class="d-flex align-items-center gap-2">
+              <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+              <div class="code-lang"><i class="fas fa-terminal"></i> Install a package</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this,'pip install flask')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">pip</span> install flask</span></div>
+          </div>
+        </div>
+
+        <div class="code-block mb-3">
+          <div class="code-topbar">
+            <div class="d-flex align-items-center gap-2">
+              <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+              <div class="code-lang"><i class="fas fa-terminal"></i> List installed packages</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this,'pip list')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">pip</span> list</span></div>
+          </div>
+        </div>
+
+        <div class="code-block mb-3">
+          <div class="code-topbar">
+            <div class="d-flex align-items-center gap-2">
+              <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+              <div class="code-lang"><i class="fas fa-terminal"></i> Uninstall a package</div>
+            </div>
+            <button class="copy-btn" onclick="copyCode(this,'pip uninstall flask')"><i class="fas fa-copy"></i> Copy</button>
+          </div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">pip</span> uninstall flask</span></div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-2">
+          <div class="col-sm-6">
+            <div class="callout callout-green" style="margin:0">
+              <i class="fas fa-check callout-icon" style="color:#22c55e"></i>
+              <div><div class="callout-title" style="color:#22c55e">500,000+ packages</div><div class="callout-body">Available on PyPI</div></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="callout callout-blue" style="margin:0">
+              <i class="fas fa-bolt callout-icon" style="color:#38bdf8"></i>
+              <div><div class="callout-title" style="color:#38bdf8">One command</div><div class="callout-body">Install any package instantly</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 7 — REPL / CALCULATOR
+======================== -->
+<section class="section-gap" id="repl">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-calculator"></i> Interactive Shell</div>
+      <h2 class="section-title">Python as a <span style="color:var(--accent)">Calculator</span></h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="row g-4 mt-3 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="callout callout-purple mb-4">
+          <i class="fas fa-terminal callout-icon" style="color:#818cf8"></i>
+          <div>
+            <div class="callout-title" style="color:#818cf8">REPL — Read Evaluate Print Loop</div>
+            <div class="callout-body">Type Python commands directly and see instant results. Open it by typing <code class="kw-purple" style="font-size:0.85em">python</code> in your terminal.</div>
+          </div>
+        </div>
+
+        <!-- REPL Flow -->
+        <div class="glass-card" style="text-align:center;padding:28px">
+          <svg viewBox="0 0 320 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px">
+            <rect x="5" y="20" width="64" height="40" rx="8" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1.5"/>
+            <text x="37" y="38" text-anchor="middle" fill="#38bdf8" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">READ</text>
+            <text x="37" y="52" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">your input</text>
+            <line x1="69" y1="40" x2="83" y2="40" stroke="#818cf8" stroke-width="1.5"/>
+            <polygon points="82,36 89,40 82,44" fill="#818cf8"/>
+            <rect x="90" y="20" width="64" height="40" rx="8" fill="rgba(129,140,248,0.12)" stroke="#818cf8" stroke-width="1.5"/>
+            <text x="122" y="38" text-anchor="middle" fill="#818cf8" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">EVALUATE</text>
+            <text x="122" y="52" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">run code</text>
+            <line x1="154" y1="40" x2="168" y2="40" stroke="#22c55e" stroke-width="1.5"/>
+            <polygon points="167,36 174,40 167,44" fill="#22c55e"/>
+            <rect x="175" y="20" width="64" height="40" rx="8" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="1.5"/>
+            <text x="207" y="38" text-anchor="middle" fill="#22c55e" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">PRINT</text>
+            <text x="207" y="52" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">show result</text>
+            <line x1="239" y1="40" x2="253" y2="40" stroke="#f59e0b" stroke-width="1.5"/>
+            <polygon points="252,36 259,40 252,44" fill="#f59e0b"/>
+            <rect x="260" y="20" width="55" height="40" rx="8" fill="rgba(245,158,11,0.12)" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="287" y="38" text-anchor="middle" fill="#f59e0b" font-size="9" font-family="Space Grotesk,sans-serif" font-weight="700">LOOP</text>
+            <text x="287" y="52" text-anchor="middle" fill="#546e7a" font-size="8" font-family="Space Grotesk,sans-serif">repeat</text>
+          </svg>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="terminal-box">
+          <div class="terminal-bar">
+            <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+            <span class="terminal-title">Python Interactive Shell (REPL)</span>
+          </div>
+          <div class="terminal-body">
+            <div><span class="t-prompt">$ </span><span class="t-cmd">python</span></div>
+            <div style="color:#546e7a;font-size:0.78rem">Python 3.12.0 | Type "help" for more information.</div>
+            <div style="margin-top:10px"><span class="t-prompt">&gt;&gt;&gt; </span><span class="t-cmd">10 + 5</span></div>
+            <div><span class="t-output">15</span></div>
+            <div><span class="t-prompt">&gt;&gt;&gt; </span><span class="t-cmd">25 * 4</span></div>
+            <div><span class="t-output">100</span></div>
+            <div><span class="t-prompt">&gt;&gt;&gt; </span><span class="t-cmd">100 / 2</span></div>
+            <div><span class="t-output">50.0</span></div>
+            <div><span class="t-prompt">&gt;&gt;&gt; </span><span class="t-cmd">2 ** 10</span></div>
+            <div><span class="t-output">1024</span></div>
+            <div><span class="t-prompt">&gt;&gt;&gt; </span><span class="t-cmd">17 % 5</span></div>
+            <div><span class="t-output">2</span></div>
+            <div style="margin-top:6px"><span class="t-prompt">&gt;&gt;&gt; </span><span class="t-cmd" style="animation:blink 0.8s step-end infinite">|</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 8 — COMMENTS
+======================== -->
+<section class="section-gap" id="comments" style="background:rgba(56,189,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-comment-dots"></i> Core Concept</div>
+      <h2 class="section-title">Comments in <span style="color:var(--accent)">Python</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Comments are notes in your code — ignored by Python during execution, but essential for developers to understand the code.</p>
+    </div>
+
+    <div class="row g-4 mt-3">
+
+      <!-- Single-Line Comment -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="concept-card h-100">
+          <div class="concept-header">
+            <div class="concept-num">1</div>
+            <div>
+              <h5 class="mb-0 fw-bold">Single-Line Comment</h5>
+              <div style="font-size:0.8rem;color:var(--text-muted)">Starts with the <span class="kw-highlight">#</span> symbol</div>
+            </div>
+          </div>
+          <div class="concept-body">
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px">Use <span class="kw-highlight">#</span> to add a comment on a single line. Python ignores everything after the <span class="kw-highlight">#</span> on that line.</p>
+            <div class="code-block">
+              <div class="code-topbar">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+                  <div class="code-lang"><i class="fab fa-python"></i> Python</div>
+                </div>
+                <button class="copy-btn" onclick="copyCode(this,`# This is a single-line comment\nprint('Hello World')  # inline comment`)">
+                  <i class="fas fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-cm"># This is a single-line comment</span></span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text"></span></div>
+                <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"Hello World"</span><span class="s-op">)</span>  <span class="s-cm"># inline comment</span></span></div>
+              </div>
+            </div>
+            <div class="callout callout-green mt-3" style="margin:0">
+              <i class="fas fa-lightbulb callout-icon" style="color:#22c55e"></i>
+              <div><div class="callout-title" style="color:#22c55e">Best for:</div><div class="callout-body">Short explanations, inline notes, quick reminders</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Multi-Line Comment -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="concept-card h-100">
+          <div class="concept-header">
+            <div class="concept-num" style="background:linear-gradient(135deg,#818cf8,#38bdf8)">2</div>
+            <div>
+              <h5 class="mb-0 fw-bold">Multi-Line Comment</h5>
+              <div style="font-size:0.8rem;color:var(--text-muted)">Uses triple quotes <span class="kw-highlight">"""..."""</span></div>
+            </div>
+          </div>
+          <div class="concept-body">
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:16px">For larger explanations or documentation, wrap your comment in triple quotes <span class="kw-highlight">"""</span>. Great for documenting functions and modules.</p>
+            <div class="code-block">
+              <div class="code-topbar">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div>
+                  <div class="code-lang"><i class="fab fa-python"></i> Python</div>
+                </div>
+                <button class="copy-btn" onclick='copyCode(this,`"""\nThis is an example\nof a multi-line\ncomment in Python.\n"""`)'>
+                  <i class="fas fa-copy"></i> Copy
+                </button>
+              </div>
+              <div class="code-content">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-cm">"""</span></span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-cm">This is an example</span></span></div>
+                <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-cm">of a multi-line</span></span></div>
+                <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-cm">comment in Python.</span></span></div>
+                <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-cm">"""</span></span></div>
+              </div>
+            </div>
+            <div class="callout callout-blue mt-3" style="margin:0">
+              <i class="fas fa-lightbulb callout-icon" style="color:#38bdf8"></i>
+              <div><div class="callout-title" style="color:#38bdf8">Best for:</div><div class="callout-body">Documenting modules, functions, larger explanations, docstrings</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Uses of Comments -->
+      <div class="col-12" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card">
+          <h5 class="fw-bold mb-4"><i class="fas fa-check-circle me-2" style="color:var(--accent)"></i>When and Why to Use Comments</h5>
+          <div class="row g-3">
+            <div class="col-md-3 col-sm-6">
+              <div class="info-card">
+                <div class="card-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-book" style="color:#38bdf8"></i></div>
+                <h6 class="fw-bold mb-2">Explain Logic</h6>
+                <p style="font-size:0.82rem;color:var(--text-muted);margin:0">Describe what complex code blocks do</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="info-card">
+                <div class="card-icon" style="background:rgba(34,197,94,0.15)"><i class="fas fa-sticky-note" style="color:#22c55e"></i></div>
+                <h6 class="fw-bold mb-2">Add Reminders</h6>
+                <p style="font-size:0.82rem;color:var(--text-muted);margin:0">Mark things to fix or improve later</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="info-card">
+                <div class="card-icon" style="background:rgba(129,140,248,0.15)"><i class="fas fa-file-alt" style="color:#818cf8"></i></div>
+                <h6 class="fw-bold mb-2">Documentation</h6>
+                <p style="font-size:0.82rem;color:var(--text-muted);margin:0">Record important information for the team</p>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="info-card">
+                <div class="card-icon" style="background:rgba(245,158,11,0.15)"><i class="fas fa-eye" style="color:#f59e0b"></i></div>
+                <h6 class="fw-bold mb-2">Readability</h6>
+                <p style="font-size:0.82rem;color:var(--text-muted);margin:0">Make code easier to read and maintain</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 9 — REAL WORLD USE CASES
+======================== -->
+<section class="section-gap" id="usecases">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-globe-asia"></i> Real World</div>
+      <h2 class="section-title">Where is <span style="color:#22c55e">Python</span> Used?</h2>
+      <div class="section-divider" style="background:linear-gradient(90deg,#22c55e,#38bdf8)"></div>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="0">
+        <div class="usecase-card">
+          <div class="uc-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-globe" style="color:#38bdf8"></i></div>
+          <h6 class="fw-bold mb-2">Web Development</h6>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Build powerful web apps with Flask and Django — used by Instagram, Pinterest, and more.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="60">
+        <div class="usecase-card">
+          <div class="uc-icon" style="background:rgba(129,140,248,0.15)"><i class="fas fa-robot" style="color:#818cf8"></i></div>
+          <h6 class="fw-bold mb-2">Artificial Intelligence</h6>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Power AI systems with TensorFlow, PyTorch, and scikit-learn. The language of AI.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="120">
+        <div class="usecase-card">
+          <div class="uc-icon" style="background:rgba(34,197,94,0.15)"><i class="fas fa-chart-line" style="color:#22c55e"></i></div>
+          <h6 class="fw-bold mb-2">Data Analysis</h6>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Analyze massive datasets with pandas, NumPy, and matplotlib. Essential for data science.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="180">
+        <div class="usecase-card">
+          <div class="uc-icon" style="background:rgba(245,158,11,0.15)"><i class="fas fa-magic" style="color:#f59e0b"></i></div>
+          <h6 class="fw-bold mb-2">Automation</h6>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Automate boring repetitive tasks — file handling, web scraping, email sending, and more.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="240">
+        <div class="usecase-card">
+          <div class="uc-icon" style="background:rgba(244,63,94,0.15)"><i class="fas fa-shield-alt" style="color:#f43f5e"></i></div>
+          <h6 class="fw-bold mb-2">Cybersecurity</h6>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Write ethical hacking tools, penetration testing scripts, and security automation.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+        <div class="usecase-card">
+          <div class="uc-icon" style="background:rgba(56,189,248,0.15)"><i class="fas fa-gamepad" style="color:#38bdf8"></i></div>
+          <h6 class="fw-bold mb-2">Game Development</h6>
+          <p style="font-size:0.82rem;color:var(--text-muted)">Create 2D games with Pygame. Build game logic, AI opponents, and more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 10 — COMMON MISTAKES
+======================== -->
+<section class="section-gap" id="mistakes" style="background:rgba(244,63,94,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-exclamation-triangle"></i> Watch Out</div>
+      <h2 class="section-title">Common <span style="color:#f43f5e">Mistakes</span></h2>
+      <div class="section-divider" style="background:linear-gradient(90deg,#f43f5e,#f59e0b)"></div>
+    </div>
+
+    <div class="row g-4 mt-3">
+
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 1: Forgetting to add Python to PATH</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Error — Python not recognized</div>
+          <div class="mistake-body">
+            <div class="terminal-box">
+              <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span></div>
+              <div class="terminal-body" style="padding:14px">
+                <div><span class="t-prompt" style="color:#f43f5e">$ </span><span class="t-cmd">python --version</span></div>
+                <div style="color:#f43f5e">'python' is not recognized as an internal or external command</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Fix — Re-install with PATH checked ✓</div>
+          <div class="mistake-body">
+            <div class="callout callout-green" style="margin:0">
+              <i class="fas fa-info-circle callout-icon" style="color:#22c55e"></i>
+              <div><div class="callout-body">During installation, tick the checkbox <strong>"Add Python to PATH"</strong> before clicking Install Now.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 2: Wrong comment syntax</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Wrong — Using // for comments</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0">
+              <div class="code-content" style="padding:14px">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text" style="color:#f43f5e">// This is wrong — Python uses # not //</span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text" style="color:#f43f5e">/* This is also wrong */</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Correct — Use # for single-line comments</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0">
+              <div class="code-content" style="padding:14px">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-cm"># This is the correct Python comment</span></span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"Hello"</span><span class="s-op">)</span>  <span class="s-cm"># inline</span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 3: Incorrect import syntax</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Wrong</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0">
+              <div class="code-content" style="padding:14px">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text" style="color:#f43f5e">Import Math  # Wrong: case matters!</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Correct</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0">
+              <div class="code-content" style="padding:14px">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">import</span> <span class="s-mod">math</span>  <span class="s-cm"># lowercase only</span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <h5 class="fw-bold mb-3"><i class="fas fa-times-circle me-2" style="color:#f43f5e"></i>Mistake 4: pip not found</h5>
+        <div class="mistake-card">
+          <div class="mistake-header mistake-wrong"><i class="fas fa-times-circle"></i> Error</div>
+          <div class="mistake-body">
+            <div class="terminal-box">
+              <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span></div>
+              <div class="terminal-body" style="padding:14px">
+                <div><span class="t-prompt" style="color:#f43f5e">$ </span><span class="t-cmd">pip install flask</span></div>
+                <div style="color:#f43f5e">'pip' is not recognized...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mistake-card mt-3">
+          <div class="mistake-header mistake-right"><i class="fas fa-check-circle"></i> Fix — Use pip3 or python -m pip</div>
+          <div class="mistake-body">
+            <div class="code-block" style="margin:0">
+              <div class="code-content" style="padding:14px">
+                <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-kw">pip3</span> install flask</span></div>
+                <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-cm"># or</span></span></div>
+                <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-kw">python</span> -m pip install flask</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 11 — INTERVIEW QUESTIONS
+======================== -->
+<section class="section-gap" id="interview">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-user-tie"></i> Interview Prep</div>
+      <h2 class="section-title">Interview <span style="color:var(--accent)">Questions</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="accordion qa-accordion mt-4" id="interviewAccordion">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="0">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+            <span class="q-num">1</span> What is Python and why is it so popular?
+          </button>
+        </h2>
+        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">
+            Python is a high-level, interpreted, general-purpose programming language known for its simple, readable syntax that resembles plain English. It's popular because it's beginner-friendly, free and open-source, cross-platform, has a massive community and ecosystem, and is versatile enough for web development, data science, AI, automation, and more.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="50">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+            <span class="q-num">2</span> What is a module in Python?
+          </button>
+        </h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">
+            A module is a file containing Python code (functions, classes, variables) that can be imported and reused in other programs. Modules help organize code, avoid duplication, and increase productivity. Python has built-in modules (like <code class="kw-highlight" style="font-size:0.85em">math</code>, <code class="kw-highlight" style="font-size:0.85em">os</code>, <code class="kw-highlight" style="font-size:0.85em">random</code>) and external modules installed via PIP.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+            <span class="q-num">3</span> What is PIP and how do you use it?
+          </button>
+        </h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">
+            PIP stands for "Pip Installs Packages." It is Python's package manager used to install, upgrade, and remove external libraries. Usage: <code class="kw-highlight" style="font-size:0.85em">pip install package_name</code> to install, <code class="kw-highlight" style="font-size:0.85em">pip list</code> to see installed packages, and <code class="kw-highlight" style="font-size:0.85em">pip uninstall package_name</code> to remove a package.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+            <span class="q-num">4</span> What is the difference between built-in and external modules?
+          </button>
+        </h2>
+        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">
+            <strong style="color:#22c55e">Built-in modules</strong> come pre-installed with Python and can be used immediately with just an import statement (e.g., <code class="kw-highlight" style="font-size:0.85em">math</code>, <code class="kw-highlight" style="font-size:0.85em">os</code>, <code class="kw-highlight" style="font-size:0.85em">datetime</code>). <strong style="color:#f59e0b">External modules</strong> are created by the community, available on PyPI, and must be installed using PIP before importing (e.g., <code class="kw-warn" style="font-size:0.85em">numpy</code>, <code class="kw-warn" style="font-size:0.85em">flask</code>, <code class="kw-warn" style="font-size:0.85em">pandas</code>).
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+            <span class="q-num">5</span> How do you write comments in Python?
+          </button>
+        </h2>
+        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">
+            Python supports two types of comments:<br><br>
+            <strong style="color:#38bdf8">Single-line:</strong> Use the <code class="kw-highlight" style="font-size:0.85em">#</code> symbol. Everything after <code class="kw-highlight" style="font-size:0.85em">#</code> on that line is ignored by Python.<br><br>
+            <strong style="color:#818cf8">Multi-line:</strong> Use triple quotes <code class="kw-highlight" style="font-size:0.85em">"""..."""</code> or <code class="kw-highlight" style="font-size:0.85em">'''...'''</code> to span multiple lines. Commonly used as docstrings for documentation.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
+            <span class="q-num">6</span> What is REPL in Python?
+          </button>
+        </h2>
+        <div id="q6" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">
+            REPL stands for <strong>Read-Evaluate-Print Loop</strong>. It's Python's interactive shell where you can type commands and immediately see results without creating a .py file. Launch it by typing <code class="kw-highlight" style="font-size:0.85em">python</code> in the terminal. It's great for testing small pieces of code and learning Python interactively.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 12 — PRACTICE QUESTIONS
+======================== -->
+<section class="section-gap" id="practice" style="background:rgba(56,189,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-dumbbell"></i> Practice Set</div>
+      <h2 class="section-title">Practice <span style="color:var(--accent)">Questions</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Strengthen your understanding by solving these exercises. Write the code yourself — don't just read it!</p>
+    </div>
+    <div class="row g-4 mt-3">
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="practice-card">
+          <div class="practice-header">
+            <span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q1</span>
+            <span class="diff-badge diff-easy">Easy</span>
+          </div>
+          <div class="practice-body">
+            <h6>Print a Poem</h6>
+            <p>Write a Python program to print "Twinkle, Twinkle, Little Star" on the screen with all stanzas.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent)"></i> <strong>Hint:</strong> Use multiple <span class="kw-highlight" style="font-size:0.82em">print()</span> statements, one for each line.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="60">
+        <div class="practice-card">
+          <div class="practice-header">
+            <span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q2</span>
+            <span class="diff-badge diff-easy">Easy</span>
+          </div>
+          <div class="practice-body">
+            <h6>Table of 5 in REPL</h6>
+            <p>Open Python REPL and print the multiplication table of 5 using mathematical expressions.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent)"></i> <strong>Hint:</strong> Use <span class="kw-highlight" style="font-size:0.82em">5 * 1</span>, <span class="kw-highlight" style="font-size:0.82em">5 * 2</span> … <span class="kw-highlight" style="font-size:0.82em">5 * 10</span> in REPL.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+        <div class="practice-card">
+          <div class="practice-header">
+            <span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q3</span>
+            <span class="diff-badge diff-medium">Medium</span>
+          </div>
+          <div class="practice-body">
+            <h6>Install &amp; Use an External Module</h6>
+            <p>Install any external Python module using PIP and perform an interesting operation with it.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent)"></i> <strong>Try:</strong> <span class="kw-warn" style="font-size:0.82em">pyttsx3</span>, <span class="kw-warn" style="font-size:0.82em">numpy</span>, <span class="kw-warn" style="font-size:0.82em">pandas</span>, or <span class="kw-warn" style="font-size:0.82em">flask</span>.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="180">
+        <div class="practice-card">
+          <div class="practice-header">
+            <span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q4</span>
+            <span class="diff-badge diff-medium">Medium</span>
+          </div>
+          <div class="practice-body">
+            <h6>List Files Using os Module</h6>
+            <p>Write a Python program that prints all files and folders inside a directory using the built-in <code style="font-family:'Fira Code',monospace;color:var(--accent)">os</code> module.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent)"></i> <strong>Hint:</strong> Search for <span class="kw-highlight" style="font-size:0.82em">os.listdir()</span> in the documentation.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="practice-card">
+          <div class="practice-header">
+            <span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q5</span>
+            <span class="diff-badge diff-medium">Medium</span>
+          </div>
+          <div class="practice-body">
+            <h6>Add Comments to Q4</h6>
+            <p>Add proper comments to the Q4 program — including program title, purpose, and logic explanation.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent)"></i> Use both <span class="kw-highlight" style="font-size:0.82em">#</span> and <span class="kw-highlight" style="font-size:0.82em">"""..."""</span> comment styles.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="practice-card" style="border-color:rgba(244,63,94,0.2)">
+          <div class="practice-header">
+            <span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Bonus</span>
+            <span class="diff-badge diff-hard">Challenge</span>
+          </div>
+          <div class="practice-body">
+            <h6>Research a New Module</h6>
+            <p>Find a module not discussed in class. Install it, build a small program, and document: name, purpose, install command, and usage example.</p>
+            <div class="practice-hint"><i class="fas fa-fire me-1" style="color:#f43f5e"></i> <strong>Optional but impressive!</strong> Show your curiosity.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 13 — REVISION
+======================== -->
+<section class="section-gap" id="revision">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-sync-alt"></i> Quick Recap</div>
+      <h2 class="section-title">Chapter <span style="color:var(--accent)">Summary</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="50">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div><strong>Programming</strong> is giving instructions to a computer using a programming language to perform specific tasks.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div><strong>Python</strong> is a simple, readable, free, cross-platform, high-level programming language used worldwide.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="150">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div>Install Python from <span class="kw-highlight">python.org</span> and always check <strong>"Add Python to PATH"</strong> during setup.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div>Your first program: <span class="kw-highlight">print("Hello, World!")</span> — run with <span class="kw-highlight">python hello.py</span>.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="250">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div>A <strong>Module</strong> is a reusable Python file. Import it with <span class="kw-highlight">import module_name</span>.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="300">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div><strong>Built-in</strong> modules come with Python (os, math, random). <strong>External</strong> modules need <span class="kw-highlight">pip install</span>.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="350">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div><strong>PIP</strong> = "Pip Installs Packages" — Python's package manager for installing external libraries.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="400">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div><strong>REPL</strong> = Read-Evaluate-Print Loop — Python's interactive shell for instant code execution.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="450">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div><strong>Single-line comment:</strong> <span class="kw-highlight"># comment here</span> — ignored by Python at runtime.</div>
+        </div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="500">
+          <div class="revision-check"><i class="fas fa-check"></i></div>
+          <div><strong>Multi-line comment:</strong> <span class="kw-highlight">"""...comment..."""</span> — for documentation and larger notes.</div>
+        </div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
+        <div class="glass-card text-center">
+          <h5 class="fw-bold mb-4">Completion Checklist</h5>
+          <div class="d-flex flex-column gap-2" id="checklistBox">
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Install Python</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Run Python from Terminal</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Create and execute a .py file</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Understand Modules and PIP</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Install an external package</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Use Python REPL</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Write Single-Line Comments</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Write Multi-Line Comments</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Solve all Practice Questions</span></div>
+          </div>
+          <div class="mt-4 pt-3" style="border-top:1px solid var(--border)">
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:8px">Your Progress</div>
+            <div style="font-size:2rem;font-weight:800;font-family:'Syne',sans-serif;" id="progressCount">0/9</div>
+            <div class="big-progress mt-2" style="margin-top:10px">
+              <div id="checkProgressBar" style="height:100%;width:0%;background:linear-gradient(90deg,#38bdf8,#22c55e);border-radius:6px;transition:width 0.4s ease"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     SECTION 14 — PROGRESS TRACKER
+======================== -->
+<section class="section-gap-sm" id="progress">
+  <div class="container">
+    <div class="progress-section" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="section-label"><i class="fas fa-map-marked-alt"></i> Course Progress</div>
+          <h3 class="fw-bold mt-2 mb-3" style="font-family:'Syne',sans-serif">Chapter 1 Complete! <span style="color:#22c55e">✓</span></h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px">You've finished Chapter 1 of 12. Keep going — you're building an incredible foundation!</p>
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div style="flex:1">
+              <div class="big-progress">
+                <div class="big-progress-bar" style="width: 8.3%"></div>
+              </div>
+            </div>
+            <span style="font-weight:700;color:var(--accent);font-size:1rem;min-width:40px">8.3%</span>
+          </div>
+          <div style="font-size:0.78rem;color:var(--text-muted)">1 of 12 chapters completed</div>
+          <!-- Mark Complete Button -->
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <button id="markCompleteBtn" onclick="toggleChapter1()" style="background:linear-gradient(135deg,#22c55e,#38bdf8);border:none;color:#fff;font-weight:700;padding:12px 24px;border-radius:10px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:0.9rem;display:flex;align-items:center;gap:8px;transition:all 0.3s">
+              <i class="fas fa-check-circle"></i> Mark Chapter 1 as Complete
+            </button>
+            <a href="../Chapter-2/index.html" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-main);font-weight:600;padding:12px 22px;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;font-size:0.9rem;transition:all 0.3s">
+              <i class="fas fa-arrow-right" style="color:#818cf8"></i> Next: Chapter 2
+            </a>
+          </div>
+          <div id="ch1CompletedMsg" style="display:none;margin-top:14px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:14px 18px;font-size:0.88rem;color:#22c55e">
+            <i class="fas fa-check-circle me-2"></i> <strong>Chapter 1 marked as complete!</strong> Your progress has been saved. Continue with Chapter 2.
+          </div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="progress-steps">
+            <div class="progress-step">
+              <div class="ps-circle ps-active"><i class="fas fa-check" style="font-size:0.75rem"></i></div>
+              <div class="ps-label">Ch 1<br>Modules</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">2</div>
+              <div class="ps-label">Ch 2<br>Variables</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">3</div>
+              <div class="ps-label">Ch 3<br>Strings</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">4</div>
+              <div class="ps-label">Ch 4<br>Lists</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">5</div>
+              <div class="ps-label">Ch 5<br>Loops</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">...</div>
+              <div class="ps-label">More<br>Coming</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     FOOTER
+======================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand column -->
+      <div>
+        <div class="footer-brand-name">Python Mastery with Harsh</div>
+        <p class="footer-tagline">From Absolute Beginner to Building Real Python Projects.<br>Completely free. Built with ❤️ for students.</p>
+        <div class="footer-social">
+          <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-social-link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-social-link" title="Portfolio">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="#" class="footer-social-link" title="Course Repo">
+            <i class="fas fa-code-branch"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chapters column -->
+      <div>
+        <div class="footer-col-title">Chapters</div>
+        <a href="../Chapter-1/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 1 – Modules &amp; PIP</a>
+        <a href="../Chapter-2/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 2 – Variables</a>
+        <a href="../coming-soon.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--text-dim)"></i>Chapter 3 – Strings (Soon)</a>
+        <a href="../index.html#chapters" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--text-dim)"></i>All Chapters →</a>
+      </div>
+
+      <!-- Links column -->
+      <div>
+        <div class="footer-col-title">Links</div>
+        <a href="../index.html#roadmap" class="footer-link">Course Roadmap</a>
+        <a href="../index.html#instructor" class="footer-link">About Instructor</a>
+        <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-link">Portfolio Website</a>
+        <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-link">GitHub Profile</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Python Mastery with Harsh. All rights reserved.</div>
+      <div class="footer-love">
+        Let's Learn Python with <a href="https://github.com/lucifer01430" target="_blank" rel="noopener">Harsh</a> ❤️
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script>
+function setChapter1Marked(isDone) {
+  var btn = document.getElementById('markCompleteBtn');
+  var msg = document.getElementById('ch1CompletedMsg');
+  if (isDone) {
+    btn.innerHTML = '<i class="fas fa-check-double"></i> Chapter 1 Complete ✓ &nbsp;<span style="font-size:0.78rem;opacity:0.75;border-left:1px solid rgba(34,197,94,0.4);padding-left:10px;margin-left:2px">Unmark</span>';
+    btn.style.background = 'rgba(34,197,94,0.15)';
+    btn.style.border = '1px solid rgba(34,197,94,0.4)';
+    btn.style.color = '#22c55e';
+    msg.style.display = 'block';
+    msg.innerHTML = '<i class="fas fa-check-circle me-2"></i><strong>Chapter 1 marked as complete!</strong> Your progress is saved. <span style="opacity:0.7;font-size:0.82rem">Click the button again to unmark.</span>';
+  } else {
+    btn.innerHTML = '<i class="fas fa-check-circle"></i> Mark Chapter 1 as Complete';
+    btn.style.background = 'linear-gradient(135deg,#22c55e,#38bdf8)';
+    btn.style.border = 'none';
+    btn.style.color = '#fff';
+    msg.style.display = 'none';
+  }
+}
+
+function toggleChapter1() {
+  var isDone = localStorage.getItem('python_chapter_1') === 'completed';
+  if (isDone) {
+    localStorage.removeItem('python_chapter_1');
+    setChapter1Marked(false);
+  } else {
+    localStorage.setItem('python_chapter_1', 'completed');
+    setChapter1Marked(true);
+  }
+}
+
+// Apply saved state on page load
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('python_chapter_1') === 'completed') {
+    setChapter1Marked(true);
+  }
+});
+</script>
+</body>
+</html>
