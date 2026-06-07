@@ -20,9 +20,9 @@ It bridges the gap between passive video tutorial watching and active coding by 
 
 ## 👨‍💻 Who Created It?
 
-This project is created and designed by **Harsh Pandey**. 
+This project is created and designed by Me - **Harsh Pandey**. 
 
-Harsh is a professional Software Developer, Web Developer, and Python enthusiast. He built this platform to share his learning journey and practical industry-level developer practices with aspiring coders.
+I am a professional Software Developer, Web Developer, and Python enthusiast. He built this platform to share his learning journey and practical industry-level developer practices with aspiring coders.
 
 * **GitHub:** [@lucifer01430](https://github.com/lucifer01430)
 * **Portfolio Website:** [Harsh's Portfolio](https://lucifer01430.github.io/Portfolio)
