@@ -699,10 +699,10 @@
         <div class="col-md-6" data-aos="fade-right" data-aos-delay="120">
           <div class="d-flex align-items-start gap-3">
             <div class="roadmap-node node-pending" data-key="python_chapter_3">3</div>
-            <div class="roadmap-card flex-grow-1">
+            <div class="roadmap-card available-card flex-grow-1">
               <div class="d-flex align-items-center justify-content-between mb-1">
                 <div class="roadmap-ch-num">Chapter 03</div>
-                <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+                <span class="ch-status-pill status-available"><i class="fas fa-unlock-alt"></i> Available</span>
               </div>
               <div class="roadmap-ch-title">Working with Strings</div>
               <div class="roadmap-ch-topics">
@@ -711,9 +711,9 @@
                 <span class="topic-tag">Formatting</span>
                 <span class="topic-tag">f-strings</span>
               </div>
-              <a href="coming-soon.html"
-                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--text-dim);text-decoration:none">
-                <i class="fas fa-lock"></i> Sneak Peek
+              <a href="./Chapter-3/index.html"
+                style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:0.78rem;color:var(--accent);text-decoration:none">
+                <i class="fas fa-arrow-right"></i> Open Chapter
               </a>
             </div>
           </div>
@@ -1086,22 +1086,32 @@
           </div>
         </div>
 
-        <!-- Chapter 3 — LOCKED -->
-        <div class="chapter-card locked" data-aos="fade-up" data-aos-delay="160">
-          <div class="chapter-card-header">
-            <div class="ch-num-badge" style="opacity:0.4">CHAPTER 03</div>
-            <span class="ch-status-pill status-coming"><i class="fas fa-lock"></i> Coming Soon</span>
+        <!-- Chapter 3 — AVAILABLE -->
+        <div class="chapter-card available" data-chapter-key="python_chapter_3" data-aos="fade-up" data-aos-delay="160">
+          <span class="completed-badge"><i class="fas fa-check me-1"></i> Completed</span>
+          <div class="chapter-card-header"
+            style="background:linear-gradient(135deg,rgba(129,140,248,0.06),rgba(56,189,248,0.06))">
+            <div class="ch-num-badge"
+              style="background:linear-gradient(135deg,#818cf8,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
+              CHAPTER 03</div>
+            <span class="ch-status-pill status-available"><i class="fas fa-unlock-alt"></i> Available</span>
           </div>
           <div class="chapter-card-body">
-            <h5 style="opacity:0.6">Working with Strings</h5>
+            <h5>Working with Strings</h5>
             <p>String methods, slicing, formatting, and f-strings. Master text manipulation in Python.</p>
             <div class="chapter-topics-list">
-              <span class="ch-topic-tag" style="opacity:0.5">String Methods</span>
-              <span class="ch-topic-tag" style="opacity:0.5">Slicing</span>
-              <span class="ch-topic-tag" style="opacity:0.5">f-strings</span>
+              <span class="ch-topic-tag">String Methods</span>
+              <span class="ch-topic-tag">Slicing</span>
+              <span class="ch-topic-tag">f-strings</span>
             </div>
-            <a href="coming-soon.html" class="btn-locked-chapter mt-2" style="text-decoration:none">
-              <i class="fas fa-lock"></i> Coming Soon
+            <div class="d-flex gap-2 mb-2" style="font-size:0.78rem;color:var(--text-muted)">
+              <span><i class="fas fa-clock me-1" style="color:#818cf8"></i>~55 min</span>
+              <span><i class="fas fa-signal me-1" style="color:#22c55e"></i>Beginner</span>
+              <span><i class="fas fa-tasks me-1" style="color:#38bdf8"></i>5 Exercises</span>
+            </div>
+            <a href="./Chapter-3/index.html" class="btn-open-chapter"
+              style="background:linear-gradient(135deg,#818cf8,#38bdf8)">
+              <i class="fas fa-book-open"></i> Open Chapter 3
             </a>
           </div>
         </div>
@@ -1325,8 +1335,8 @@
               style="font-size:0.6rem;color:var(--accent)"></i>Chapter 1 – Modules &amp; PIP</a>
           <a href="./Chapter-2/index.html" class="footer-link"><i class="fas fa-chevron-right me-1"
               style="font-size:0.6rem;color:var(--accent)"></i>Chapter 2 – Variables</a>
-          <a href="coming-soon.html" class="footer-link"><i class="fas fa-chevron-right me-1"
-              style="font-size:0.6rem;color:var(--text-dim)"></i>Chapter 3 – Strings (Soon)</a>
+          <a href="./Chapter-3/index.html" class="footer-link"><i class="fas fa-chevron-right me-1"
+              style="font-size:0.6rem;color:var(--accent)"></i>Chapter 3 – Strings</a>
           <a href="#chapters" class="footer-link"><i class="fas fa-chevron-right me-1"
               style="font-size:0.6rem;color:var(--text-dim)"></i>All Chapters →</a>
         </div>

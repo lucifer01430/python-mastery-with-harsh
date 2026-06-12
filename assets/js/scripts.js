@@ -27,7 +27,7 @@ const CHAPTER_KEYS = [
 const CHAPTER_META = {
   python_chapter_1:   { label: 'Chapter 1', link: './Chapter-1/index.html' },
   python_chapter_2:   { label: 'Chapter 2', link: './Chapter-2/index.html' },
-  python_chapter_3:   { label: 'Chapter 3', link: null },
+  python_chapter_3:   { label: 'Chapter 3', link: './Chapter-3/index.html' },
   python_chapter_4:   { label: 'Chapter 4', link: null },
   python_chapter_5:   { label: 'Chapter 5', link: null },
   python_chapter_6:   { label: 'Chapter 6', link: null },
@@ -115,7 +115,7 @@ function updateContinueLearning() {
     const ch1done = localStorage.getItem('python_chapter_1') === 'completed';
     const ch2done = localStorage.getItem('python_chapter_2') === 'completed';
 
-    if (ch1done && ch2done) {
+    if (ch1done && ch2done && localStorage.getItem('python_chapter_3') === 'completed') {
       el.innerHTML = `
         <div class="continue-badge"><i class="fas fa-trophy"></i> All Available Chapters Complete</div>
         <h3 class="fw-bold mb-2" style="font-family:'Syne',sans-serif">More Chapters Coming Soon!</h3>
@@ -136,6 +136,9 @@ function updateContinueLearning() {
   } else if (nextKey === 'python_chapter_2') {
     title = 'Chapter 2 — Variables & Data Types';
     subtitle = 'Great job finishing Chapter 1! Keep going.';
+  } else if (nextKey === 'python_chapter_3') {
+    title = 'Chapter 3 — Working with Strings';
+    subtitle = 'Awesome work on Chapter 2! Dive into Strings.';
   }
 
   el.innerHTML = buildContinueCard(nextKey, { label: title || nextMeta.label, link: nextMeta.link }, subtitle);
@@ -205,8 +208,16 @@ function updateRoadmapNodes() {
       if (!node.dataset.special) {
         node.innerHTML = '<i class="fas fa-check" style="font-size:0.8rem"></i>';
       }
+    } else if (completed.length === CHAPTER_KEYS.indexOf(key)) {
+      node.classList.add('node-active');
+      if (!node.dataset.special) {
+        node.textContent = CHAPTER_KEYS.indexOf(key) + 1;
+      }
     } else {
       node.classList.add('node-pending');
+      if (!node.dataset.special) {
+        node.textContent = CHAPTER_KEYS.indexOf(key) + 1;
+      }
     }
   });
 }

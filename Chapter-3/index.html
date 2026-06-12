@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chapter 3 – Working with Strings | Python Mastery with Harsh</title>
+<meta name="description" content="Master string indexing, slicing, immutability, built-in string methods, and escape sequence formatting in Python with Harsh." />
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<!-- NAVBAR -->
+<nav class="course-nav">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="brand">
+        <div class="brand-icon"><i class="fab fa-python"></i></div>
+        Python Mastery with Harsh
+      </a>
+      <div class="d-flex align-items-center gap-3">
+        <span class="chapter-badge">CH 03</span>
+        <span class="d-none d-md-block" style="font-size:0.82rem;color:var(--text-muted)">Working with Strings</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero-section" id="hero">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="chapter-number-pill animate-hero">
+          <i class="fas fa-book-reader"></i> Chapter 03 of 13
+        </div>
+        <h1 class="hero-title animate-hero-delay-1">
+          Working<br>
+          <span class="gradient-text">with Strings</span>
+        </h1>
+        <p class="hero-desc animate-hero-delay-2">
+          Master the power of text manipulation in Python. Learn string slicing, negative indexing, immutability, built-in string methods, and f-strings to build real-world text-processing applications.
+        </p>
+        <div class="d-flex flex-wrap gap-3 animate-hero-delay-3">
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(129,140,248,0.1);border:1px solid rgba(129,140,248,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#818cf8">
+            <i class="fas fa-clock"></i> ~55 min read
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#22c55e">
+            <i class="fas fa-signal"></i> Beginner Level
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:rgba(56,189,248,0.1);border:1px solid rgba(56,189,248,0.2);padding:8px 16px;border-radius:30px;font-size:0.82rem;color:#38bdf8">
+            <i class="fas fa-tasks"></i> 5 Exercises
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual position-relative" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero-code-window">
+            <div class="window-bar">
+              <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              <span class="window-title">strings.py — Python Mastery</span>
+            </div>
+            <div class="window-body">
+              <div class="code-line"><span class="ln">1</span><span class="cm"># Chapter 3 — Working with Strings</span></div>
+              <div class="code-line"><span class="ln">2</span><span class="ot">name </span><span class="op">= </span><span class="str">"Harsh"</span></div>
+              <div class="code-line"><span class="ln">3</span><span class="ot">message </span><span class="op">= </span><span class="str">f"Welcome {name}!"</span></div>
+              <div class="code-line"><span class="ln">4</span></div>
+              <div class="code-line"><span class="ln">5</span><span class="fn">print</span><span class="op">(</span><span class="ot">message</span><span class="op">[</span><span class="num">0</span><span class="op">:</span><span class="num">7</span><span class="op">]</span><span class="op">)</span>  <span class="cm"># Slicing</span></div>
+              <div class="code-line"><span class="ln">6</span><span class="fn">print</span><span class="op">(</span><span class="ot">name</span><span class="op">.</span><span class="fn">upper</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>    <span class="cm"># Method</span></div>
+            </div>
+          </div>
+          <div class="floating-badge floating-badge-1">
+            <i class="fas fa-scissors" style="color:#818cf8;font-size:1.1rem"></i>
+            <span>String Slicing</span>
+          </div>
+          <div class="floating-badge floating-badge-2">
+            <i class="fas fa-magic" style="color:#22c55e"></i>
+            <span>f-strings</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEARNING OBJECTIVES -->
+    <div class="mt-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="section-label"><i class="fas fa-bullseye"></i> Learning Objectives</div>
+      <div class="obj-grid">
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-quote-right"></i></div><div><div style="font-weight:700;font-size:0.88rem">Creating Strings</div><div style="font-size:0.78rem;color:var(--text-muted)">Single, double, triple quotes</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-list-ol"></i></div><div><div style="font-weight:700;font-size:0.88rem">String Indexing</div><div style="font-size:0.78rem;color:var(--text-muted)">0-based &amp; Negative Indexing</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-scissors"></i></div><div><div style="font-weight:700;font-size:0.88rem">Slicing</div><div style="font-size:0.78rem;color:var(--text-muted)">string[start:end:skip]</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-lock"></i></div><div><div style="font-weight:700;font-size:0.88rem">Immutability</div><div style="font-size:0.78rem;color:var(--text-muted)">Strings cannot be changed in place</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-cog"></i></div><div><div style="font-weight:700;font-size:0.88rem">String Methods</div><div style="font-size:0.78rem;color:var(--text-muted)">len, count, replace, find etc.</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-terminal"></i></div><div><div style="font-weight:700;font-size:0.88rem">Escape Sequences</div><div style="font-size:0.78rem;color:var(--text-muted)">\n, \t, escape characters</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-globe"></i></div><div><div style="font-weight:700;font-size:0.88rem">Real Use Cases</div><div style="font-size:0.78rem;color:var(--text-muted)">Validations, input, AI chatbots</div></div></div>
+        <div class="obj-card"><div class="obj-icon"><i class="fas fa-check-double"></i></div><div><div style="font-weight:700;font-size:0.88rem">Practice Set</div><div style="font-size:0.78rem;color:var(--text-muted)">Solve 5 practice problems</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 1 — INTRODUCTION ======================== -->
+<section class="section-gap" id="intro">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-lightbulb"></i> Introduction</div>
+      <h2 class="section-title">What is a <span style="color:var(--accent2)">String?</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row align-items-center g-5 mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <p style="color:var(--text-muted);font-size:0.97rem;margin-bottom:20px;">
+          Strings are one of the most commonly used data types in Python. Whenever we work with text such as names, messages, emails, passwords, addresses, or user input, we use strings.
+        </p>
+        <p style="color:var(--text-muted);font-size:0.97rem;margin-bottom:20px;">
+          A string is simply a <span class="kw-purple">sequence of characters</span> enclosed within quotes. Strings allow us to store, display, modify, and manipulate textual data easily.
+        </p>
+        <div class="callout callout-purple">
+          <i class="fas fa-database callout-icon" style="color:#818cf8"></i>
+          <div>
+            <div class="callout-title" style="color:#818cf8">Syntax Rule</div>
+            <div class="callout-body">Python provides multiple ways to create strings: single quotes, double quotes, and triple quotes.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> string_creation.py</div></div><button class="copy-btn" onclick="copyCode(this,`name = &quot;Harsh&quot;\ncity = &quot;Lucknow&quot;\nmessage = &quot;Welcome to Python Mastery with Harsh&quot;`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Harsh"</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-ot">city </span><span class="s-op">= </span><span class="s-str">"Lucknow"</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-ot">message </span><span class="s-op">= </span><span class="s-str">"Welcome to Python Mastery with Harsh"</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 2 — QUOTATION STYLES ======================== -->
+<section class="section-gap" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-quote-left"></i> Quotations</div>
+      <h2 class="section-title">Quotation Styles in <span style="color:var(--accent)">Python</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">You can define strings using single, double, or triple quotes. Choose the one that suits your needs.</p>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="glass-card h-100">
+          <h5 class="fw-bold mb-3"><i class="fas fa-quote-right me-2" style="color:var(--accent)"></i>Single Quotes</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem">Use for short strings where you don't need double quote escaping.</p>
+          <div class="code-block" style="margin-bottom:0">
+            <div class="code-topbar"><div class="code-lang">single.py</div></div>
+            <div class="code-content">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">'Harsh'</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="glass-card h-100">
+          <h5 class="fw-bold mb-3"><i class="fas fa-quote-left me-2" style="color:var(--accent2)"></i>Double Quotes</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem">The standard style for most Python developers.</p>
+          <div class="code-block" style="margin-bottom:0">
+            <div class="code-topbar"><div class="code-lang">double.py</div></div>
+            <div class="code-content">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Harsh"</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card h-100">
+          <h5 class="fw-bold mb-3"><i class="fas fa-heading me-2" style="color:#22c55e"></i>Triple Quotes</h5>
+          <p style="color:var(--text-muted);font-size:0.88rem">Perfect for writing multi-line text or preserving line breaks.</p>
+          <div class="code-block" style="margin-bottom:0">
+            <div class="code-topbar"><div class="code-lang">triple.py</div></div>
+            <div class="code-content">
+              <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">message </span><span class="s-op">= </span><span class="s-str">'''Welcome to</span></span></div>
+              <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-str">Python Mastery</span></span></div>
+              <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-str">with Harsh'''</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 3 — STRING INDEXING ======================== -->
+<section class="section-gap" id="indexing">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-list-ol"></i> Indexing</div>
+      <h2 class="section-title">String <span style="color:var(--accent2)">Indexing</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Every character in a string occupies a position number called an index. Python starts counting indices from 0.</p>
+    </div>
+
+    <div class="row g-5 align-items-center mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <!-- SVG diagram representing string indexing -->
+        <div class="illustration-wrap mb-4">
+          <svg viewBox="0 0 440 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px">
+            <defs>
+              <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#818cf8"/>
+                <stop offset="100%" style="stop-color:#38bdf8"/>
+              </linearGradient>
+            </defs>
+            <rect width="440" height="180" rx="16" fill="#0d1b2a" opacity="0.95"/>
+            <!-- Grid Boxes -->
+            <rect x="50" y="60" width="60" height="60" rx="8" fill="#1e293b" stroke="url(#g1)" stroke-width="2"/>
+            <rect x="120" y="60" width="60" height="60" rx="8" fill="#1e293b" stroke="url(#g1)" stroke-width="2"/>
+            <rect x="190" y="60" width="60" height="60" rx="8" fill="#1e293b" stroke="url(#g1)" stroke-width="2"/>
+            <rect x="260" y="60" width="60" height="60" rx="8" fill="#1e293b" stroke="url(#g1)" stroke-width="2"/>
+            <rect x="330" y="60" width="60" height="60" rx="8" fill="#1e293b" stroke="url(#g1)" stroke-width="2"/>
+            <!-- Characters -->
+            <text x="80" y="98" text-anchor="middle" fill="#fff" font-size="24" font-family="Space Grotesk, sans-serif" font-weight="700">H</text>
+            <text x="150" y="98" text-anchor="middle" fill="#fff" font-size="24" font-family="Space Grotesk, sans-serif" font-weight="700">a</text>
+            <text x="220" y="98" text-anchor="middle" fill="#fff" font-size="24" font-family="Space Grotesk, sans-serif" font-weight="700">r</text>
+            <text x="290" y="98" text-anchor="middle" fill="#fff" font-size="24" font-family="Space Grotesk, sans-serif" font-weight="700">s</text>
+            <text x="360" y="98" text-anchor="middle" fill="#fff" font-size="24" font-family="Space Grotesk, sans-serif" font-weight="700">h</text>
+            <!-- Indices -->
+            <text x="80" y="45" text-anchor="middle" fill="#38bdf8" font-size="14" font-family="Fira Code, monospace" font-weight="700">0</text>
+            <text x="150" y="45" text-anchor="middle" fill="#38bdf8" font-size="14" font-family="Fira Code, monospace" font-weight="700">1</text>
+            <text x="220" y="45" text-anchor="middle" fill="#38bdf8" font-size="14" font-family="Fira Code, monospace" font-weight="700">2</text>
+            <text x="290" y="45" text-anchor="middle" fill="#38bdf8" font-size="14" font-family="Fira Code, monospace" font-weight="700">3</text>
+            <text x="360" y="45" text-anchor="middle" fill="#38bdf8" font-size="14" font-family="Fira Code, monospace" font-weight="700">4</text>
+            <text x="25" y="42" fill="#64748b" font-size="8" font-family="Space Grotesk, sans-serif" font-weight="700">INDEX:</text>
+            <!-- Negative Indices -->
+            <text x="80" y="150" text-anchor="middle" fill="#f59e0b" font-size="14" font-family="Fira Code, monospace" font-weight="700">-5</text>
+            <text x="150" y="150" text-anchor="middle" fill="#f59e0b" font-size="14" font-family="Fira Code, monospace" font-weight="700">-4</text>
+            <text x="220" y="150" text-anchor="middle" fill="#f59e0b" font-size="14" font-family="Fira Code, monospace" font-weight="700">-3</text>
+            <text x="290" y="150" text-anchor="middle" fill="#f59e0b" font-size="14" font-family="Fira Code, monospace" font-weight="700">-2</text>
+            <text x="360" y="150" text-anchor="middle" fill="#f59e0b" font-size="14" font-family="Fira Code, monospace" font-weight="700">-1</text>
+            <text x="20" y="148" fill="#64748b" font-size="8" font-family="Space Grotesk, sans-serif" font-weight="700">NEGATIVE:</text>
+          </svg>
+        </div>
+        <p style="color:var(--text-muted);font-size:0.97rem">
+          To access a specific character, write the variable name followed by the index enclosed in square brackets `[]`.
+        </p>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> indexing.py</div></div><button class="copy-btn" onclick="copyCode(this,`name = &quot;Harsh&quot;\nprint(name[0])\nprint(name[1])\nprint(name[-1])`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Harsh"</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">name</span><span class="s-op">[</span><span class="s-num">0</span><span class="s-op">]</span><span class="s-op">)</span>  <span class="s-cm"># First character</span></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">name</span><span class="s-op">[</span><span class="s-num">1</span><span class="s-op">]</span><span class="s-op">)</span>  <span class="s-cm"># Second character</span></span></div>
+            <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">name</span><span class="s-op">[</span><span class="s-op">-</span><span class="s-num">1</span><span class="s-op">]</span><span class="s-op">)</span> <span class="s-cm"># Last character</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Terminal Output</div>
+          <div class="output-text">H<br>a<br>h</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 4 — STRING SLICING ======================== -->
+<section class="section-gap" id="slicing" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-scissors"></i> Slicing</div>
+      <h2 class="section-title">String <span style="color:var(--accent)">Slicing</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Slicing allows us to extract a portion of a string. We specify where to start and where to end.</p>
+    </div>
+
+    <div class="row g-5 mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <h5 class="fw-bold mb-3"><i class="fas fa-key me-2" style="color:var(--accent)"></i>Slicing Syntax</h5>
+        <div class="callout callout-blue">
+          <i class="fas fa-info-circle callout-icon" style="color:#38bdf8"></i>
+          <div>
+            <div class="callout-title" style="color:#38bdf8">Syntax Template</div>
+            <div class="callout-body">`string[start : end]` — Python slices from the `start` index and stops *before* the `end` index (non-inclusive of the end index).</div>
+          </div>
+        </div>
+        <p style="color:var(--text-muted);font-size:0.95rem;">
+          If you omit the start, it defaults to `0`. If you omit the end, it defaults to the length of the string.
+        </p>
+
+        <h5 class="fw-bold mt-4 mb-3"><i class="fas fa-step-forward me-2" style="color:var(--accent2)"></i>Slicing with a Skip Value</h5>
+        <div class="callout callout-purple">
+          <i class="fas fa-angle-double-right callout-icon" style="color:#818cf8"></i>
+          <div>
+            <div class="callout-title" style="color:#818cf8">Skip Syntax</div>
+            <div class="callout-body">`string[start : end : skip]` — Python extracts characters at the step interval defined by `skip`.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> slicing.py</div></div><button class="copy-btn" onclick="copyCode(this,`word = &quot;Programming&quot;\nprint(word[0:7])\n\nword2 = &quot;Amazing&quot;\nprint(word2[1:6:2])\n\nprint(word2[:7])\nprint(word2[0:])\nprint(word2[:])`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">word </span><span class="s-op">= </span><span class="s-str">"Programming"</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">word</span><span class="s-op">[</span><span class="s-num">0</span><span class="s-op">:</span><span class="s-num">7</span><span class="s-op">]</span><span class="s-op">)</span>    <span class="s-cm"># Output: Program</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-ot">word2 </span><span class="s-op">= </span><span class="s-str">"Amazing"</span></span></div>
+            <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">word2</span><span class="s-op">[</span><span class="s-num">1</span><span class="s-op">:</span><span class="s-num">6</span><span class="s-op">:</span><span class="s-num">2</span><span class="s-op">]</span><span class="s-op">)</span>  <span class="s-cm"># Starts index 1, skips every 2nd → mzn</span></span></div>
+            <div class="code-row"><span class="line-no">6</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">7</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">word2</span><span class="s-op">[</span><span class="s-op">:</span><span class="s-num">7</span><span class="s-op">]</span><span class="s-op">)</span>     <span class="s-cm"># Defaults start to 0 → Amazing</span></span></div>
+            <div class="code-row"><span class="line-no">8</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">word2</span><span class="s-op">[</span><span class="s-num">0</span><span class="s-op">:</span><span class="s-op">]</span><span class="s-op">)</span>     <span class="s-cm"># Defaults end to end of string → Amazing</span></span></div>
+            <div class="code-row"><span class="line-no">9</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">word2</span><span class="s-op">[</span><span class="s-op">:</span><span class="s-op">]</span><span class="s-op">)</span>      <span class="s-cm"># Full slice copy → Amazing</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Terminal Output</div>
+          <div class="output-text">Program<br>mzn<br>Amazing<br>Amazing<br>Amazing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 5 — IMMUTABILITY ======================== -->
+<section class="section-gap" id="immutability">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-lock"></i> Core Concept</div>
+      <h2 class="section-title">String <span style="color:var(--danger)">Immutability</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Once a string is created in memory, its individual characters cannot be changed or modified in place.</p>
+    </div>
+
+    <div class="row g-5 align-items-center mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="callout callout-red">
+          <i class="fas fa-exclamation-triangle callout-icon" style="color:var(--danger)"></i>
+          <div>
+            <div class="callout-title" style="color:var(--danger)">Why does this fail?</div>
+            <div class="callout-body">In Python, strings are **immutable**. Attempting to modify an index (e.g. `name[0] = 'M'`) will raise a `TypeError`.</div>
+          </div>
+        </div>
+        <p style="color:var(--text-muted);font-size:0.95rem;">
+          If you want to modify a string, you must create a new string variable with the desired change. Python does this to optimize memory and run faster.
+        </p>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> immutability.py</div></div><button class="copy-btn" onclick="copyCode(this,`name = &quot;Harsh&quot;\n# name[0] = &quot;M&quot; # Raises TypeError!\n\n# Correct approach:\nname = &quot;Marsh&quot;\nprint(name)`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Harsh"</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-cm"># name[0] = "M"  &lt;-- This raises TypeError!</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-cm"># Correct way is creating a new reference:</span></span></div>
+            <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-ot">name </span><span class="s-op">= </span><span class="s-str">"Marsh"</span></span></div>
+            <div class="code-row"><span class="line-no">6</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">name</span><span class="s-op">)</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Terminal Output</div>
+          <div class="output-text">Marsh</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 6 — STRING FUNCTIONS ======================== -->
+<section class="section-gap" id="functions" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-cogs"></i> Built-in Methods</div>
+      <h2 class="section-title">String <span style="color:var(--accent2)">Functions &amp; Methods</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Python provides powerful built-in functions and object methods to analyze, validate, and manipulate text strings.</p>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="glass-card mb-4">
+          <h5 class="fw-bold mb-3"><i class="fas fa-list me-2" style="color:var(--accent)"></i>Common String Operations</h5>
+          
+          <ul class="list-unstyled" style="font-size:0.93rem;color:var(--text-muted)">
+            <li class="mb-3"><strong class="kw-purple" style="font-family:'Fira Code',monospace">len(str)</strong>: Returns the total number of characters in the string.</li>
+            <li class="mb-3"><strong class="kw-purple" style="font-family:'Fira Code',monospace">str.endswith(val)</strong>: Returns `True` if the string ends with the specified suffix value.</li>
+            <li class="mb-3"><strong class="kw-purple" style="font-family:'Fira Code',monospace">str.count(val)</strong>: Counts how many times a substring appears in the string.</li>
+            <li class="mb-3"><strong class="kw-purple" style="font-family:'Fira Code',monospace">str.capitalize()</strong>: Capitalizes the very first letter of the string.</li>
+            <li class="mb-3"><strong class="kw-purple" style="font-family:'Fira Code',monospace">str.find(val)</strong>: Searches for a substring and returns its index. Returns `-1` if not found.</li>
+            <li class="mb-3"><strong class="kw-purple" style="font-family:'Fira Code',monospace">str.replace(old, new)</strong>: Replaces occurrences of `old` text with `new` text.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card">
+          <h5 class="fw-bold mb-3"><i class="fas fa-font me-2" style="color:#22c55e"></i>Casing &amp; Formatting</h5>
+          <ul class="list-unstyled" style="font-size:0.93rem;color:var(--text-muted)">
+            <li class="mb-3"><strong class="kw-green" style="font-family:'Fira Code',monospace">str.upper()</strong>: Converts all characters to uppercase.</li>
+            <li class="mb-3"><strong class="kw-green" style="font-family:'Fira Code',monospace">str.lower()</strong>: Converts all characters to lowercase.</li>
+            <li class="mb-3"><strong class="kw-green" style="font-family:'Fira Code',monospace">str.strip()</strong>: Trims white space from both the start and end of a string.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> string_methods.py</div></div><button class="copy-btn" onclick="copyCode(this,`text = &quot;harsh&quot;\nprint(len(text))\nprint(text.endswith(&quot;sh&quot;))\nprint(text.count(&quot;h&quot;))\nprint(text.capitalize())\nprint(text.find(&quot;rs&quot;))\nprint(text.replace(&quot;h&quot;, &quot;m&quot;))\n\nprint(&quot;python&quot;.upper())\nprint(&quot;PYTHON&quot;.lower())\nprint(&quot;   Python   &quot;.strip())`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-ot">text </span><span class="s-op">= </span><span class="s-str">"harsh"</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-fn">len</span><span class="s-op">(</span><span class="s-ot">text</span><span class="s-op">)</span><span class="s-op">)</span>              <span class="s-cm"># Length: 5</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">text</span><span class="s-op">.</span><span class="fn">endswith</span><span class="op">(</span><span class="s-str">"sh"</span><span class="op">)</span><span class="op">)</span>    <span class="s-cm"># True</span></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">text</span><span class="s-op">.</span><span class="fn">count</span><span class="op">(</span><span class="s-str">"h"</span><span class="op">)</span><span class="op">)</span>       <span class="s-cm"># 2 ('h' occurs twice)</span></span></div>
+            <div class="code-row"><span class="line-no">5</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">text</span><span class="s-op">.</span><span class="fn">capitalize</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>     <span class="s-cm"># Harsh</span></span></div>
+            <div class="code-row"><span class="line-no">6</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">text</span><span class="s-op">.</span><span class="fn">find</span><span class="op">(</span><span class="s-str">"rs"</span><span class="op">)</span><span class="op">)</span>        <span class="s-cm"># 2</span></span></div>
+            <div class="code-row"><span class="line-no">7</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-ot">text</span><span class="s-op">.</span><span class="fn">replace</span><span class="op">(</span><span class="s-str">"h"</span><span class="op">,</span> <span class="s-str">"m"</span><span class="op">)</span><span class="op">)</span> <span class="s-cm"># marsm</span></span></div>
+            <div class="code-row"><span class="line-no">8</span><span class="code-text"></span></div>
+            <div class="code-row"><span class="line-no">9</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"python"</span><span class="s-op">.</span><span class="fn">upper</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>      <span class="s-cm"># PYTHON</span></span></div>
+            <div class="code-row"><span class="line-no">10</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"PYTHON"</span><span class="s-op">.</span><span class="fn">lower</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>      <span class="s-cm"># python</span></span></div>
+            <div class="code-row"><span class="line-no">11</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"   Python   "</span><span class="s-op">.</span><span class="fn">strip</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="s-cm"># Python (trims spaces)</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Terminal Output</div>
+          <div class="output-text">5<br>True<br>2<br>Harsh<br>2<br>marsm<br>PYTHON<br>python<br>Python</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 7 — ESCAPE SEQUENCES ======================== -->
+<section class="section-gap" id="escape">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-terminal"></i> Escape Characters</div>
+      <h2 class="section-title">Escape <span style="color:var(--accent)">Sequences</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Escape sequences start with a backslash `\` and are used to include characters that are otherwise hard or impossible to write inside strings.</p>
+    </div>
+
+    <div class="row g-5 align-items-center mt-2">
+      <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="callout callout-blue">
+          <i class="fas fa-keyboard callout-icon" style="color:#38bdf8"></i>
+          <div>
+            <div class="callout-title" style="color:#38bdf8">Common Escape Codes</div>
+            <div class="callout-body">
+              <ul class="list-unstyled mb-0" style="font-size:0.88rem;color:var(--text-muted)">
+                <li class="mb-2">`\n` : Adds a **New Line** break.</li>
+                <li class="mb-2">`\t` : Inserts a horizontal **Tab Space**.</li>
+                <li class="mb-2">`\"` : Includes a **Double Quote** inside double-quoted text.</li>
+                <li class="mb-2">`\'` : Includes a **Single Quote** inside single-quoted text.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="code-block">
+          <div class="code-topbar"><div class="d-flex align-items-center gap-2"><div class="code-dots"><div class="code-dot" style="background:#f43f5e"></div><div class="code-dot" style="background:#f59e0b"></div><div class="code-dot" style="background:#22c55e"></div></div><div class="code-lang"><i class="fab fa-python"></i> escape.py</div></div><button class="copy-btn" onclick="copyCode(this,`print(&quot;Hello\\nWorld&quot;)\nprint(&quot;Python\\tCourse&quot;)\nprint(&quot;Harsh said \\&quot;Python is awesome\\&quot;&quot;)\nprint('It\\'s a beautiful day')`)"><i class="fas fa-copy"></i> Copy</button></div>
+          <div class="code-content">
+            <div class="code-row"><span class="line-no">1</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"Hello\nWorld"</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">2</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"Python\tCourse"</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">3</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">"Harsh said \"Python is awesome\""</span><span class="s-op">)</span></span></div>
+            <div class="code-row"><span class="line-no">4</span><span class="code-text"><span class="s-fn">print</span><span class="s-op">(</span><span class="s-str">'It\'s a beautiful day'</span><span class="s-op">)</span></span></div>
+          </div>
+        </div>
+        <div class="output-box">
+          <div class="output-label">Terminal Output</div>
+          <div class="output-text">Hello<br>World<br>Python    Course<br>Harsh said "Python is awesome"<br>It's a beautiful day</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 8 — REAL WORLD USE CASES ======================== -->
+<section class="section-gap" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-globe"></i> Real-world Applications</div>
+      <h2 class="section-title">Where Strings are <span style="color:var(--accent2)">Used</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Almost every Python application deals with string data. Here are the primary domains:</p>
+    </div>
+
+    <div class="row g-4 mt-3">
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="info-card">
+          <div class="card-icon" style="background:rgba(56,189,248,0.1);color:var(--accent)"><i class="fas fa-user-lock"></i></div>
+          <h6 class="fw-bold">Users &amp; Passwords</h6>
+          <p style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0">Authenticating usernames, matching encrypted password hashes, and processing logins.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="80">
+        <div class="info-card">
+          <div class="card-icon" style="background:rgba(129,140,248,0.1);color:var(--accent2)"><i class="fas fa-envelope"></i></div>
+          <h6 class="fw-bold">Email Processing</h6>
+          <p style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0">Formatting and validating emails, scanning messages for spam, and routing alerts.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="160">
+        <div class="info-card">
+          <div class="card-icon" style="background:rgba(34,197,94,0.1);color:#22c55e"><i class="fas fa-comments"></i></div>
+          <h6 class="fw-bold">AI Chatbots</h6>
+          <p style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0">Parsing human questions, generating text responses, and feeding text into models.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="info-card">
+          <div class="card-icon" style="background:rgba(245,158,11,0.1);color:#f59e0b"><i class="fas fa-search"></i></div>
+          <h6 class="fw-bold">Search Engines</h6>
+          <p style="color:var(--text-muted);font-size:0.8rem;margin-bottom:0">Analyzing web text queries, matching strings using indexing, and ranking results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 9 — INTERVIEW Q ======================== -->
+<section class="section-gap" id="interview">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-user-tie"></i> Interview Prep</div>
+      <h2 class="section-title">Python Strings – <span style="color:var(--accent2)">Interview Questions</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="accordion qa-accordion mt-4" id="interviewAccordion">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="0">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+            <span class="q-num">1</span> What is a String in Python?
+          </button>
+        </h2>
+        <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">A string in Python is a sequence of characters enclosed within single quotes (<code class="kw-highlight" style="font-size:0.85em">'...'</code>), double quotes (<code class="kw-highlight" style="font-size:0.85em">"..."</code>), or triple quotes (<code class="kw-highlight" style="font-size:0.85em">'''...'''</code> or <code class="kw-highlight" style="font-size:0.85em">"""..."""</code>). It is an immutable data type, meaning once a string is created, its individual characters cannot be modified or replaced.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="50">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+            <span class="q-num">2</span> What is the difference between String Indexing and String Slicing?
+          </button>
+        </h2>
+        <div id="q2" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body"><strong>String Indexing</strong> is used to access a single character at a specific position by referencing its index position (e.g. <code class="kw-highlight" style="font-size:0.85em">name[0]</code>). <strong>String Slicing</strong> is used to extract a range of characters (a substring) using the start and end index boundaries (e.g. <code class="kw-highlight" style="font-size:0.85em">name[1:4]</code>). Slicing doesn't raise an error even if indices are out of range.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+            <span class="q-num">3</span> What is String Immutability?
+          </button>
+        </h2>
+        <div id="q3" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">String immutability means that a string's characters cannot be updated or changed in-place after the string has been created. For example, doing <code class="kw-highlight" style="font-size:0.85em">word[0] = 'P'</code> will raise a <code class="kw-highlight" style="font-size:0.85em">TypeError</code>. If you need a modified string, you must create a new string variable. This ensures memory efficiency and security.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q4">
+            <span class="q-num">4</span> What is the difference between find() and replace() methods?
+          </button>
+        </h2>
+        <div id="q4" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">The <code class="kw-highlight" style="font-size:0.85em">find(sub)</code> method searches for a substring and returns the lowest index where it begins (or returns <code class="kw-highlight" style="font-size:0.85em">-1</code> if it is not found). The <code class="kw-highlight" style="font-size:0.85em">replace(old, new)</code> method returns a new string where all occurrences of the <code class="kw-highlight" style="font-size:0.85em">old</code> substring are replaced by the <code class="kw-highlight" style="font-size:0.85em">new</code> substring. Neither method alters the original string.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q5">
+            <span class="q-num">5</span> What are Escape Sequence Characters?
+          </button>
+        </h2>
+        <div id="q5" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">Escape sequence characters are special combinations of characters consisting of a backslash (<code class="kw-highlight" style="font-size:0.85em">\</code>) followed by a letter or symbol. They are used to format text in ways that are otherwise hard to express directly. Common escape sequences include <code class="kw-highlight" style="font-size:0.85em">\n</code> for newline, <code class="kw-highlight" style="font-size:0.85em">\t</code> for a horizontal tab space, and <code class="kw-highlight" style="font-size:0.85em">\"</code> or <code class="kw-highlight" style="font-size:0.85em">\'</code> to insert literal quotes inside single or double-quoted strings.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q6">
+            <span class="q-num">6</span> What are some common built-in String functions in Python?
+          </button>
+        </h2>
+        <div id="q6" class="accordion-collapse collapse" data-bs-parent="#interviewAccordion">
+          <div class="accordion-body">Some of the most common string functions and methods include: <code class="kw-highlight" style="font-size:0.85em">len()</code> (gets string length), <code class="kw-highlight" style="font-size:0.85em">endswith(suffix)</code> (checks suffix), <code class="kw-highlight" style="font-size:0.85em">count(substring)</code> (counts occurrences), <code class="kw-highlight" style="font-size:0.85em">capitalize()</code> (capitalizes the first character), <code class="kw-highlight" style="font-size:0.85em">upper()</code> / <code class="kw-highlight" style="font-size:0.85em">lower()</code> (case conversion), and <code class="kw-highlight" style="font-size:0.85em">strip()</code> (removes leading/trailing whitespace).</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 10 — PRACTICE ======================== -->
+<section class="section-gap" id="practice" style="background:rgba(129,140,248,0.02)">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-dumbbell"></i> Practice Set</div>
+      <h2 class="section-title">Practice <span style="color:var(--accent2)">Questions</span></h2>
+      <div class="section-divider"></div>
+      <p class="section-sub">Write every line yourself — the best way to learn is by doing, not just reading.</p>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q1</span><span class="diff-badge diff-easy">Easy</span></div>
+          <div class="practice-body">
+            <h6>Good Afternoon Program</h6>
+            <p>Write a Python program to display a user-entered name followed by <strong>"Good Afternoon"</strong> using the <code>input()</code> function.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use <code>input()</code> to get the name, and print using an f-string: <code>f"Good Afternoon, {name}"</code>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="60">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q2</span><span class="diff-badge diff-easy">Easy</span></div>
+          <div class="practice-body">
+            <h6>Letter Template Replacer</h6>
+            <p>Write a program to fill in a letter template dynamically, replacing <code>&lt;|Name|&gt;</code> and <code>&lt;|Date|&gt;</code> placeholders with actual inputs.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use a multiline string template, then chain <code>.replace("&lt;|Name|&gt;", name).replace("&lt;|Date|&gt;", date)</code>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="120">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q3</span><span class="diff-badge diff-easy">Easy</span></div>
+          <div class="practice-body">
+            <h6>Detect Double Spaces</h6>
+            <p>Write a Python program to detect double spaces (e.g. <code>"  "</code>) inside a target string.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use the <code>.find("  ")</code> method. A return value other than <code>-1</code> indicates double spaces exist.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="180">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q4</span><span class="diff-badge diff-medium">Medium</span></div>
+          <div class="practice-body">
+            <h6>Replace Double Spaces</h6>
+            <p>Modify the program from Question 3 to replace all double spaces in a string with a single space.</p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Use the <code>.replace("  ", " ")</code> method. Note that because strings are immutable, this returns a new string.</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="240">
+        <div class="practice-card">
+          <div class="practice-header"><span style="font-family:'Fira Code',monospace;font-size:0.8rem;color:var(--text-dim)">Q5</span><span class="diff-badge diff-medium">Medium</span></div>
+          <div class="practice-body">
+            <h6>Format Letter via Escape Codes</h6>
+            <p>Format the following letter using escape sequence characters for clean readability: <code>"Dear Harsh, this Python course is amazing. Thanks!"</code></p>
+            <div class="practice-hint"><i class="fas fa-lightbulb me-1" style="color:var(--accent2)"></i> <strong>Hint:</strong> Format using newline <code>\n</code> and tab <code>\t</code> escape characters inside a single string.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== SECTION 11 — REVISION ======================== -->
+<section class="section-gap" id="revision">
+  <div class="container">
+    <div data-aos="fade-right">
+      <div class="section-label"><i class="fas fa-sync-alt"></i> Quick Recap</div>
+      <h2 class="section-title">Chapter <span style="color:var(--accent2)">Summary</span></h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="row g-4 mt-3">
+      <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="50"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>Strings</strong> are sequences of characters enclosed inside single (<code>'...'</code>), double (<code>"..."</code>), or triple (<code>'''...'''</code>) quotes.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="100"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>String Indexing</strong> starts at <code>0</code> for the first character, while <strong>Negative Indexing</strong> starts at <code>-1</code> from the right side.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="150"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>String Slicing</strong> extracts a portion of a string using <code>string[start:end]</code> (non-inclusive of the end index).</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="200"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>Slicing with step</strong> syntax <code>string[start:end:skip]</code> retrieves characters by stepping over the interval defined by <code>skip</code>.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="250"><div class="revision-check"><i class="fas fa-check"></i></div><div>Strings in Python are <strong>immutable</strong>, meaning you cannot change individual characters in-place once created.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="300"><div class="revision-check"><i class="fas fa-check"></i></div><div>Built-in string functions include <code>len()</code>, <code>capitalize()</code>, <code>endswith()</code>, <code>count()</code>, <code>find()</code>, and <code>replace()</code>.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="350"><div class="revision-check"><i class="fas fa-check"></i></div><div>Case conversions can be done using <code>.upper()</code>, <code>.lower()</code>, and leading/trailing whitespace can be trimmed with <code>.strip()</code>.</div></div>
+        <div class="revision-item" data-aos="fade-right" data-aos-delay="400"><div class="revision-check"><i class="fas fa-check"></i></div><div><strong>Escape Sequence Characters</strong> (like <code>\n</code> for newline, <code>\t</code> for tab) let you include special characters inside text.</div></div>
+      </div>
+      <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
+        <div class="glass-card text-center">
+          <h5 class="fw-bold mb-4">Completion Checklist</h5>
+          <div class="d-flex flex-column gap-2" id="checklistBox">
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Understand Strings &amp; Quotation Styles</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Use Indexing &amp; Negative Indexing</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Perform String Slicing with Skip Value</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Understand String Immutability Rules</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Use String Built-in Methods &amp; Functions</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Understand Escape Sequence Characters</span></div>
+            <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"><i class="fas fa-check"></i></div><span class="check-label">Solve All Practice Questions</span></div>
+          </div>
+          <div class="mt-4 pt-3" style="border-top:1px solid var(--border)">
+            <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:8px">Your Progress</div>
+            <div style="font-size:2rem;font-weight:800;font-family:'Syne',sans-serif" id="progressCount">0/7</div>
+            <div class="big-progress mt-2">
+              <div id="checkProgressBar" style="height:100%;width:0%;background:linear-gradient(90deg,#818cf8,#22c55e);border-radius:6px;transition:width 0.4s ease"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Excellent Work -->
+        <div class="glass-card mt-4 text-center">
+          <div style="font-size:3rem;margin-bottom:12px;color:#ca8a04"><i class="fas fa-trophy"></i></div>
+          <h5 class="fw-bold mb-2">Excellent Work!</h5>
+          <p style="font-size:0.85rem;color:var(--text-muted)">You have successfully completed Chapter 3 — Strings. You can now process, clean, and format textual data in Python!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== PROGRESS TRACKER ======================== -->
+<section class="section-gap-sm" id="progress">
+  <div class="container">
+    <div class="progress-section" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="section-label"><i class="fas fa-map-marked-alt"></i> Course Progress</div>
+          <h3 class="fw-bold mt-2 mb-3" style="font-family:'Syne',sans-serif">Chapter 3 Complete! <span style="color:#22c55e">✓</span></h3>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:20px">Three chapters down, ten to go. You're building serious Python foundations — keep the momentum!</p>
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div style="flex:1">
+              <div class="big-progress">
+                <div class="big-progress-bar" style="width: 23.1%"></div>
+              </div>
+            </div>
+            <span style="font-weight:700;color:var(--accent2);font-size:1rem;min-width:46px">23.1%</span>
+          </div>
+          <div style="font-size:0.78rem;color:var(--text-muted)">3 of 13 chapters completed</div>
+          <!-- Mark Complete Button -->
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <button id="markCompleteBtn" onclick="toggleChapter3()" style="background:linear-gradient(135deg,#22c55e,#818cf8);border:none;color:#fff;font-weight:700;padding:12px 24px;border-radius:10px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-size:0.9rem;display:flex;align-items:center;gap:8px;transition:all 0.3s">
+              <i class="fas fa-check-circle"></i> Mark Chapter 3 as Complete
+            </button>
+            <a href="../index.html" style="background:var(--bg-card);border:1px solid var(--border);color:var(--text-main);font-weight:600;padding:12px 22px;border-radius:10px;text-decoration:none;display:flex;align-items:center;gap:8px;font-size:0.9rem;transition:all 0.3s">
+              <i class="fas fa-home" style="color:#818cf8"></i> Back to Course Home
+            </a>
+          </div>
+          <div id="ch3CompletedMsg" style="display:none;margin-top:14px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:14px 18px;font-size:0.88rem;color:#22c55e">
+            <i class="fas fa-check-circle me-2"></i> <strong>Chapter 3 marked as complete!</strong> Your progress has been saved. Return to the homepage to continue your journey.
+          </div>
+        </div>
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <div class="progress-steps">
+            <div class="progress-step">
+              <div class="ps-circle ps-done"><i class="fas fa-check" style="font-size:0.75rem"></i></div>
+              <div class="ps-label">Ch 1<br>Modules</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-done"><i class="fas fa-check" style="font-size:0.75rem"></i></div>
+              <div class="ps-label">Ch 2<br>Variables</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-active"><i class="fas fa-check" style="font-size:0.75rem"></i></div>
+              <div class="ps-label">Ch 3<br>Strings</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">4</div>
+              <div class="ps-label">Ch 4<br>Lists</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">5</div>
+              <div class="ps-label">Ch 5<br>Loops</div>
+            </div>
+            <div class="progress-step">
+              <div class="ps-circle ps-pending">...</div>
+              <div class="ps-label">More<br>Coming</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand column -->
+      <div>
+        <div class="footer-brand-name">Python Mastery with Harsh</div>
+        <p class="footer-tagline">From Absolute Beginner to Building Real Python Projects.<br>Completely free. Built with care for students.</p>
+        <div class="footer-social">
+          <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-social-link" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-social-link" title="Portfolio">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="#" class="footer-social-link" title="Course Repo">
+            <i class="fas fa-code-branch"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Chapters column -->
+      <div>
+        <div class="footer-col-title">Chapters</div>
+        <a href="../Chapter-1/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 1 – Modules &amp; PIP</a>
+        <a href="../Chapter-2/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 2 – Variables</a>
+        <a href="../Chapter-3/index.html" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--accent)"></i>Chapter 3 – Strings</a>
+        <a href="../index.html#chapters" class="footer-link"><i class="fas fa-chevron-right me-1" style="font-size:0.6rem;color:var(--text-dim)"></i>All Chapters →</a>
+      </div>
+
+      <!-- Links column -->
+      <div>
+        <div class="footer-col-title">Links</div>
+        <a href="../index.html#roadmap" class="footer-link">Course Roadmap</a>
+        <a href="../index.html#instructor" class="footer-link">About Instructor</a>
+        <a href="https://lucifer01430.github.io/Portfolio" target="_blank" rel="noopener" class="footer-link">Portfolio Website</a>
+        <a href="https://github.com/lucifer01430" target="_blank" rel="noopener" class="footer-link">GitHub Profile</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 Python Mastery with Harsh. All rights reserved.</div>
+      <div class="footer-love">
+        Let's Learn Python with <a href="https://github.com/lucifer01430" target="_blank" rel="noopener">Harsh</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script>
+function setChapter3Marked(isDone) {
+  var btn = document.getElementById('markCompleteBtn');
+  var msg = document.getElementById('ch3CompletedMsg');
+  if (isDone) {
+    btn.innerHTML = '<i class="fas fa-check-double"></i> Chapter 3 Complete ✓ &nbsp;<span style="font-size:0.78rem;opacity:0.75;border-left:1px solid rgba(34,197,94,0.4);padding-left:10px;margin-left:2px">Unmark</span>';
+    btn.style.background = 'rgba(34,197,94,0.15)';
+    btn.style.border = '1px solid rgba(34,197,94,0.4)';
+    btn.style.color = '#22c55e';
+    msg.style.display = 'block';
+    msg.innerHTML = '<i class="fas fa-check-circle me-2"></i><strong>Chapter 3 marked as complete!</strong> Your progress is saved. <span style="opacity:0.7;font-size:0.82rem">Click the button again to unmark.</span>';
+  } else {
+    btn.innerHTML = '<i class="fas fa-check-circle"></i> Mark Chapter 3 as Complete';
+    btn.style.background = 'linear-gradient(135deg,#22c55e,#818cf8)';
+    btn.style.border = 'none';
+    btn.style.color = '#fff';
+    msg.style.display = 'none';
+  }
+}
+
+function toggleChapter3() {
+  var isDone = localStorage.getItem('python_chapter_3') === 'completed';
+  if (isDone) {
+    localStorage.removeItem('python_chapter_3');
+    setChapter3Marked(false);
+  } else {
+    localStorage.setItem('python_chapter_3', 'completed');
+    setChapter3Marked(true);
+  }
+}
+
+// Apply saved state on page load
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('python_chapter_3') === 'completed') {
+    setChapter3Marked(true);
+  }
+});
+</script>
+
+</body>
+</html>
