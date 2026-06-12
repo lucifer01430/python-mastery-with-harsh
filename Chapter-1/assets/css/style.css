@@ -858,6 +858,11 @@ body::before {
 }
 .footer-social-link:hover { border-color: var(--accent); color: var(--accent); }
 .footer-col-title { font-weight: 700; font-size: 0.85rem; margin-bottom: 16px; color: var(--text-main); }
+.footer-link {
+  display: block; color: var(--text-muted); font-size: 0.85rem;
+  text-decoration: none; margin-bottom: 10px; transition: color 0.2s;
+}
+.footer-link:hover { color: var(--accent); }
 .footer-bottom {
   border-top: 1px solid var(--border); padding-top: 24px;
   display: flex; align-items: center; justify-content: space-between;

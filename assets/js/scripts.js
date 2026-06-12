@@ -118,7 +118,7 @@ function updateContinueLearning() {
     if (ch1done && ch2done) {
       el.innerHTML = `
         <div class="continue-badge"><i class="fas fa-trophy"></i> All Available Chapters Complete</div>
-        <h3 class="fw-bold mb-2" style="font-family:'Syne',sans-serif">More Chapters Coming Soon! 🚀</h3>
+        <h3 class="fw-bold mb-2" style="font-family:'Syne',sans-serif">More Chapters Coming Soon!</h3>
         <p style="color:var(--text-muted);font-size:0.95rem;margin-bottom:0">
           You've completed all currently available chapters. Stay tuned — more content is on the way!
         </p>`;

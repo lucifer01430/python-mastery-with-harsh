@@ -1,4 +1,4 @@
-# 🐍 Python Mastery with Harsh
+# Python Mastery with Harsh
 
 [![License: Proprietary / Educational Only](https://img.shields.io/badge/License-Proprietary%20%2F%20Educational%20Only-red.svg?style=for-the-badge)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.x-38bdf8?style=for-the-badge&logo=python)](https://www.python.org/)
@@ -6,11 +6,11 @@
 
 Welcome to **Python Mastery with Harsh**! This repository hosts an interactive, beautifully designed, and beginner-friendly Python learning platform. 
 
-🚀 **Live Site:** [https://lucifer01430.github.io/python-mastery-with-harsh/](https://lucifer01430.github.io/python-mastery-with-harsh/)
+**Live Site:** [https://lucifer01430.github.io/python-mastery-with-harsh/](https://lucifer01430.github.io/python-mastery-with-harsh/)
 
 ---
 
-## 🎯 Purpose of this Project
+## Purpose of this Project
 
 The sole purpose of this project is **educational**. It is built to serve as a comprehensive, structured, and completely free learning roadmap for students, programming beginners, and working professionals who want to master Python from scratch.
 
@@ -18,7 +18,7 @@ It bridges the gap between passive video tutorial watching and active coding by 
 
 ---
 
-## 👨‍💻 Who Created It?
+## Who Created It?
 
 This project is created and designed by Me - **Harsh Pandey**. 
 
@@ -29,7 +29,7 @@ I am a professional Software Developer, Web Developer, and Python enthusiast. He
 
 ---
 
-## 📚 What Will You Learn?
+## What Will You Learn?
 
 By interacting with this platform, users will progress from absolute coding basics to intermediate and advanced developer levels:
 
@@ -41,7 +41,7 @@ By interacting with this platform, users will progress from absolute coding basi
 
 ---
 
-## 🔒 License & Copyright Information
+## License & Copyright Information
 
 **© 2025 Harsh Pandey. All rights reserved.**
 
